@@ -34,19 +34,33 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  
   @override
   Widget build(BuildContext context) {
-    double padding = MediaQuery.of(context).size.width < 600? 50 : 100;
+    double padding = MediaQuery.of(context).size.width < 600 ? 50 : 100;
 
     return Material(
-          child: Scrollbar(
+      child: Scrollbar(
         isAlwaysShown: true,
         child: CustomScrollView(
           scrollDirection: Axis.vertical,
           slivers: [
             SliverAppBar(
+              actions: [
+                GestureDetector(
+                  child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Row(
+                      children: [
+                        Icon(FontAwesomeIcons.github),
+                        SizedBox(width: 10),
+                        Text('Fork On Github', style: GoogleFonts.josefinSans(fontSize: 20)),
+                      ],
+                    ),
+                  ),
+                  onTap: () => launch(
+                              'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web'),
+                )
+              ],
               floating: true,
               pinned: true,
               expandedHeight: 350.0,
