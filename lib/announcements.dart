@@ -44,25 +44,37 @@ class _AnnouncementsState extends State<Announcements> {
                 padding: EdgeInsets.all(50),
                 itemCount: items.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    hoverColor: Colors.amberAccent,
-                    contentPadding: EdgeInsets.all(20.0),
-                    title: new Text(
-                      items[index]['title'],
-                      style: GoogleFonts.josefinSans(),
+                  return Card(
+                    color: _isWithinOneWeek(items[index]['pubDate'])? Colors.redAccent : Colors.transparent,
+                    elevation: _isWithinOneWeek(items[index]['pubDate'])? 20 : 10,
+                    shadowColor: _isWithinOneWeek(items[index]['pubDate'])? Colors.red : Colors.black,
+                    margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                    child: ListTile(
+                      hoverColor: Colors.amberAccent,
+                      contentPadding: EdgeInsets.all(20.0),
+                      title: new Text(
+                        items[index]['title'],
+                        style: GoogleFonts.josefinSans(),
+                      ),
+                      subtitle: Text(items[index]['categories'].join(', ')),
+                      leading: new Image.network(
+                        items[index]['thumbnail'],
+                        fit: BoxFit.cover,
+                        height: 400.0,
+                        width: 50.0,
+                      ),
+                      trailing: _isWithinOneWeek(items[index]['pubDate'])? Text('NEW UPDATE', style: GoogleFonts.josefinSans(color: Colors.black)) : Text(''),
+                      onTap: () => launch(items[index]['link']),
                     ),
-                    subtitle: Text(items[index]['categories'].join(', ')),
-                    leading: new Image.network(
-                      items[index]['thumbnail'],
-                      fit: BoxFit.cover,
-                      height: 400.0,
-                      width: 50.0,
-                    ),
-                    onTap: () => launch(items[index]['link']),
                   );
                 },
               ),
       ),
     );
+  }
+
+  bool _isWithinOneWeek(String date) {
+    var publishDate = DateTime.parse(date);
+    return DateTime.now().difference(publishDate).inDays < 7; 
   }
 }
