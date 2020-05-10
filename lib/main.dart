@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:vancouver_flutter_group_web/announcements.dart';
 
 void main() {
   runApp(MyApp());
@@ -49,6 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 GestureDetector(
                   child: Padding(
                     padding: EdgeInsets.all(16),
+                    child: Icon(FontAwesomeIcons.bullhorn),
+                  ),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Announcements()))
+                ),
+                GestureDetector(
+                  child: Padding(
+                    padding: EdgeInsets.all(16),
                     child: Row(
                       children: [
                         Icon(FontAwesomeIcons.github),
@@ -86,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 20,
                     ),
                     Text(
-                      'Flutter is a UI framework by Google to design and build beautiful mobile, web and desktop apps from a single codebase at lightening fast speeds. Vancouver Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections.',
+                      'Flutter is an UI framework by Google to design and build beautiful mobile, web and desktop apps from a single codebase at lightening fast speeds. Vancouver Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections.',
                       style: GoogleFonts.roboto(fontSize: 18, height: 1.3),
                     ),
                   ],
