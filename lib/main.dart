@@ -37,7 +37,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    double padding = MediaQuery.of(context).size.width < 600 ? 50 : 100;
+    double padding = MediaQuery.of(context).size.width < 800 ? 50 : 100;
+    double expandedHeight = MediaQuery.of(context).size.width < 800 ? 150 : 300;
+    double titleFont = MediaQuery.of(context).size.width < 800 ? 20 : 40;
+    double navigationHeaderIconSize = MediaQuery.of(context).size.width < 400 ? 15 : 30;
 
     return Material(
       child: Scrollbar(
@@ -49,21 +52,15 @@ class _MyHomePageState extends State<MyHomePage> {
               actions: [
                 GestureDetector(
                   child: Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Icon(FontAwesomeIcons.bullhorn),
+                    padding: EdgeInsets.all(10),
+                    child: Icon(FontAwesomeIcons.bullhorn, size: navigationHeaderIconSize,),
                   ),
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Announcements()))
                 ),
                 GestureDetector(
                   child: Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Row(
-                      children: [
-                        Icon(FontAwesomeIcons.github),
-                        SizedBox(width: 10),
-                        Text('Fork On Github', style: GoogleFonts.josefinSans(fontSize: 20)),
-                      ],
-                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Icon(FontAwesomeIcons.github, size: navigationHeaderIconSize,),
                   ),
                   onTap: () => launch(
                               'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web'),
@@ -71,14 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               floating: true,
               pinned: true,
-              expandedHeight: 350.0,
+              expandedHeight: expandedHeight,
               flexibleSpace: FlexibleSpaceBar(
                 background: FlutterLogo(),
-                title: Padding(
-                  padding: const EdgeInsets.all(0.0),
-                  child: Text('Flutter Vancouver Group',
-                      style: GoogleFonts.josefinSans(fontSize: 30)),
-                ),
+                title: Text('Flutter Vancouver Group',
+                    style: GoogleFonts.josefinSans(fontSize: titleFont)),
               ),
             ),
             SliverToBoxAdapter(
