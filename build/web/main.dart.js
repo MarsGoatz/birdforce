@@ -45237,7 +45237,7 @@ aV:function(){this.b9()
 var t=u.P
 G.a3T("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/flutter").bk(new S.RR(this),t)
 G.a3T("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/dartlang").bk(new S.RS(this),t)},
-J:function(a){var t,s=this,r=null,q=F.bO(a,!1).a.a<600?25:50,p=L.cH("Announcements",r,r,B.hU(r,r),r),o=u.E
+J:function(a){var t,s=this,r=null,q=F.bO(a,!1).a.a<600?10:50,p=L.cH("Announcements",r,r,B.hU(r,r),r),o=u.E
 p=E.a_l(r,r,!0,r,new E.rA(H.b([E.a1r(L.cH("Flutter",r,r,B.hU(r,r),r)),E.a1r(L.cH("Dart",r,r,B.hU(r,r),r))],o),r),1,r,r,r,!1,r,r,r,!0,r,r,p,16,1)
 t=M.dO(r,s.e==null?new T.eV(C.a3,r,r,U.a_F(),r):S.a2r(q,s.f),r,r,r,r,r,r,r,r,r)
 return new U.oD(2,new M.r1(p,new E.rC(H.b([t,M.dO(r,s.x==null?new T.eV(C.a3,r,r,U.a_F(),r):S.a2r(q,s.y),r,r,r,r,r,r,r,r,r)],o),r),r),r)}}

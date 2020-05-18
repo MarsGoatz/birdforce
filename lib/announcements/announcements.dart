@@ -42,7 +42,7 @@ class _AnnouncementsState extends State<Announcements> {
 
   @override
   Widget build(BuildContext context) {
-    double cardPadding = MediaQuery.of(context).size.width < 600 ? 25 : 50;
+    double _cardPadding = MediaQuery.of(context).size.width < 600 ? 10 : 50;
 
     return DefaultTabController(
       length: 2,
@@ -72,12 +72,12 @@ class _AnnouncementsState extends State<Announcements> {
             Container(
               child: flutterJsonData == null
                   ? Center(child: CircularProgressIndicator())
-                  : _buildListView(cardPadding, flutterItems),
+                  : _buildListView(_cardPadding, flutterItems),
             ),
             Container(
               child: dartJsonData == null
                   ? Center(child: CircularProgressIndicator())
-                  : _buildListView(cardPadding, dartItems),
+                  : _buildListView(_cardPadding, dartItems),
             ),
           ],
         ),
