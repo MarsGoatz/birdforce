@@ -75,7 +75,7 @@ class _AnnouncementsState extends State<Announcements> {
                   : _buildListView(cardPadding, flutterItems),
             ),
             Container(
-              child: flutterJsonData == null
+              child: dartJsonData == null
                   ? Center(child: CircularProgressIndicator())
                   : _buildListView(cardPadding, dartItems),
             ),
