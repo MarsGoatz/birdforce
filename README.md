@@ -8,4 +8,4 @@ Switch flutter channel to ```beta``` and then run ```flutter run -d chrome```.
 
 # Deploy
 
-Run ```flutter build web``` and then copy the contents from ```build/web/``` to [this repo](https://github.com/FlutterVancouver/flutter_vancouver_website/tree/master/flutter_web_build) which will kick off an auto build to deploy the changes.
+Build locally using ```flutter build web``` and add the ```build``` contents to the commit. Once the code is pushed to Github repo, Netlify will trigger a build and deploy the changes from the ```build/web``` folder.
