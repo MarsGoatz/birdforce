@@ -103,7 +103,7 @@ ListView _buildListView(double cardPadding, List items) {
         elevation: _isWithinOneWeek(items[index]['pubDate']) ? 20 : 10,
         shadowColor: _isWithinOneWeek(items[index]['pubDate'])
             ? Colors.red
-            : Colors.black,
+            : Colors.blueAccent,
         margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
