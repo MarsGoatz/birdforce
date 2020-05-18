@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      routes: {
+        '/announcements': (BuildContext context) => Announcements(),
+      },
       home: MyHomePage(title: 'Flutter Vancouver Group'),
     );
   }
@@ -40,7 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
     double padding = MediaQuery.of(context).size.width < 800 ? 50 : 100;
     double expandedHeight = MediaQuery.of(context).size.width < 800 ? 150 : 300;
     double titleFont = MediaQuery.of(context).size.width < 800 ? 20 : 40;
-    double navigationHeaderIconSize = MediaQuery.of(context).size.width < 400 ? 15 : 30;
+    double navigationHeaderIconSize =
+        MediaQuery.of(context).size.width < 400 ? 15 : 30;
 
     return Material(
       child: Scrollbar(
@@ -51,19 +55,25 @@ class _MyHomePageState extends State<MyHomePage> {
             SliverAppBar(
               actions: [
                 GestureDetector(
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Icon(FontAwesomeIcons.bullhorn, size: navigationHeaderIconSize,),
-                  ),
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Announcements()))
-                ),
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Icon(
+                        FontAwesomeIcons.bullhorn,
+                        size: navigationHeaderIconSize,
+                      ),
+                    ),
+                    onTap: () => Navigator.pushNamed(
+                        context, '/announcements')),
                 GestureDetector(
                   child: Padding(
                     padding: EdgeInsets.all(10),
-                    child: Icon(FontAwesomeIcons.github, size: navigationHeaderIconSize,),
+                    child: Icon(
+                      FontAwesomeIcons.github,
+                      size: navigationHeaderIconSize,
+                    ),
                   ),
                   onTap: () => launch(
-                              'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web'),
+                      'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web'),
                 )
               ],
               floating: true,
