@@ -17,6 +17,11 @@ class _AnnouncementsState extends State<Announcements> {
   var flutterJsonData;
   var flutterItems;
 
+  final _targetDartFeedUrl =
+      'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/dartlang';
+  var dartJsonData;
+  var dartItems;
+
   @override
   void initState() {
     super.initState();
@@ -26,23 +31,56 @@ class _AnnouncementsState extends State<Announcements> {
         flutterItems = flutterJsonData['items'] as List;
       });
     });
+
+    http.read(_targetDartFeedUrl).then((jsonResponse) {
+      setState(() {
+        dartJsonData = jsonDecode(jsonResponse);
+        dartItems = dartJsonData['items'] as List;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     double cardPadding = MediaQuery.of(context).size.width < 600 ? 25 : 50;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Announcements',
-          style: GoogleFonts.josefinSans(),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Announcements',
+            style: GoogleFonts.josefinSans(),
+          ),
+          bottom: TabBar(
+            tabs: [
+              Tab(
+                  icon: Text(
+                'Flutter',
+                style: GoogleFonts.josefinSans(),
+              )),
+              Tab(
+                  icon: Text(
+                'Dart',
+                style: GoogleFonts.josefinSans(),
+              )),
+            ],
+          ),
         ),
-      ),
-      body: Container(
-        child: flutterJsonData == null
-            ? Center(child: CircularProgressIndicator())
-            : _buildListView(cardPadding, flutterItems),
+        body: TabBarView(
+          children: [
+            Container(
+              child: flutterJsonData == null
+                  ? Center(child: CircularProgressIndicator())
+                  : _buildListView(cardPadding, flutterItems),
+            ),
+            Container(
+              child: flutterJsonData == null
+                  ? Center(child: CircularProgressIndicator())
+                  : _buildListView(cardPadding, dartItems),
+            ),
+          ],
+        ),
       ),
     );
   }
