@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Vancouver Group',
       theme: ThemeData(
         primarySwatch: Colors.amber,
+        brightness: Brightness.dark,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: {

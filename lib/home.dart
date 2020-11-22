@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
 
     return Material(
       child: Scrollbar(
+        controller: ScrollController(),
         isAlwaysShown: true,
         child: CustomScrollView(
           scrollDirection: Axis.vertical,
@@ -37,8 +38,8 @@ class _HomePageState extends State<HomePage> {
                         size: navigationHeaderIconSize,
                       ),
                     ),
-                    onTap: () => Navigator.pushNamed(
-                        context, '/announcements')),
+                    onTap: () =>
+                        Navigator.pushNamed(context, '/announcements')),
                 GestureDetector(
                   child: Padding(
                     padding: EdgeInsets.all(10),
