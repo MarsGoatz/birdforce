@@ -2,7 +2,7 @@
     "name": "vancouver_flutter_group_web",
     "short_name": "vancouver_flutter_group_web",
     "start_url": ".",
-    "display": "minimal-ui",
+    "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "A new Flutter project.",
