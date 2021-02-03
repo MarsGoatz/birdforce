@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:vancouver_flutter_group_web/announcements/announcements.dart';
-import 'package:vancouver_flutter_group_web/home.dart';
+import 'package:vancouver_flutter_group_web/home/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(FvApp());
 }
 
-class MyApp extends StatelessWidget {
+class FvApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Vancouver Group',
+      title: 'Flutter Vancouver',
       theme: ThemeData(
         primarySwatch: Colors.amber,
         brightness: Brightness.dark,
