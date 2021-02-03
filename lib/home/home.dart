@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 import 'package:vancouver_flutter_group_web/common/ui/app_bar.dart';
 import 'package:vancouver_flutter_group_web/home/join_us.dart';
 import 'package:vancouver_flutter_group_web/home/mission.dart';
@@ -37,7 +34,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    double padding = MediaQuery.of(context).size.width < 800 ? 50 : 150;
+    double horizontalPadding =
+        MediaQuery.of(context).size.width < 800 ? 50 : 150;
+    double verticalPadding = 50;
     return Material(
       child: CustomScrollView(
         controller: _pageScrollController,
@@ -50,7 +49,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               child: Material(
             color: Colors.grey[850],
             child: Padding(
-              padding: EdgeInsets.all(padding),
+              padding: EdgeInsets.symmetric(
+                  horizontal: horizontalPadding, vertical: verticalPadding),
               child: Mission(),
             ),
           )),
@@ -58,7 +58,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             child: Material(
                 color: Colors.grey[900],
                 child: Padding(
-                  padding: EdgeInsets.all(padding),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: horizontalPadding, vertical: verticalPadding),
                   child: JoinUs(),
                 )),
           ),
