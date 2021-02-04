@@ -49,16 +49,12 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/group_coders.jpg
     - assets/vancouver.jpg
     - assets/meetup.png
     - assets/slack_white.png
     - assets/github.png
     - assets/logo.png
     - assets/goals.png
-    - assets/conference_call.png
-    - assets/open_source.png
-    - assets/pair_programming.png
     - assets/conference_call.svg
     - assets/open_source.svg
     - assets/pair_programming.svg

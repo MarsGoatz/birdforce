@@ -6,6 +6,18 @@ import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 class Mission extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var breakPoint = 1000;
+    Axis direction = MediaQuery.of(context).size.width < breakPoint
+        ? Axis.vertical
+        : Axis.horizontal;
+    FlexFit fit = MediaQuery.of(context).size.width < breakPoint
+        ? FlexFit.loose
+        : FlexFit.tight;
+
+    var separtorWidth = MediaQuery.of(context).size.width < breakPoint ? 0 : 20;
+    var separtorHeight =
+        MediaQuery.of(context).size.width < breakPoint ? 50 : 0;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -34,51 +46,53 @@ class Mission extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 50.0),
-          child: Row(
-            children: [
-              Expanded(
+          child: Center(
+            child: Flex(
+              mainAxisSize: MainAxisSize.min,
+              direction: direction,
+              children: [
+                Flexible(
+                    flex: 2,
+                    fit: fit,
+                    child: FvValue(
+                      asset: "assets/conference_call.svg",
+                      message:
+                          'Regular meetups to discuss the current trends in Flutter and talks by members to make sure everyone is up to date with Flutter.',
+                    )),
+                Flexible(
+                    flex: 1,
+                    fit: fit,
+                    child: SizedBox(
+                      width: separtorWidth.toDouble(),
+                      height: separtorHeight.toDouble(),
+                    )),
+                Flexible(
+                  flex: 2,
+                  fit: fit,
                   child: FvValue(
-                asset: "assets/conference_call.svg",
-                message:
-                    'Regular meetups to discuss the current trends in Flutter and talks by members to make sure everyone is up to date with Flutter.',
-              )),
-              Expanded(
-                  child: SizedBox(
-                width: 10,
-              )),
-              Expanded(
-                  child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.network("assets/pair_programming.svg"),
-                  SizedBox(
-                    height: 20,
+                    asset: "assets/pair_programming.svg",
+                    message:
+                        'Find people to ask questions and work on projects together. Regular workshops and hackathons to keep you active with Flutter.',
                   ),
-                  Text(
-                    'Find people to ask questions and work on projects together. Regular workshops and hackathons to keep you active with Flutter.',
-                    style: StyleConstants.kDefaultTextStyle,
+                ),
+                Flexible(
+                    flex: 1,
+                    fit: fit,
+                    child: SizedBox(
+                      width: separtorWidth.toDouble(),
+                      height: separtorHeight.toDouble(),
+                    )),
+                Flexible(
+                  flex: 2,
+                  fit: fit,
+                  child: FvValue(
+                    asset: "assets/open_source.svg",
+                    message:
+                        'All our content along with the code is all open source and we will never ask you to pay anything. This community will always be open source.',
                   ),
-                ],
-              )),
-              Expanded(
-                  child: SizedBox(
-                width: 10,
-              )),
-              Expanded(
-                  child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.network("assets/open_source.svg"),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'All our content along with the code is all open source and we will never ask you to pay anything. This community will always be open source.',
-                    style: StyleConstants.kDefaultTextStyle,
-                  ),
-                ],
-              )),
-            ],
+                ),
+              ],
+            ),
           ),
         )
       ],
@@ -98,18 +112,29 @@ class FvValue extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.network(asset),
-        SizedBox(
-          height: 20,
-        ),
-        Text(
-          message,
-          style: StyleConstants.kDefaultTextStyle,
-        ),
-      ],
+    return ConstrainedBox(
+      constraints: new BoxConstraints(
+        maxWidth: 500.0,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ConstrainedBox(
+              constraints: new BoxConstraints(
+                maxHeight: 300.0,
+                maxWidth: 300.0,
+              ),
+              child: Image.network(asset)),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            message,
+            style: StyleConstants.kDefaultTextStyle,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }
