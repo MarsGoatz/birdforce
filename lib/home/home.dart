@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 import 'package:vancouver_flutter_group_web/common/ui/app_bar.dart';
+import 'package:vancouver_flutter_group_web/common/ui/footer.dart';
 import 'package:vancouver_flutter_group_web/home/join_us.dart';
 import 'package:vancouver_flutter_group_web/home/mission.dart';
 
@@ -37,31 +40,49 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     double horizontalPadding =
         MediaQuery.of(context).size.width < 800 ? 50 : 150;
     double verticalPadding = 50;
+    double titleFont = MediaQuery.of(context).size.width > 960 ? 125 : 60;
+    double navigationHeaderIconSize =
+        MediaQuery.of(context).size.width < 400 ? 13 : 25;
+
     return Material(
       child: CustomScrollView(
         controller: _pageScrollController,
         scrollDirection: Axis.vertical,
         slivers: [
           FvAppBar(
-            title: title,
-          ),
-          SliverToBoxAdapter(
-              child: Material(
-            color: Colors.grey[850],
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: horizontalPadding, vertical: verticalPadding),
-              child: Mission(),
+              title: title,
+              titleFont: titleFont,
+              navigationHeaderIconSize: navigationHeaderIconSize),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Material(
+                  color: Colors.grey[850],
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: horizontalPadding,
+                        vertical: verticalPadding),
+                    child: Mission(),
+                  ),
+                ),
+                Material(
+                    color: Colors.grey[900],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
+                      child: JoinUs(),
+                    )),
+                Material(
+                    color: Colors.grey[850],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
+                      child: FvFooter(),
+                    )),
+              ],
             ),
-          )),
-          SliverToBoxAdapter(
-            child: Material(
-                color: Colors.grey[900],
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: horizontalPadding, vertical: verticalPadding),
-                  child: JoinUs(),
-                )),
           ),
         ],
       ),

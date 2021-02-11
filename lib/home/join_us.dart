@@ -12,6 +12,17 @@ class JoinUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var breakPoint = 1000;
+    Axis direction = MediaQuery.of(context).size.width < breakPoint
+        ? Axis.vertical
+        : Axis.horizontal;
+    FlexFit fit = MediaQuery.of(context).size.width < breakPoint
+        ? FlexFit.loose
+        : FlexFit.tight;
+
+    var separtorWidth = MediaQuery.of(context).size.width < breakPoint ? 0 : 20;
+    var separtorHeight =
+        MediaQuery.of(context).size.width < breakPoint ? 50 : 0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -21,113 +32,136 @@ class JoinUs extends StatelessWidget {
         SizedBox(
           height: 60,
         ),
-        Row(
-          children: [
-            SizedBox(width: 20),
-            Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  MouseRegion(
-                    cursor: SystemMouseCursors.click,
-                    child: GestureDetector(
-                      onTap: () => launch(
-                          'https://join.slack.com/t/fluttervancouver/shared_invite/zt-dtlz4grr-mqfJO5cuH5Xq5PjHaqa4fQ'),
-                      child: Image.asset(
-                        "slack_white.png",
-                        height: 200,
-                        width: 200,
+        Center(
+          child: Flex(
+            mainAxisSize: MainAxisSize.min,
+            direction: direction,
+            children: [
+              Flexible(
+                flex: 2,
+                fit: fit,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () => launch(
+                            'https://join.slack.com/t/fluttervancouver/shared_invite/zt-dtlz4grr-mqfJO5cuH5Xq5PjHaqa4fQ'),
+                        child: Image.asset(
+                          "assets/slack_white.png",
+                          height: 200,
+                          width: 200,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  OutlineButton(
-                      padding: EdgeInsets.all(16),
-                      borderSide: BorderSide(width: 2.0, color: Colors.amber),
-                      color: Colors.amber[850],
-                      onPressed: () {
-                        launch(
-                            'https://join.slack.com/t/fluttervancouver/shared_invite/zt-dtlz4grr-mqfJO5cuH5Xq5PjHaqa4fQ');
-                      },
-                      child: Text(
-                        'Slack',
-                        style: StyleConstants.kButtonTextStyle,
-                      ),
-                      shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(20.0)))
-                ],
+                    SizedBox(
+                      height: 25,
+                    ),
+                    OutlineButton(
+                        padding: EdgeInsets.all(16),
+                        borderSide: BorderSide(width: 2.0, color: Colors.amber),
+                        color: Colors.amber[850],
+                        onPressed: () {
+                          launch(
+                              'https://join.slack.com/t/fluttervancouver/shared_invite/zt-dtlz4grr-mqfJO5cuH5Xq5PjHaqa4fQ');
+                        },
+                        child: Text(
+                          'Slack',
+                          style: StyleConstants.kButtonTextStyle,
+                        ),
+                        shape: new RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(20.0)))
+                  ],
+                ),
               ),
-            ),
-            SizedBox(width: 25),
-            Expanded(
-                child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: () =>
-                        launch('https://www.meetup.com/meetup-group-eBaLiZyW'),
-                    child: Image.asset(
-                      "meetup.png",
-                      height: 200,
-                      width: 200,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                OutlineButton(
-                    padding: EdgeInsets.all(16),
-                    borderSide: BorderSide(width: 2.0, color: Colors.red),
-                    color: Colors.redAccent,
-                    onPressed: () {
-                      launch('https://www.meetup.com/meetup-group-eBaLiZyW');
-                    },
-                    child: Text(
-                      'Meetup',
-                      style: StyleConstants.kButtonTextStyle,
-                    ),
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(20.0)))
-              ],
-            )),
-            SizedBox(width: 20),
-            Expanded(
-                child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: () => launch(
-                        'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web'),
-                    child: Image.asset(
-                      "github.png",
-                      height: 200,
-                      width: 200,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                OutlineButton(
-                    padding: EdgeInsets.all(16),
-                    borderSide: BorderSide(width: 2.0, color: Colors.cyan),
-                    color: Colors.cyanAccent,
-                    onPressed: () {
-                      launch(
-                          'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web');
-                    },
-                    child: Text(
-                      'Github',
-                      style: StyleConstants.kButtonTextStyle,
-                    ),
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(20.0)))
-              ],
-            )),
-          ],
+              Flexible(
+                  flex: 1,
+                  fit: fit,
+                  child: SizedBox(
+                    width: separtorWidth.toDouble(),
+                    height: separtorHeight.toDouble(),
+                  )),
+              Flexible(
+                  flex: 2,
+                  fit: fit,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () => launch(
+                              'https://www.meetup.com/meetup-group-eBaLiZyW'),
+                          child: Image.asset(
+                            "assets/meetup.png",
+                            height: 200,
+                            width: 200,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      OutlineButton(
+                          padding: EdgeInsets.all(16),
+                          borderSide: BorderSide(width: 2.0, color: Colors.red),
+                          color: Colors.redAccent,
+                          onPressed: () {
+                            launch(
+                                'https://www.meetup.com/meetup-group-eBaLiZyW');
+                          },
+                          child: Text(
+                            'Meetup',
+                            style: StyleConstants.kButtonTextStyle,
+                          ),
+                          shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(20.0)))
+                    ],
+                  )),
+              Flexible(
+                  flex: 1,
+                  fit: fit,
+                  child: SizedBox(
+                    width: separtorWidth.toDouble(),
+                    height: separtorHeight.toDouble(),
+                  )),
+              Flexible(
+                  flex: 2,
+                  fit: fit,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () => launch(
+                              'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web'),
+                          child: Image.asset(
+                            "assets/github.png",
+                            height: 200,
+                            width: 200,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      OutlineButton(
+                          padding: EdgeInsets.all(16),
+                          borderSide:
+                              BorderSide(width: 2.0, color: Colors.cyan),
+                          color: Colors.cyanAccent,
+                          onPressed: () {
+                            launch(
+                                'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web');
+                          },
+                          child: Text(
+                            'Github',
+                            style: StyleConstants.kButtonTextStyle,
+                          ),
+                          shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(20.0)))
+                    ],
+                  )),
+            ],
+          ),
         ),
       ],
     );

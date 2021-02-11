@@ -55,7 +55,7 @@ class Mission extends StatelessWidget {
                     flex: 2,
                     fit: fit,
                     child: FvValue(
-                      asset: "assets/conference_call.svg",
+                      asset: "assets/conference_call.png",
                       message:
                           'Regular meetups to discuss the current trends in Flutter and talks by members to make sure everyone is up to date with Flutter.',
                     )),
@@ -70,7 +70,7 @@ class Mission extends StatelessWidget {
                   flex: 2,
                   fit: fit,
                   child: FvValue(
-                    asset: "assets/pair_programming.svg",
+                    asset: "assets/pair_programming.png",
                     message:
                         'Find people to ask questions and work on projects together. Regular workshops and hackathons to keep you active with Flutter.',
                   ),
@@ -86,7 +86,7 @@ class Mission extends StatelessWidget {
                   flex: 2,
                   fit: fit,
                   child: FvValue(
-                    asset: "assets/open_source.svg",
+                    asset: "assets/open_source.png",
                     message:
                         'All our content along with the code is all open source and we will never ask you to pay anything. This community will always be open source.',
                   ),
@@ -124,7 +124,7 @@ class FvValue extends StatelessWidget {
                 maxHeight: 300.0,
                 maxWidth: 300.0,
               ),
-              child: Image.network(asset)),
+              child: Image.asset(asset)),
           SizedBox(
             height: 20,
           ),

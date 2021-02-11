@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 
 class FvAppBar extends StatelessWidget {
   const FvAppBar({
     Key key,
-    @required this.title,
+    this.title,
+    this.titleFont,
+    this.navigationHeaderIconSize,
   }) : super(key: key);
 
   final Text title;
+  final double titleFont;
+  final double navigationHeaderIconSize;
 
   @override
   Widget build(BuildContext context) {
-    double titleFont = MediaQuery.of(context).size.width > 960 ? 125 : 60;
-    double navigationHeaderIconSize =
-        MediaQuery.of(context).size.width < 400 ? 15 : 30;
+    var fontSize = MediaQuery.of(context).size.width > 400 ? 12 : 18;
     return SliverAppBar(
-      leading: Image.asset("logo.png"),
+      leading: Image.asset("assets/logo.png"),
       actions: [
         GestureDetector(
             child: Padding(
@@ -41,7 +44,6 @@ class FvAppBar extends StatelessWidget {
               'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web'),
         )
       ],
-      floating: true,
       pinned: true,
       expandedHeight: MediaQuery.of(context).size.height,
       flexibleSpace: FlexibleSpaceBar(
@@ -98,7 +100,9 @@ class FvAppBar extends StatelessWidget {
                           child: Center(
                             child: Text(
                               "Open Source Community. Made In Vancouver.",
-                              style: StyleConstants.kDefaultTextStyle,
+                              style: GoogleFonts.sourceCodePro(
+                                  fontSize: fontSize.roundToDouble(),
+                                  height: 1.3),
                             ),
                           ),
                         ),
