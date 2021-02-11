@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 import 'package:vancouver_flutter_group_web/common/ui/app_bar.dart';
 import 'package:vancouver_flutter_group_web/common/ui/footer.dart';
+import 'package:vancouver_flutter_group_web/home/community.dart';
 import 'package:vancouver_flutter_group_web/home/join_us.dart';
 import 'package:vancouver_flutter_group_web/home/mission.dart';
 
@@ -72,6 +73,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           horizontal: horizontalPadding,
                           vertical: verticalPadding),
                       child: JoinUs(),
+                    )),
+                Material(
+                    color: Colors.black,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
+                      child: Community(),
                     )),
                 Material(
                     color: Colors.grey[850],

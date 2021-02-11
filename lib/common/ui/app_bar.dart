@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 
 class FvAppBar extends StatelessWidget {
   const FvAppBar({
