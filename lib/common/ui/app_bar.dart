@@ -19,7 +19,7 @@ class FvAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var fontSize = MediaQuery.of(context).size.width > 400 ? 12 : 18;
+    var fontSize = MediaQuery.of(context).size.width > 400 ? 12 : 25;
     return SliverAppBar(
       leading: Image.asset("assets/logo.png"),
       actions: [
@@ -48,7 +48,17 @@ class FvAppBar extends StatelessWidget {
       expandedHeight: MediaQuery.of(context).size.height,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: false,
-        title: title,
+        title: title != null
+            ? Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    title,
+                  ],
+                ),
+              )
+            : title,
         background: Stack(
           children: [
             ColorFiltered(
@@ -76,19 +86,22 @@ class FvAppBar extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: Center(
-                            child: Text(
-                              "Flutter Vancouver",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'Roboto',
-                                fontSize:
-                                    titleFont, // 247 is the height of the F when the fontSize is 350, assuming device pixel ratio 1.0
-                                fontWeight: FontWeight.w400,
-                                textBaseline: TextBaseline.alphabetic,
+                        Center(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Flutter Vancouver",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Roboto',
+                                  fontSize:
+                                      titleFont, // 247 is the height of the F when the fontSize is 350, assuming device pixel ratio 1.0
+                                  fontWeight: FontWeight.w400,
+                                  textBaseline: TextBaseline.alphabetic,
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                         ),
                       ],
@@ -96,14 +109,39 @@ class FvAppBar extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: Center(
-                            child: Text(
-                              "Open Source Community. Made In Vancouver.",
-                              style: GoogleFonts.sourceCodePro(
-                                  fontSize: fontSize.roundToDouble(),
-                                  height: 1.3),
-                            ),
+                        Center(
+                          child: Row(
+                            children: [
+                              Text(
+                                "Tech Community",
+                                style: GoogleFonts.sourceCodePro(
+                                    fontSize: 25, height: 1.3),
+                              ),
+                              Text(
+                                " <_>",
+                                style: GoogleFonts.sourceCodePro(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25,
+                                    height: 1.3,
+                                    color: Colors.greenAccent),
+                              ),
+                              Text(
+                                " ",
+                                style: GoogleFonts.sourceCodePro(
+                                    fontSize: 25, height: 1.3),
+                              ),
+                              Text(
+                                " Made In Vancouver ",
+                                style: GoogleFonts.sourceCodePro(
+                                    fontSize: 25, height: 1.3),
+                              ),
+                              Image.asset(
+                                'assets/pixel_heart_canada_2.png',
+                                width: 60,
+                                height: 60,
+                                fit: BoxFit.fill,
+                              ),
+                            ],
                           ),
                         ),
                       ],
