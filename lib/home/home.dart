@@ -1,5 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:vancouver_flutter_group_web/common/mouse_region_span.dart';
 import 'package:vancouver_flutter_group_web/common/ui/app_bar.dart';
 import 'package:vancouver_flutter_group_web/common/ui/footer.dart';
 import 'package:vancouver_flutter_group_web/home/community.dart';
@@ -58,6 +62,56 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             SliverList(
               delegate: SliverChildListDelegate(
                 [
+                  Material(
+                    color: Colors.amber[800].withOpacity(0.8),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12),
+                      child: Center(
+                          child: RichText(
+                        text: new TextSpan(
+                          children: [
+                            new TextSpan(
+                              text:
+                                  'New to Flutter? Watch the introductory video ',
+                              style: GoogleFonts.sourceCodePro(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            MouseRegionSpan(
+                              mouseCursor: SystemMouseCursors.click,
+                              inlineSpan: TextSpan(
+                                text: 'here',
+                                style: GoogleFonts.sourceCodePro(
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontWeight: FontWeight.bold),
+                                recognizer: new TapGestureRecognizer()
+                                  ..onTap = () {
+                                    launch(
+                                        'https://www.youtube.com/watch?v=fq4N0hgOWzU');
+                                  },
+                              ),
+                            ),
+                            TextSpan(
+                              text: '.',
+                              style: GoogleFonts.roboto(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      )
+
+                          // Text(
+                          //   'New to Flutter? Watch the introductory video here.',
+                          //   style: GoogleFonts.roboto(
+                          //       color: Colors.black, fontWeight: FontWeight.bold),
+                          // ),
+                          ),
+                    ),
+                  ),
                   Material(
                     color: Colors.grey[850],
                     child: Padding(
