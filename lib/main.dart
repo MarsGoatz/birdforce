@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'package:vancouver_flutter_group_web/announcements/announcements.dart';
-import 'package:vancouver_flutter_group_web/home/home.dart';
+import 'package:flutter_vancouver/announcements/announcements.dart';
+import 'package:flutter_vancouver/home/home.dart';
 
 void main() {
   setPathUrlStrategy();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vancouver_flutter_group_web/common/style_constants.dart';
+import 'package:flutter_vancouver/common/style_constants.dart';
 
 class Mission extends StatelessWidget {
   @override

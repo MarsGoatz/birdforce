@@ -2,12 +2,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:vancouver_flutter_group_web/common/mouse_region_span.dart';
-import 'package:vancouver_flutter_group_web/common/ui/app_bar.dart';
-import 'package:vancouver_flutter_group_web/common/ui/footer.dart';
-import 'package:vancouver_flutter_group_web/home/community.dart';
-import 'package:vancouver_flutter_group_web/home/join_us.dart';
-import 'package:vancouver_flutter_group_web/home/mission.dart';
+import 'package:flutter_vancouver/common/mouse_region_span.dart';
+import 'package:flutter_vancouver/common/ui/app_bar.dart';
+import 'package:flutter_vancouver/common/ui/footer.dart';
+import 'package:flutter_vancouver/home/community.dart';
+import 'package:flutter_vancouver/home/join_us.dart';
+import 'package:flutter_vancouver/home/mission.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
