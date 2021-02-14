@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vancouver_flutter_group_web/common/mouse_region_span.dart';
 import 'package:vancouver_flutter_group_web/common/ui/app_bar.dart';
@@ -73,7 +72,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             new TextSpan(
                               text:
                                   'New to Flutter? Watch the introductory video ',
-                              style: GoogleFonts.sourceCodePro(
+                              style: TextStyle(
+                                  fontFamily: 'SourceCodePro',
                                   fontSize: 20,
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
@@ -82,7 +82,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               mouseCursor: SystemMouseCursors.click,
                               inlineSpan: TextSpan(
                                 text: 'here',
-                                style: GoogleFonts.sourceCodePro(
+                                style: TextStyle(
+                                    fontFamily: 'SourceCodePro',
                                     fontSize: 20,
                                     color: Colors.black,
                                     decoration: TextDecoration.underline,
@@ -96,7 +97,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                             TextSpan(
                               text: '.',
-                              style: GoogleFonts.roboto(
+                              style: TextStyle(
+                                  fontFamily: 'Roboto',
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
                             ),

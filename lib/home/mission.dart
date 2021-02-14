@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 
 class Mission extends StatelessWidget {
@@ -26,7 +25,7 @@ class Mission extends StatelessWidget {
           children: [
             Text('Mission',
                 textAlign: TextAlign.left,
-                style: GoogleFonts.josefinSans(fontSize: 40)),
+                style: TextStyle(fontFamily: 'JosefinSans', fontSize: 40)),
             Image.asset(
               'assets/goals.png',
               width: 80,

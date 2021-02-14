@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
@@ -54,19 +53,19 @@ class _AnnouncementsState extends State<Announcements> {
         appBar: AppBar(
           title: Text(
             'Announcements',
-            style: GoogleFonts.josefinSans(),
+            style: TextStyle(fontFamily: 'JosefinSans'),
           ),
           bottom: TabBar(
             tabs: [
               Tab(
                   icon: Text(
                 'Flutter',
-                style: GoogleFonts.josefinSans(),
+                style: TextStyle(fontFamily: 'JosefinSans'),
               )),
               Tab(
                   icon: Text(
                 'Dart',
-                style: GoogleFonts.josefinSans(),
+                style: TextStyle(fontFamily: 'JosefinSans'),
               )),
             ],
           ),
@@ -130,7 +129,8 @@ Widget _buildListView(
                           padding: EdgeInsets.fromLTRB(20, 20, 0, 10),
                           child: Text(
                             'NEW',
-                            style: GoogleFonts.josefinSans(color: Colors.black),
+                            style: TextStyle(
+                                fontFamily: 'JosefinSans', color: Colors.black),
                           ),
                         ),
                       ),
@@ -143,7 +143,7 @@ Widget _buildListView(
                       contentPadding: EdgeInsets.all(20.0),
                       title: new Text(
                         items[index]['title'],
-                        style: GoogleFonts.josefinSans(),
+                        style: TextStyle(fontFamily: 'JosefinSans'),
                       ),
                       subtitle: Text(items[index]['categories'].join(', ')),
                       leading: new Image.network(

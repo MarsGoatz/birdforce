@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 
 class Community extends StatelessWidget {
   const Community({
@@ -28,7 +25,7 @@ class Community extends StatelessWidget {
       children: [
         Text('Community',
             textAlign: TextAlign.left,
-            style: GoogleFonts.josefinSans(fontSize: 40)),
+            style: TextStyle(fontFamily: 'JosefinSans', fontSize: 40)),
         SizedBox(
           height: 60,
         ),

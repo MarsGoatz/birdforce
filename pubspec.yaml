@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  google_fonts: ^0.3.8
+  # google_fonts: ^0.3.8
   font_awesome_flutter: ^8.8.1
   url_launcher: ^5.4.5
   http: ^0.12.1
@@ -27,6 +27,19 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: SourceCodePro
+      fonts:
+        - asset: fonts/SourceCodePro-Regular.ttf
+        - asset: fonts/SourceCodePro-Regular.ttf
+          weight: 700
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
+    - family: JosefinSans
+      fonts:
+        - asset: fonts/JosefinSans-Regular.ttf    
 
   assets:
     - assets/vancouver.jpg

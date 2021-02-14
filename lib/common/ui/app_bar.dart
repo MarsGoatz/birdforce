@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vancouver_flutter_group_web/common/responsive_constants.dart';
 
@@ -92,7 +91,8 @@ class FvAppBar extends StatelessWidget {
                             children: [
                               Text(
                                 "Flutter Vancouver",
-                                style: GoogleFonts.roboto(
+                                style: TextStyle(
+                                  fontFamily: 'Roboto',
                                   color: Colors.white,
                                   fontSize: ResponsiveConstants.getTitleFont(
                                       context), // 247 is the height of the F when the fontSize is 350, assuming device pixel ratio 1.0
@@ -115,7 +115,8 @@ class FvAppBar extends StatelessWidget {
                           children: [
                             Text(
                               " Tech Community",
-                              style: GoogleFonts.sourceCodePro(
+                              style: TextStyle(
+                                  fontFamily: 'SourceCodePro',
                                   color: Colors.grey[300],
                                   fontSize: ResponsiveConstants.getSubTitleFont(
                                       context),
@@ -123,7 +124,8 @@ class FvAppBar extends StatelessWidget {
                             ),
                             Text(
                               " <_> ",
-                              style: GoogleFonts.sourceCodePro(
+                              style: TextStyle(
+                                  fontFamily: 'SourceCodePro',
                                   fontWeight: FontWeight.bold,
                                   fontSize: ResponsiveConstants.getSubTitleFont(
                                       context),
@@ -137,7 +139,8 @@ class FvAppBar extends StatelessWidget {
                           children: [
                             Text(
                               "Made In Vancouver ",
-                              style: GoogleFonts.sourceCodePro(
+                              style: TextStyle(
+                                  fontFamily: 'SourceCodePro',
                                   color: Colors.grey[300],
                                   fontSize: ResponsiveConstants.getSubTitleFont(
                                       context),
