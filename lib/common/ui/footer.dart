@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vancouver_flutter_group_web/common/responsive_constants.dart';
 import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -10,7 +11,7 @@ class FvFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var fontSize = MediaQuery.of(context).size.width > 400 ? 12 : 18;
+    var fontSize = MediaQuery.of(context).size.width < 500 ? 12 : 18;
     return Center(
       child: Column(
         children: [
@@ -18,16 +19,23 @@ class FvFooter extends StatelessWidget {
             'Flutter Vancouver',
             style: StyleConstants.kMissionTextStyle,
           ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            child: Center(
-              child: Text(
-                'Open Source Community. Made In Vancouver.',
+          Flex(
+            direction: ResponsiveConstants.getAxis(context),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Open Source Community. ',
                 maxLines: 1,
                 style: GoogleFonts.sourceCodePro(
                     fontSize: fontSize.roundToDouble(), height: 1.3),
               ),
-            ),
+              Text(
+                'Made In Vancouver.',
+                maxLines: 1,
+                style: GoogleFonts.sourceCodePro(
+                    fontSize: fontSize.roundToDouble(), height: 1.3),
+              ),
+            ],
           )
         ],
       ),
