@@ -72,7 +72,7 @@ class Mission extends StatelessWidget {
                   child: FvValue(
                     asset: "assets/pair_programming.png",
                     message:
-                        'Find people to ask questions and work on projects together. Regular workshops and hackathons to keep you active with Flutter.',
+                        'Find people to ask questions and work on projects together. Regular workshops and hackathons to keep your Flutter skills sharp.',
                   ),
                 ),
                 Flexible(
@@ -88,7 +88,7 @@ class Mission extends StatelessWidget {
                   child: FvValue(
                     asset: "assets/open_source.png",
                     message:
-                        'All our content along with the code is all open source and we will never ask you to pay anything. This community will always be open source.',
+                        'All our content(except for third party and sensitive data) is all open source and there will never be any membership dues.',
                   ),
                 ),
               ],

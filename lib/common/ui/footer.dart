@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vancouver_flutter_group_web/common/responsive_constants.dart';
 import 'package:vancouver_flutter_group_web/common/style_constants.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class FvFooter extends StatelessWidget {
   const FvFooter({
