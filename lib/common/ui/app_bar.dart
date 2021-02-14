@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:vancouver_flutter_group_web/common/responsive_constants.dart';
 
 class FvAppBar extends StatelessWidget {
   const FvAppBar({
@@ -18,7 +19,7 @@ class FvAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var fontSize = MediaQuery.of(context).size.width > 400 ? 12 : 25;
+    double fontSize = MediaQuery.of(context).size.width > 400 ? 12 : 25;
     return SliverAppBar(
       leading: Image.asset("assets/logo.png"),
       actions: [
@@ -91,11 +92,10 @@ class FvAppBar extends StatelessWidget {
                             children: [
                               Text(
                                 "Flutter Vancouver",
-                                style: TextStyle(
+                                style: GoogleFonts.roboto(
                                   color: Colors.white,
-                                  fontFamily: 'Roboto',
-                                  fontSize:
-                                      titleFont, // 247 is the height of the F when the fontSize is 350, assuming device pixel ratio 1.0
+                                  fontSize: ResponsiveConstants.getTitleFont(
+                                      context), // 247 is the height of the F when the fontSize is 350, assuming device pixel ratio 1.0
                                   fontWeight: FontWeight.w400,
                                   textBaseline: TextBaseline.alphabetic,
                                 ),
@@ -105,43 +105,51 @@ class FvAppBar extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
+                    Flex(
+                      mainAxisSize: MainAxisSize.min,
+                      direction: ResponsiveConstants.getAxis(context),
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Center(
-                          child: Row(
-                            children: [
-                              Text(
-                                "Tech Community",
-                                style: GoogleFonts.sourceCodePro(
-                                    fontSize: 25, height: 1.3),
-                              ),
-                              Text(
-                                " <_>",
-                                style: GoogleFonts.sourceCodePro(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25,
-                                    height: 1.3,
-                                    color: Colors.greenAccent),
-                              ),
-                              Text(
-                                " ",
-                                style: GoogleFonts.sourceCodePro(
-                                    fontSize: 25, height: 1.3),
-                              ),
-                              Text(
-                                " Made In Vancouver ",
-                                style: GoogleFonts.sourceCodePro(
-                                    fontSize: 25, height: 1.3),
-                              ),
-                              Image.asset(
-                                'assets/pixel_heart_canada_2.png',
-                                width: 60,
-                                height: 60,
-                                fit: BoxFit.fill,
-                              ),
-                            ],
-                          ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              " Tech Community",
+                              style: GoogleFonts.sourceCodePro(
+                                  color: Colors.grey[300],
+                                  fontSize: ResponsiveConstants.getSubTitleFont(
+                                      context),
+                                  height: 1.3),
+                            ),
+                            Text(
+                              " <_> ",
+                              style: GoogleFonts.sourceCodePro(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: ResponsiveConstants.getSubTitleFont(
+                                      context),
+                                  height: 1.3,
+                                  color: Colors.greenAccent[400]),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              "Made In Vancouver ",
+                              style: GoogleFonts.sourceCodePro(
+                                  color: Colors.grey[300],
+                                  fontSize: ResponsiveConstants.getSubTitleFont(
+                                      context),
+                                  height: 1.3),
+                            ),
+                            Image.asset(
+                              'assets/pixel_heart_canada_2.png',
+                              width: 60,
+                              height: 60,
+                              fit: BoxFit.fill,
+                            ),
+                          ],
                         ),
                       ],
                     ),

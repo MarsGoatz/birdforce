@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:vancouver_flutter_group_web/common/style_constants.dart';
 import 'package:vancouver_flutter_group_web/common/ui/app_bar.dart';
 import 'package:vancouver_flutter_group_web/common/ui/footer.dart';
 import 'package:vancouver_flutter_group_web/home/community.dart';
@@ -46,54 +44,58 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         MediaQuery.of(context).size.width < 400 ? 13 : 25;
 
     return Material(
-      child: CustomScrollView(
+      child: Scrollbar(
+        isAlwaysShown: true,
         controller: _pageScrollController,
-        scrollDirection: Axis.vertical,
-        slivers: [
-          FvAppBar(
-              title: title,
-              titleFont: titleFont,
-              navigationHeaderIconSize: navigationHeaderIconSize),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                Material(
-                  color: Colors.grey[850],
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: horizontalPadding,
-                        vertical: verticalPadding),
-                    child: Mission(),
-                  ),
-                ),
-                Material(
-                    color: Colors.grey[900],
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
-                          vertical: verticalPadding),
-                      child: JoinUs(),
-                    )),
-                Material(
-                    color: Colors.black,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
-                          vertical: verticalPadding),
-                      child: Community(),
-                    )),
-                Material(
+        child: CustomScrollView(
+          controller: _pageScrollController,
+          scrollDirection: Axis.vertical,
+          slivers: [
+            FvAppBar(
+                title: title,
+                titleFont: titleFont,
+                navigationHeaderIconSize: navigationHeaderIconSize),
+            SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  Material(
                     color: Colors.grey[850],
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: horizontalPadding,
                           vertical: verticalPadding),
-                      child: FvFooter(),
-                    )),
-              ],
+                      child: Mission(),
+                    ),
+                  ),
+                  Material(
+                      color: Colors.grey[900],
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: horizontalPadding,
+                            vertical: verticalPadding),
+                        child: JoinUs(),
+                      )),
+                  Material(
+                      color: Colors.black,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: horizontalPadding,
+                            vertical: verticalPadding),
+                        child: Community(),
+                      )),
+                  Material(
+                      color: Colors.grey[850],
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: horizontalPadding,
+                            vertical: verticalPadding),
+                        child: FvFooter(),
+                      )),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
