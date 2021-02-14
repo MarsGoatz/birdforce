@@ -20,6 +20,7 @@ dependencies:
   gradient_widgets: ^0.5.1
   animated_text_kit: ^2.5.4
   auto_size_text: ^2.1.0
+  url_strategy: ^0.1.1
 
 dev_dependencies:
   flutter_test:
