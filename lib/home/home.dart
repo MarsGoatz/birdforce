@@ -67,11 +67,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       padding: EdgeInsets.symmetric(vertical: 12),
                       child: Center(
                           child: RichText(
+                        textAlign: TextAlign.center,
                         text: new TextSpan(
                           children: [
                             new TextSpan(
-                              text:
-                                  'New to Flutter? Watch the introductory video ',
+                              text: 'New to Flutter? Watch the 2 min ',
                               style: TextStyle(
                                   fontFamily: 'SourceCodePro',
                                   fontSize: 20,
@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             MouseRegionSpan(
                               mouseCursor: SystemMouseCursors.click,
                               inlineSpan: TextSpan(
-                                text: 'here',
+                                text: 'animation',
                                 style: TextStyle(
                                     fontFamily: 'SourceCodePro',
                                     fontSize: 20,
@@ -104,14 +104,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                           ],
                         ),
-                      )
-
-                          // Text(
-                          //   'New to Flutter? Watch the introductory video here.',
-                          //   style: GoogleFonts.roboto(
-                          //       color: Colors.black, fontWeight: FontWeight.bold),
-                          // ),
-                          ),
+                      )),
                     ),
                   ),
                   Material(
