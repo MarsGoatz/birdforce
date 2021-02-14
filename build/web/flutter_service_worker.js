@@ -9,7 +9,7 @@ const RESOURCES = {
 "main.dart.js": "ef8cdd619a710c5a5afa48d203f8e733",
 "favicon.png": "a989b32dc2990703d8869f5beac168ab",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"icons/Icon-512.png": "a562c744d4a57cba401dce5860cb5b41",
+"icons/Icon-512.png": "2a478f963f1936193a295c06b76e6ad6",
 "manifest.json": "e0e7f2c97a7bf64594d9822a69532194",
 "assets/AssetManifest.json": "dc0eda73ee4bdae7bb6c9fe54b66d26a",
 "assets/NOTICES": "75695f54010ee05fac92df100363cd75",
