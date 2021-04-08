@@ -23,6 +23,7 @@ class FvAppBar extends StatelessWidget {
       leading: Image.asset("assets/logo.png"),
       actions: [
         IconButton(
+          padding: EdgeInsets.fromLTRB(0, 0, 8, 6),
           icon: Icon(
             FontAwesomeIcons.github,
             size: navigationHeaderIconSize,
