@@ -6,12 +6,12 @@ const RESOURCES = {
   "version.json": "0bc7b94a806732bee92e3007afb3a831",
 "index.html": "d13198e31f7a19530c06a63950ce4dd6",
 "/": "d13198e31f7a19530c06a63950ce4dd6",
-"main.dart.js": "ef8cdd619a710c5a5afa48d203f8e733",
+"main.dart.js": "0eaa2c2a255e1d47eb5eeb8b1d1edbdb",
 "favicon.png": "a989b32dc2990703d8869f5beac168ab",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "2a478f963f1936193a295c06b76e6ad6",
 "manifest.json": "e0e7f2c97a7bf64594d9822a69532194",
-"assets/AssetManifest.json": "dc0eda73ee4bdae7bb6c9fe54b66d26a",
+"assets/AssetManifest.json": "c5d3a4643810509ed637a936c3ca4888",
 "assets/NOTICES": "75695f54010ee05fac92df100363cd75",
 "assets/FontManifest.json": "860286ffeda13bdc25ddd5f45379f3fd",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "2aa350bd2aeab88b601a593f793734c0",
@@ -25,18 +25,14 @@ const RESOURCES = {
 "assets/assets/meetup.png": "1ecb252d1b2339334f91efa0b1916e7c",
 "assets/assets/slack_white.png": "b5990c2313e0deafd4c9c9387d999ec9",
 "assets/assets/goals.png": "ee9a24808e27ce41c1b811b0a6f90b87",
-"assets/assets/github.png": "ef468e275a2c13d0bc7156549261fde6",
+"assets/assets/github.png": "4aed8381e217ca58ded3f25f38815dbb",
 "assets/assets/open_source.png": "550b1569c158ec696b012d9578f82cc3",
-"assets/assets/pixel_heart_canada.png": "eb330f7835546d10a901629dfaa2a883",
 "assets/assets/logo.png": "a989b32dc2990703d8869f5beac168ab",
 "assets/assets/pair_programming.png": "651433b3c54dea5b2335140f5ad3488a",
-"assets/assets/vancouver.jpg": "a1dca1744e80a5d3424d0e2d7b3318e7",
 "assets/assets/conference_call.png": "5c2d5a5335c7743654db2889999035a7",
 "assets/assets/community/coming_soon.png": "383e066615fca7bd60ec33b4c6a60cd3",
 "assets/assets/community/people.png": "4907a80330a35e7b6dd7dd68f081277e",
-"assets/assets/canada/flag.png": "a30f002e4943e3f3679c504836dc9b84",
-"assets/assets/canada/moose.png": "618b8747355d5ce86b9379ba0ca8a0c5",
-"assets/assets/canada/bear.png": "14da947e31582aab6d0f088e2de8dd2c"
+"assets/assets/vancity.png": "60de72ed29e752a9b929181f49c5109b"
 };
 
 // The application shell files that are downloaded before a service worker can

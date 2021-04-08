@@ -60,15 +60,11 @@ class FvAppBar extends StatelessWidget {
             : title,
         background: Stack(
           children: [
-            ColorFiltered(
-              colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.40), BlendMode.darken),
-              child: Image.asset(
-                'assets/vancouver.jpg',
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                fit: BoxFit.cover,
-              ),
+            Image.network(
+              'assets/vancity.png',
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              fit: BoxFit.cover,
             ),
             Center(
                 child: Column(

@@ -43,7 +43,6 @@ flutter:
         - asset: fonts/JosefinSans-Regular.ttf    
 
   assets:
-    - assets/vancouver.jpg
     - assets/meetup.png
     - assets/slack_white.png
     - assets/github.png
@@ -52,7 +51,6 @@ flutter:
     - assets/conference_call.png
     - assets/open_source.png
     - assets/pair_programming.png
-    - assets/pixel_heart_canada.png
     - assets/pixel_heart_canada_2.png
-    - assets/canada/
+    - assets/vancity.png
     - assets/community/
