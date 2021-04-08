@@ -17,11 +17,13 @@ class ResponsiveConstants {
   }
 
   static double getTitleFont(BuildContext context) {
-    return MediaQuery.of(context).size.width < kSmBreakpoint
-        ? 45
-        : MediaQuery.of(context).size.width > kMdBreakpoint
-            ? 100
-            : 60;
+    return MediaQuery.of(context).size.width < 365
+        ? 35
+        : MediaQuery.of(context).size.width < kSmBreakpoint
+            ? 45
+            : MediaQuery.of(context).size.width > kMdBreakpoint
+                ? 100
+                : 60;
   }
 
   static double getSubTitleFont(BuildContext context) {
