@@ -58,14 +58,15 @@ class FvAppBar extends StatelessWidget {
               Colors.redAccent,
               Colors.orange[400],
               Colors.orange[400],
-              // Colors.blue,
+              Colors.orange,
               Colors.blue[400],
               Colors.blue[800]
             ],
           )),
           child: Stack(
             children: [
-              if (MediaQuery.of(context).size.width > 600)
+              if (MediaQuery.of(context).size.width > 600 &&
+                  MediaQuery.of(context).size.height > 600)
                 Image.asset(
                   'assets/vancity.png',
                   width: MediaQuery.of(context).size.width,
@@ -76,7 +77,7 @@ class FvAppBar extends StatelessWidget {
                   child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (MediaQuery.of(context).size.height > 400)
+                  if (MediaQuery.of(context).size.height > 600)
                     Opacity(
                       opacity: 0.8,
                       child: FlutterLogo(
@@ -108,7 +109,7 @@ class FvAppBar extends StatelessWidget {
                           ),
                         ],
                       ),
-                      MediaQuery.of(context).size.width > 600
+                      MediaQuery.of(context).size.width > 800
                           ? Flex(
                               mainAxisSize: MainAxisSize.min,
                               direction: ResponsiveConstants.getAxis(context),
