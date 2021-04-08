@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'package:flutter_vancouver/announcements/announcements.dart';
 import 'package:flutter_vancouver/home/home.dart';
 
 void main() {
@@ -21,7 +20,6 @@ class FvApp extends StatelessWidget {
       ),
       routes: {
         '/': (BuildContext context) => HomePage(),
-        '/announcements': (BuildContext context) => Announcements(),
       },
     );
   }
