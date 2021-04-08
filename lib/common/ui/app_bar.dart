@@ -22,16 +22,23 @@ class FvAppBar extends StatelessWidget {
     return SliverAppBar(
       leading: Image.asset("assets/logo.png"),
       actions: [
-        GestureDetector(
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(0, 10, 20, 0),
-            child: Icon(
-              FontAwesomeIcons.github,
-              size: navigationHeaderIconSize,
-            ),
+        IconButton(
+          icon: Icon(
+            FontAwesomeIcons.github,
+            size: navigationHeaderIconSize,
           ),
-          onTap: () => launch('https://github.com/FlutterVancouver'),
+          onPressed: () => launch('https://github.com/FlutterVancouver'),
         )
+        // GestureDetector(
+        //   child: Padding(
+        //     padding: EdgeInsets.fromLTRB(0, 10, 20, 0),
+        //     child: Icon(
+        //       FontAwesomeIcons.github,
+        //       size: navigationHeaderIconSize,
+        //     ),
+        //   ),
+        //   onTap: () => launch('https://github.com/FlutterVancouver'),
+        // )
       ],
       pinned: true,
       expandedHeight: MediaQuery.of(context).size.height,

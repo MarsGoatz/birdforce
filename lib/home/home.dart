@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     double verticalPadding = 50;
     double titleFont = MediaQuery.of(context).size.width > 960 ? 125 : 60;
     double navigationHeaderIconSize =
-        MediaQuery.of(context).size.width < 400 ? 13 : 25;
+        MediaQuery.of(context).size.width < 400 ? 30 : 40;
 
     return Material(
       child: Scrollbar(
