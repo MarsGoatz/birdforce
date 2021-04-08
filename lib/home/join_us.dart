@@ -132,8 +132,8 @@ class JoinUs extends StatelessWidget {
                       MouseRegion(
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
-                          onTap: () => launch(
-                              'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web'),
+                          onTap: () =>
+                              launch('https://github.com/FlutterVancouver'),
                           child: Image.asset(
                             "assets/github.png",
                             height: 200,
@@ -148,8 +148,7 @@ class JoinUs extends StatelessWidget {
                               BorderSide(width: 2.0, color: Colors.cyan),
                           color: Colors.cyanAccent,
                           onPressed: () {
-                            launch(
-                                'https://github.com/FlutterVancouver/flutter_vancouver_flutter_web');
+                            launch('https://github.com/FlutterVancouver');
                           },
                           child: Text(
                             'Github',
