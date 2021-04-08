@@ -51,13 +51,8 @@ class FvAppBar extends StatelessWidget {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              Colors.red,
-              Colors.redAccent,
-              Colors.orange[400],
-              Colors.orange[400],
-              Colors.orange,
-              Colors.blue[400],
-              Colors.blue[800]
+              Color(0xffff9a44),
+              Color(0xfffc6076),
             ],
           )),
           child: Stack(
