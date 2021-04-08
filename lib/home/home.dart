@@ -65,46 +65,49 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     color: Colors.amber[800].withOpacity(0.8),
                     child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 12),
-                      child: Center(
-                          child: RichText(
-                        textAlign: TextAlign.center,
-                        text: new TextSpan(
-                          children: [
-                            new TextSpan(
-                              text: 'New to Flutter? Watch the 2 min ',
-                              style: TextStyle(
-                                  fontFamily: 'SourceCodePro',
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            MouseRegionSpan(
-                              mouseCursor: SystemMouseCursors.click,
-                              inlineSpan: TextSpan(
-                                text: 'animation',
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Center(
+                            child: RichText(
+                          textAlign: TextAlign.center,
+                          text: new TextSpan(
+                            children: [
+                              new TextSpan(
+                                text: 'New to Flutter? Watch the 2 min ',
                                 style: TextStyle(
                                     fontFamily: 'SourceCodePro',
                                     fontSize: 20,
                                     color: Colors.black,
-                                    decoration: TextDecoration.underline,
                                     fontWeight: FontWeight.bold),
-                                recognizer: new TapGestureRecognizer()
-                                  ..onTap = () {
-                                    launch(
-                                        'https://www.youtube.com/watch?v=fq4N0hgOWzU');
-                                  },
                               ),
-                            ),
-                            TextSpan(
-                              text: '.',
-                              style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      )),
+                              MouseRegionSpan(
+                                mouseCursor: SystemMouseCursors.click,
+                                inlineSpan: TextSpan(
+                                  text: 'animation',
+                                  style: TextStyle(
+                                      fontFamily: 'SourceCodePro',
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold),
+                                  recognizer: new TapGestureRecognizer()
+                                    ..onTap = () {
+                                      launch(
+                                          'https://www.youtube.com/watch?v=fq4N0hgOWzU');
+                                    },
+                                ),
+                              ),
+                              TextSpan(
+                                text: '.',
+                                style: TextStyle(
+                                    fontFamily: 'Roboto',
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        )),
+                      ),
                     ),
                   ),
                   Material(
