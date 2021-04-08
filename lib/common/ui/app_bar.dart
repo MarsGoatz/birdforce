@@ -81,7 +81,9 @@ class FvAppBar extends StatelessWidget {
                     Opacity(
                       opacity: 0.8,
                       child: FlutterLogo(
-                        size: 400,
+                        size: MediaQuery.of(context).size.height > 800
+                            ? 400
+                            : 200,
                       ),
                     ),
                   Column(
