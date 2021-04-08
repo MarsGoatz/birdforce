@@ -54,28 +54,35 @@ class FvAppBar extends StatelessWidget {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              Colors.blue,
               Colors.red,
+              Colors.redAccent,
+              Colors.orange[400],
+              Colors.orange[400],
+              // Colors.blue,
+              Colors.blue[400],
+              Colors.blue[800]
             ],
           )),
           child: Stack(
             children: [
-              Image.asset(
-                'assets/vancity.png',
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                fit: BoxFit.cover,
-              ),
+              if (MediaQuery.of(context).size.width > 600)
+                Image.asset(
+                  'assets/vancity.png',
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  fit: BoxFit.cover,
+                ),
               Center(
                   child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Opacity(
-                    opacity: 0.8,
-                    child: FlutterLogo(
-                      size: 400,
+                  if (MediaQuery.of(context).size.height > 400)
+                    Opacity(
+                      opacity: 0.8,
+                      child: FlutterLogo(
+                        size: 400,
+                      ),
                     ),
-                  ),
                   Column(
                     children: [
                       Row(
@@ -101,60 +108,67 @@ class FvAppBar extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Flex(
-                        mainAxisSize: MainAxisSize.min,
-                        direction: ResponsiveConstants.getAxis(context),
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                " Tech Community",
-                                style: TextStyle(
-                                    fontFamily: 'SourceCodePro',
-                                    color: Colors.grey[300],
-                                    fontSize:
-                                        ResponsiveConstants.getSubTitleFont(
-                                            context),
-                                    height: 1.3),
-                              ),
-                              Text(
-                                " <_> ",
-                                style: TextStyle(
-                                    fontFamily: 'SourceCodePro',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize:
-                                        ResponsiveConstants.getSubTitleFont(
-                                            context),
-                                    height: 1.3,
-                                    color: Colors.greenAccent[400]),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                "Made In Vancouver ",
-                                style: TextStyle(
-                                    fontFamily: 'SourceCodePro',
-                                    color: Colors.grey[300],
-                                    fontSize:
-                                        ResponsiveConstants.getSubTitleFont(
-                                            context),
-                                    height: 1.3),
-                              ),
-                              Image.asset(
-                                'assets/pixel_heart_canada_2.png',
-                                width: 60,
-                                height: 60,
-                                fit: BoxFit.fill,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                      MediaQuery.of(context).size.width > 600
+                          ? Flex(
+                              mainAxisSize: MainAxisSize.min,
+                              direction: ResponsiveConstants.getAxis(context),
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      " Tech Community",
+                                      style: TextStyle(
+                                          fontFamily: 'SourceCodePro',
+                                          color: Colors.grey[300],
+                                          fontSize: ResponsiveConstants
+                                              .getSubTitleFont(context),
+                                          height: 1.3),
+                                    ),
+                                    Text(
+                                      " <_> ",
+                                      style: TextStyle(
+                                          fontFamily: 'SourceCodePro',
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: ResponsiveConstants
+                                              .getSubTitleFont(context),
+                                          height: 1.3,
+                                          color: Colors.greenAccent[400]),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      "Made In Vancouver ",
+                                      style: TextStyle(
+                                          fontFamily: 'SourceCodePro',
+                                          color: Colors.grey[300],
+                                          fontSize: ResponsiveConstants
+                                              .getSubTitleFont(context),
+                                          height: 1.3),
+                                    ),
+                                    Image.asset(
+                                      'assets/pixel_heart_canada_2.png',
+                                      width: 60,
+                                      height: 60,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            )
+                          : Text(
+                              "Where the Vancouver Flutter community hangs out!",
+                              style: TextStyle(
+                                  fontFamily: 'SourceCodePro',
+                                  color: Colors.green[800],
+                                  fontSize: ResponsiveConstants.getSubTitleFont(
+                                      context),
+                                  height: 1.3),
+                            ),
                     ],
                   )
                 ],
