@@ -165,6 +165,7 @@ class FvAppBar extends StatelessWidget {
                             )
                           : Text(
                               "Where the Vancouver Flutter community hangs out!",
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontFamily: 'SourceCodePro',
                                   color: Colors.green[800],
