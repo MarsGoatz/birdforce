@@ -37,7 +37,7 @@ class Mission extends StatelessWidget {
           height: 20,
         ),
         Text(
-          'Flutter is an UI framework by Google to design and build beautiful mobile, web and desktop apps from a single codebase at lightening fast speeds. Vancouver Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections.',
+          'Flutter is an UI framework by Google to design and build beautiful mobile, web and desktop apps from a single codebase at lightning fast speeds. Vancouver Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections.',
           style: StyleConstants.kDefaultTextStyle,
         ),
         SizedBox(
