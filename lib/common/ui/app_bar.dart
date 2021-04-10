@@ -24,6 +24,10 @@ class FvAppBar extends StatelessWidget {
     return SliverAppBar(
       leading: Image.asset("assets/logo.png"),
       actions: [
+        TextButton(
+          child: Text('About'),
+          onPressed: () => Navigator.pushNamed(context, '/about'),
+        ),
         IconButton(
           padding: EdgeInsets.fromLTRB(0, 0, 8, 6),
           icon: Icon(

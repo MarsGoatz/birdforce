@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vancouver/about/about.dart';
+import 'package:flutter_vancouver/common/no_transition_animation.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:flutter_vancouver/home/home.dart';
 
@@ -15,6 +16,7 @@ class FvApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Vancouver',
       theme: ThemeData(
+        pageTransitionsTheme: NoTransitionsOnWeb(),
         primarySwatch: Colors.amber,
         brightness: Brightness.dark,
         visualDensity: VisualDensity.adaptivePlatformDensity,
