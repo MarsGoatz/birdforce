@@ -10,11 +10,13 @@ class FvAppBar extends StatelessWidget {
     this.title,
     this.titleFont,
     this.navigationHeaderIconSize,
+    this.flexibleSpaceBar,
   }) : super(key: key);
 
   final Text title;
   final double titleFont;
   final double navigationHeaderIconSize;
+  final Widget flexibleSpaceBar;
 
   @override
   Widget build(BuildContext context) {
@@ -33,159 +35,7 @@ class FvAppBar extends StatelessWidget {
       ],
       pinned: true,
       expandedHeight: MediaQuery.of(context).size.height,
-      flexibleSpace: FlexibleSpaceBar(
-        centerTitle: false,
-        title: title != null
-            ? Padding(
-                padding: const EdgeInsets.only(top: 15.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    title,
-                  ],
-                ),
-              )
-            : title,
-        background: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(0xffff9a44),
-              Color(0xfffc6076),
-            ],
-          )),
-          child: Stack(
-            children: [
-              if (MediaQuery.of(context).size.width > 600 &&
-                  MediaQuery.of(context).size.height > 600)
-                Image.asset(
-                  'assets/vancity.png',
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  fit: BoxFit.cover,
-                ),
-              Center(
-                  child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (MediaQuery.of(context).size.height > 600)
-                    Opacity(
-                      opacity: 0.8,
-                      child: FlutterLogo(
-                        size: (MediaQuery.of(context).size.width > 600 &&
-                                MediaQuery.of(context).size.height > 600)
-                            ? 400
-                            : 250,
-                      ),
-                    ),
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Center(
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Flutter Vancouver",
-                                  style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.white,
-                                    fontSize: ResponsiveConstants.getTitleFont(
-                                        context), // 247 is the height of the F when the fontSize is 350, assuming device pixel ratio 1.0
-                                    fontWeight: FontWeight.w400,
-                                    textBaseline: TextBaseline.alphabetic,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      MediaQuery.of(context).size.width > 800
-                          ? Flex(
-                              mainAxisSize: MainAxisSize.min,
-                              direction: ResponsiveConstants.getAxis(context),
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      " Tech Community",
-                                      style: TextStyle(
-                                          fontFamily: 'SourceCodePro',
-                                          color: Colors.grey[300],
-                                          fontSize: ResponsiveConstants
-                                              .getSubTitleFont(context),
-                                          height: 1.3),
-                                    ),
-                                    Text(
-                                      " <_> ",
-                                      style: TextStyle(
-                                          fontFamily: 'SourceCodePro',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: ResponsiveConstants
-                                              .getSubTitleFont(context),
-                                          height: 1.3,
-                                          color: Colors.greenAccent[400]),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      "Made In Vancouver ",
-                                      style: TextStyle(
-                                          fontFamily: 'SourceCodePro',
-                                          color: Colors.grey[300],
-                                          fontSize: ResponsiveConstants
-                                              .getSubTitleFont(context),
-                                          height: 1.3),
-                                    ),
-                                    Image.asset(
-                                      'assets/pixel_heart_canada_2.png',
-                                      width: 60,
-                                      height: 60,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            )
-                          : Text(
-                              "Where the Vancouver Flutter community hangs out!",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontFamily: 'SourceCodePro',
-                                  color: Colors.green[800],
-                                  fontSize: ResponsiveConstants.getSubTitleFont(
-                                      context),
-                                  height: 1.3),
-                            ),
-                    ],
-                  )
-                ],
-              )),
-              Padding(
-                padding: EdgeInsets.only(left: 0, bottom: 40),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Icon(
-                    FontAwesomeIcons.chevronDown,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+      flexibleSpace: flexibleSpaceBar,
     );
   }
 }
