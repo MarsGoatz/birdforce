@@ -54,7 +54,7 @@ class AboutCard extends StatelessWidget {
                       networkImageUrl:
                           "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/sid.png?alt=media&token=f13cccbc-f093-4f60-829c-3b4cee60e4f2",
                       name: 'Siddharth Molleti',
-                      message: 'Organizer & Software Developer at a Startup',
+                      message: 'Organizer & Founder',
                       twitterHandle: 'https://twitter.com/marsgoatzz',
                       linkedInHandle: 'https://www.linkedin.com/in/smllti',
                       email: 'sid.310@icloud.com',
