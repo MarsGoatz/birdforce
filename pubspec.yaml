@@ -15,12 +15,13 @@ dependencies:
   # google_fonts: ^0.3.8
   font_awesome_flutter: ^8.8.1
   url_launcher: ^5.4.5
-  http: ^0.12.1
+  http: ^0.13.0
   flutter_gradients: ^1.0.0+2
   gradient_widgets: ^0.5.1
   animated_text_kit: ^2.5.4
   auto_size_text: ^2.1.0
   url_strategy: ^0.1.1
+  cached_network_image: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -55,3 +56,4 @@ flutter:
     - assets/vancity.png
     - assets/preview.png
     - assets/community/
+    - assets/social/

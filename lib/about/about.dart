@@ -1,15 +1,10 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_vancouver/about/about_card.dart';
 import 'package:flutter_vancouver/common/responsive_constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_vancouver/common/mouse_region_span.dart';
 import 'package:flutter_vancouver/common/ui/app_bar.dart';
 import 'package:flutter_vancouver/common/ui/footer.dart';
-import 'package:flutter_vancouver/home/community.dart';
-import 'package:flutter_vancouver/home/join_us.dart';
-import 'package:flutter_vancouver/home/mission.dart';
 
 class AboutPage extends StatefulWidget {
   AboutPage({Key key, this.title}) : super(key: key);
@@ -30,7 +25,12 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
 
     _pageScrollController = ScrollController();
 
-    _titleController();
+    title = Text(
+      "Flutter Vancouver",
+      style: TextStyle(
+        color: Colors.white,
+      ),
+    );
   }
 
   @override
@@ -59,87 +59,40 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
             FvAppBar(
                 title: title,
                 titleFont: titleFont,
-                flexibleSpaceBar: HomeFlexibleSpacebar(
-                  title: title,
-                ),
+                // flexibleSpaceBar: HomeFlexibleSpacebar(
+                //   title: title,
+                // ),
                 navigationHeaderIconSize: navigationHeaderIconSize),
             SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  Material(
-                    color: Colors.amber[800].withOpacity(0.8),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 12),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Center(
-                            child: RichText(
-                          textAlign: TextAlign.center,
-                          text: new TextSpan(
-                            children: [
-                              new TextSpan(
-                                text: 'New to Flutter? Watch the 2 min ',
-                                style: TextStyle(
-                                    fontFamily: 'SourceCodePro',
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              MouseRegionSpan(
-                                mouseCursor: SystemMouseCursors.click,
-                                inlineSpan: TextSpan(
-                                  text: 'animation',
-                                  style: TextStyle(
-                                      fontFamily: 'SourceCodePro',
-                                      fontSize: 20,
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: FontWeight.bold),
-                                  recognizer: new TapGestureRecognizer()
-                                    ..onTap = () {
-                                      launch(
-                                          'https://www.youtube.com/watch?v=fq4N0hgOWzU');
-                                    },
-                                ),
-                              ),
-                              TextSpan(
-                                text: '.',
-                                style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        )),
-                      ),
-                    ),
-                  ),
                   Material(
                     color: Colors.grey[850],
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: horizontalPadding,
                           vertical: verticalPadding),
-                      child: Mission(),
+                      child: AboutCard(),
                     ),
                   ),
                   Material(
-                      color: Colors.grey[900],
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: horizontalPadding,
-                            vertical: verticalPadding),
-                        child: JoinUs(),
-                      )),
+                    color: Colors.grey[900],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
+                      child: GuestCard(),
+                    ),
+                  ),
                   Material(
-                      color: Colors.black,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: horizontalPadding,
-                            vertical: verticalPadding),
-                        child: Community(),
-                      )),
+                    color: Colors.black,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
+                      child: MentorCard(),
+                    ),
+                  ),
                   Material(
                       color: Colors.grey[850],
                       child: Padding(
@@ -155,26 +108,6 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
         ),
       ),
     );
-  }
-
-  void _titleController() {
-    _pageScrollController.addListener(() {
-      if (_pageScrollController.offset >=
-          MediaQuery.of(context).size.height / 2) {
-        setState(() {
-          title = Text(
-            "Flutter Vancouver",
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          );
-        });
-      } else {
-        setState(() {
-          title = null;
-        });
-      }
-    });
   }
 }
 
@@ -203,8 +136,8 @@ class HomeFlexibleSpacebar extends StatelessWidget {
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
-            Color(0xff00c6fb),
-            Color(0xff005bea),
+            Color(0xff6a11cb),
+            Color(0xff2575fc),
           ],
         )),
         child: Stack(
