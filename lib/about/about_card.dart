@@ -54,7 +54,7 @@ class AboutCard extends StatelessWidget {
                       networkImageUrl:
                           "https://drive.google.com/uc?id=1Ez-5dNCvOFR2kCBocOvFqjBDSfZDQzRn",
                       name: 'Siddharth Molleti',
-                      message: 'Software Developer',
+                      message: 'Organizer & Software Developer at a Startup',
                       twitterHandle: 'https://twitter.com/marsgoatzz',
                       linkedInHandle: 'https://www.linkedin.com/in/smllti',
                       email: 'sid.310@icloud.com',
@@ -73,7 +73,8 @@ class AboutCard extends StatelessWidget {
                       networkImageUrl:
                           "https://drive.google.com/uc?id=1L9phZvlJ-XYzbJ83i_3IAzhbptKqL5sv",
                       name: 'Boris Schneiderman',
-                      message: 'Lead Frontend Developer',
+                      message:
+                          'Co-Orgainzer & Lead Frontend Developer at 364 Northern Development Corporation',
                       linkedInHandle:
                           'https://www.linkedin.com/in/boris-schneiderman-14986721',
                       email: 'boris@bormind.com',
@@ -92,7 +93,8 @@ class AboutCard extends StatelessWidget {
                       networkImageUrl:
                           "https://drive.google.com/uc?id=15V0EinHezPj92VaFj2r6azWVLTQitKhL",
                       name: 'Lu Tang',
-                      message: 'Flutter Developer',
+                      message:
+                          'Co-Organizer & Flutter Developer at Payload Technologies Inc.',
                       twitterHandle: 'https://twitter.com/FlutterLulu',
                       linkedInHandle: 'https://www.linkedin.com/in/lutang123/',
                       email: 'lutang908@gmail.com',
@@ -236,7 +238,8 @@ class MentorCard extends StatelessWidget {
                       networkImageUrl:
                           "https://drive.google.com/uc?id=136-JEUdAsELxbiYlfJaeaqAd_CM2f8Uf",
                       name: 'Ria Carmin',
-                      message: 'Organizer, React Vancouver',
+                      message:
+                          'Organizer, React Vancouver & Frontend Developer, Hopin',
                       twitterHandle: 'https://twitter.com/RiaCarmin',
                     )),
               ],
@@ -334,7 +337,7 @@ class PersonDetails extends StatelessWidget {
                 TextButton(
                     onPressed: () => launch(twitterHandle),
                     child: Image.asset(
-                      'social/twitter.png',
+                      'assets/social/twitter.png',
                       width: 32,
                       height: 32,
                     )),
@@ -342,7 +345,7 @@ class PersonDetails extends StatelessWidget {
                 TextButton(
                     onPressed: () => launch(linkedInHandle),
                     child: Image.asset(
-                      'social/linkedin.png',
+                      'assets/social/linkedin.png',
                       width: 35,
                       height: 35,
                     )),

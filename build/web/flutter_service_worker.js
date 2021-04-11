@@ -7,7 +7,7 @@ const RESOURCES = {
 "index.html": "5fb76cfa297a62766c51ac0024381dbc",
 "/": "5fb76cfa297a62766c51ac0024381dbc",
 "netlify.toml": "dbaa08b4c062e1b125607fc702da8423",
-"main.dart.js": "7feadd13126b3592f09f9e7d414d9bee",
+"main.dart.js": "9995f91234ed0b7f797a1906d1b778bc",
 "_headers": "4ded02e0e5cbbf117589d7fb437efdbf",
 "icons/Icon-192.png": "d13b53c1476ef167b81106a9f02e746d",
 "icons/Icon-512.png": "3450af63f7c6b721856789186a352351",

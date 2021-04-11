@@ -55084,8 +55084,8 @@ p=L.bK(l.d,k,A.bq(k,k,C.yY,k,k,k,k,k,"SourceCodePro",k,k,15,k,k,k,1.3,!0,k,k,k,k
 o=T.b2(k,20,k)
 n=t.Y
 m=H.c([],n)
-if(l.f!=null)m.push(U.Dw(U.ff("social/twitter.png",k,32,32),new V.Sj(l)))
-if(l.r!=null)m.push(U.Dw(U.ff("social/linkedin.png",k,35,35),new V.Sk(l)))
+if(l.f!=null)m.push(U.Dw(U.ff("assets/social/twitter.png",k,32,32),new V.Sj(l)))
+if(l.r!=null)m.push(U.Dw(U.ff("assets/social/linkedin.png",k,35,35),new V.Sk(l)))
 if(l.x!=null)m.push(U.Dw(L.PD(C.x8,k,35),new V.Sl(l)))
 return new T.e2(new S.al(0,500,0,1/0),T.e1(H.c([new T.e2(new S.al(0,300,0,300),i,k),s,r,q,p,o,T.eP(m,C.z,C.ij,C.ae)],n),C.z,C.v,C.R),k)},
 ga7:function(a){return this.e}}
