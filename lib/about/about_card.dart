@@ -34,7 +34,7 @@ class AboutCard extends StatelessWidget {
           height: 20,
         ),
         Text(
-          'Flutter Vancouver was created by Siddharth Molleti after falling in love with Flutter and his interest for creating a community and empowering others came together. In addition to being a speaker, Sid actively maintains and organizes events in the community. The next person to make an impact in the group is Boris Schneiderman. Boris has been involved since the beginning and is the Gandalf of our group. On top of having high standards for teaching others, he also actively helps when someone has a query. The group is very lucky to have him. Next up is Lu Tang, Lu is a self learner and has no background on programming and picked up Flutter to kick start her career in tech and now is actively a Flutter developer. She is truly an inspiration for women out there. All of us live and work in Vancouver.',
+          'Flutter Vancouver was created by Siddharth Molleti after falling in love with Flutter and his interest for creating a community and teaching others came together. In addition to being a speaker, Sid actively maintains and organizes events in the community. The next person to make an impact in the group is Boris Schneiderman. Boris has been involved since the beginning and is the Gandalf of our group. On top of having high standards for teaching others, when someone has a query, he goes above and beyond to help them. The group is very lucky to have him. Next up is Lu Tang, Lu is a self learner and previously has had no background on programming. She picked up Flutter to kick start her career in tech and now is actively a Flutter developer. She is truly an inspiration for women out there. All of us live and work in Vancouver.',
           style: StyleConstants.kDefaultTextStyle,
         ),
         SizedBox(
@@ -52,7 +52,7 @@ class AboutCard extends StatelessWidget {
                     fit: fit,
                     child: PersonDetails(
                       networkImageUrl:
-                          "https://drive.google.com/uc?id=1Ez-5dNCvOFR2kCBocOvFqjBDSfZDQzRn",
+                          "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/sid.png?alt=media&token=f13cccbc-f093-4f60-829c-3b4cee60e4f2",
                       name: 'Siddharth Molleti',
                       message: 'Organizer & Software Developer at a Startup',
                       twitterHandle: 'https://twitter.com/marsgoatzz',
@@ -71,7 +71,7 @@ class AboutCard extends StatelessWidget {
                     fit: fit,
                     child: PersonDetails(
                       networkImageUrl:
-                          "https://drive.google.com/uc?id=1L9phZvlJ-XYzbJ83i_3IAzhbptKqL5sv",
+                          "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/boris.png?alt=media&token=a324a3f1-9fd6-48ee-9edc-cc312275beaf",
                       name: 'Boris Schneiderman',
                       message:
                           'Co-Orgainzer & Lead Frontend Developer at 364 Northern Development Corporation',
@@ -91,7 +91,7 @@ class AboutCard extends StatelessWidget {
                     fit: fit,
                     child: PersonDetails(
                       networkImageUrl:
-                          "https://drive.google.com/uc?id=15V0EinHezPj92VaFj2r6azWVLTQitKhL",
+                          "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/lu.jpg?alt=media&token=fd2fd02c-317c-48eb-bdbf-dbff97279a5d",
                       name: 'Lu Tang',
                       message:
                           'Co-Organizer & Flutter Developer at Payload Technologies Inc.',
@@ -156,7 +156,7 @@ class GuestCard extends StatelessWidget {
                     fit: fit,
                     child: PersonDetails(
                       networkImageUrl:
-                          "https://drive.google.com/uc?id=1Yif19fudTTJi-nUpvhEri1KoIdb0z6-S",
+                          "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/fernando.png?alt=media&token=be542152-d4b5-44d6-b82e-06bf61cfd434",
                       name: 'Fernando Rocha',
                       message: 'Solutions Architect, AWS Amplify, Amazon',
                       twitterHandle: 'https://twitter.com/rochatron',
@@ -174,7 +174,7 @@ class GuestCard extends StatelessWidget {
                     fit: fit,
                     child: PersonDetails(
                       networkImageUrl:
-                          "https://drive.google.com/uc?id=1JvVwW3VnS4Y5HreYgmoQJAB6bfRJ0PS8",
+                          "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/kevin.jpg?alt=media&token=fbeb9e8f-3c01-45e6-9dc7-7d8d094e8628",
                       name: 'Kevin Moore',
                       message: 'Product Manager, Flutter & Darlang, Google',
                       twitterHandle: 'https://twitter.com/kevmoo',
@@ -218,7 +218,7 @@ class MentorCard extends StatelessWidget {
           height: 20,
         ),
         Text(
-          'Thank you for the support and guiding us!',
+          'Thank you for guiding us and the support!',
           style: StyleConstants.kDefaultTextStyle,
         ),
         SizedBox(
@@ -236,7 +236,7 @@ class MentorCard extends StatelessWidget {
                     fit: fit,
                     child: PersonDetails(
                       networkImageUrl:
-                          "https://drive.google.com/uc?id=136-JEUdAsELxbiYlfJaeaqAd_CM2f8Uf",
+                          "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/ria.jpg?alt=media&token=87781e2c-96ab-4b67-ac4c-ed0c38bc61c6",
                       name: 'Ria Carmin',
                       message:
                           'Organizer, React Vancouver & Frontend Developer, Hopin',
