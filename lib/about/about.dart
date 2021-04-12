@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_vancouver/about/about_card.dart';
 import 'package:flutter_vancouver/common/responsive_constants.dart';
+import 'package:flutter_vancouver/common/ui/drawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_vancouver/common/ui/app_bar.dart';
 import 'package:flutter_vancouver/common/ui/footer.dart';
@@ -49,27 +50,13 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
         MediaQuery.of(context).size.width < 400 ? 25 : 30;
 
     return Scaffold(
-      endDrawer: FvAppBar.shouldShowNavOptions(context)
-          ? null
-          : Drawer(
-              child: Container(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xff6a11cb),
-                    Color(0xff2575fc),
-                  ],
-                )),
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  children: FvAppBar.navOptions(context),
-                ),
-              ),
-            ),
+      endDrawer:
+          FvAppBar.shouldShowNavOptions(context) ? null : DrawerResponsive(),
       body: Scrollbar(
-        isAlwaysShown: true,
+        isAlwaysShown: _pageScrollController.hasClients &&
+                _pageScrollController.offset > 10
+            ? true
+            : false,
         controller: _pageScrollController,
         child: CustomScrollView(
           controller: _pageScrollController,

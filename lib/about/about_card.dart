@@ -15,6 +15,10 @@ class AboutCard extends StatelessWidget {
         ? FlexFit.loose
         : FlexFit.tight;
 
+    CrossAxisAlignment alignment =
+        MediaQuery.of(context).size.width < breakPoint
+            ? CrossAxisAlignment.center
+            : CrossAxisAlignment.start;
     var separtorWidth = MediaQuery.of(context).size.width < breakPoint ? 0 : 20;
     var separtorHeight =
         MediaQuery.of(context).size.width < breakPoint ? 50 : 0;
@@ -44,6 +48,7 @@ class AboutCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 50.0),
           child: Center(
             child: Flex(
+              crossAxisAlignment: alignment,
               mainAxisSize: MainAxisSize.min,
               direction: direction,
               children: [
@@ -310,26 +315,6 @@ class PersonDetails extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Text(
-            name ?? 'Placeholder',
-            style: TextStyle(fontFamily: 'josefinsans', fontSize: 25),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            message ?? 'Placeholder',
-            style: TextStyle(
-                fontFamily: 'SourceCodePro',
-                fontSize: 15,
-                height: 1.3,
-                color: Colors.grey),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: 20,
-          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -357,7 +342,27 @@ class PersonDetails extends StatelessWidget {
                     ),
                     onPressed: () => launch('mailto:$email'))
             ],
-          )
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            name ?? 'Placeholder',
+            style: TextStyle(fontFamily: 'josefinsans', fontSize: 25),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            message ?? 'Placeholder',
+            style: TextStyle(
+                fontFamily: 'SourceCodePro',
+                fontSize: 15,
+                height: 1.3,
+                color: Colors.grey),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

@@ -24,7 +24,7 @@ class FvAppBar extends StatelessWidget {
     double fontSize = MediaQuery.of(context).size.width > 400 ? 12 : 25;
     return SliverAppBar(
       leading: Image.asset("assets/logo.png"),
-      actions: shouldShowNavOptions(context) ? navOptions(context) : null,
+      actions: !shouldShowNavOptions(context) ? null : navOptions(context),
       pinned: true,
       title: flexibleSpaceBar != null ? null : title,
       centerTitle: false,

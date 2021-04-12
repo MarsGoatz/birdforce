@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_vancouver/common/responsive_constants.dart';
+import 'package:flutter_vancouver/common/ui/drawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_vancouver/common/mouse_region_span.dart';
@@ -49,31 +50,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         MediaQuery.of(context).size.width < 400 ? 25 : 30;
 
     return Scaffold(
-      endDrawer: FvAppBar.shouldShowNavOptions(context)
-          ? null
-          : Drawer(
-              // Add a ListView to the drawer. This ensures the user can scroll
-              // through the options in the drawer if there isn't enough vertical
-              // space to fit everything.
-              child: Container(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xff6a11cb),
-                    Color(0xff2575fc),
-                  ],
-                )),
-                child: ListView(
-                  // Important: Remove any padding from the ListView.
-                  padding: EdgeInsets.zero,
-                  children: FvAppBar.navOptions(context),
-                ),
-              ),
-            ),
+      endDrawer:
+          FvAppBar.shouldShowNavOptions(context) ? null : DrawerResponsive(),
       body: Scrollbar(
-        isAlwaysShown: true,
+        isAlwaysShown: _pageScrollController.hasClients &&
+                _pageScrollController.offset > 10
+            ? true
+            : false,
         controller: _pageScrollController,
         child: CustomScrollView(
           controller: _pageScrollController,
