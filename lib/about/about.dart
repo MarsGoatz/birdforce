@@ -49,6 +49,25 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
         MediaQuery.of(context).size.width < 400 ? 25 : 30;
 
     return Scaffold(
+      endDrawer: FvAppBar.shouldShowNavOptions(context)
+          ? null
+          : Drawer(
+              child: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color(0xff6a11cb),
+                    Color(0xff2575fc),
+                  ],
+                )),
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: FvAppBar.navOptions(context),
+                ),
+              ),
+            ),
       body: Scrollbar(
         isAlwaysShown: true,
         controller: _pageScrollController,
@@ -59,9 +78,6 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
             FvAppBar(
                 title: title,
                 titleFont: titleFont,
-                // flexibleSpaceBar: HomeFlexibleSpacebar(
-                //   title: title,
-                // ),
                 navigationHeaderIconSize: navigationHeaderIconSize),
             SliverList(
               delegate: SliverChildListDelegate(

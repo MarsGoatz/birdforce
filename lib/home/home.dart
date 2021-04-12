@@ -49,6 +49,29 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         MediaQuery.of(context).size.width < 400 ? 25 : 30;
 
     return Scaffold(
+      endDrawer: FvAppBar.shouldShowNavOptions(context)
+          ? null
+          : Drawer(
+              // Add a ListView to the drawer. This ensures the user can scroll
+              // through the options in the drawer if there isn't enough vertical
+              // space to fit everything.
+              child: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color(0xff6a11cb),
+                    Color(0xff2575fc),
+                  ],
+                )),
+                child: ListView(
+                  // Important: Remove any padding from the ListView.
+                  padding: EdgeInsets.zero,
+                  children: FvAppBar.navOptions(context),
+                ),
+              ),
+            ),
       body: Scrollbar(
         isAlwaysShown: true,
         controller: _pageScrollController,
