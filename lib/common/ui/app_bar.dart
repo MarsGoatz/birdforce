@@ -77,7 +77,7 @@ class FvAppBar extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            print('from home' + Uri.base.pathSegments.toString());
+            // print('from home' + Uri.base.pathSegments.toString());
             if (Uri.base.pathSegments.isNotEmpty) {
               return Navigator.popUntil(context, (route) => route.isFirst);
             }
@@ -110,7 +110,7 @@ class FvAppBar extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            print('from about' + Uri.base.pathSegments.toString());
+            // print('from about' + Uri.base.pathSegments.toString());
             if (Uri.base.pathSegments.isEmpty) {
               return Navigator.pushNamed(context, '/about');
             }

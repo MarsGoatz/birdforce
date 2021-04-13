@@ -59,7 +59,7 @@ class AboutCard extends StatelessWidget {
                       networkImageUrl:
                           "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/sid.png?alt=media&token=f13cccbc-f093-4f60-829c-3b4cee60e4f2",
                       name: 'Siddharth Molleti',
-                      message: 'Organizer & Founder',
+                      message: 'Founder, Organizer & Software Developer',
                       twitterHandle: 'https://twitter.com/marsgoatzz',
                       linkedInHandle: 'https://www.linkedin.com/in/smllti',
                       email: 'sid.310@icloud.com',
@@ -79,7 +79,7 @@ class AboutCard extends StatelessWidget {
                           "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/boris.png?alt=media&token=a324a3f1-9fd6-48ee-9edc-cc312275beaf",
                       name: 'Boris Schneiderman',
                       message:
-                          'Co-Orgainzer & Lead Frontend Developer at 364 Northern Development Corporation',
+                          'Co-Organizer & Head of development at Potent Systems LLC',
                       linkedInHandle:
                           'https://www.linkedin.com/in/boris-schneiderman-14986721',
                       email: 'boris@bormind.com',
@@ -301,17 +301,15 @@ class PersonDetails extends StatelessWidget {
                       width: 100,
                       height: 100,
                       imageUrl: networkImageUrl,
-                      progressIndicatorBuilder:
-                          (context, url, downloadProgress) =>
-                              CircularProgressIndicator(
-                                  value: downloadProgress.progress),
+                      placeholder: (context, url) {
+                        return Icon(
+                          Icons.person_rounded,
+                          size: 80,
+                          color: Colors.cyan,
+                        );
+                      },
                     ),
-                  )
-                  // CircleAvatar(
-                  //   backgroundImage: NetworkImage(networkImageUrl),
-                  //   radius: 60,
-                  // ),
-                  )),
+                  ))),
           SizedBox(
             height: 20,
           ),
