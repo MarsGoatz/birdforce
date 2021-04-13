@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -217,12 +218,19 @@ class HomeFlexibleSpacebar extends StatelessWidget {
           children: [
             if (MediaQuery.of(context).size.width > 600 &&
                 MediaQuery.of(context).size.height > 600)
-              Image.asset(
-                'assets/vancity.png',
+              CachedNetworkImage(
+                imageUrl:
+                    'https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/vancity.png?alt=media&token=c2f0787c-ffe9-4cb5-b1d3-321f3e4063fa',
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 fit: BoxFit.cover,
               ),
+            // Image.asset(
+            //   'assets/vancity.png',
+            //   width: MediaQuery.of(context).size.width,
+            //   height: MediaQuery.of(context).size.height,
+            //   fit: BoxFit.cover,
+            // ),
             Center(
                 child: Column(
               mainAxisSize: MainAxisSize.min,

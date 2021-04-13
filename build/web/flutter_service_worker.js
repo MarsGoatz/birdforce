@@ -7,11 +7,11 @@ const RESOURCES = {
 "index.html": "626d8239f7a6771c43920829c7d033da",
 "/": "626d8239f7a6771c43920829c7d033da",
 "netlify.toml": "dbaa08b4c062e1b125607fc702da8423",
-"main.dart.js": "bfbab3a7b8d074ee31654b2f01b9108b",
+"main.dart.js": "658991c0e348baeb3152a4dc396baaed",
 "icons/Icon-192.png": "d13b53c1476ef167b81106a9f02e746d",
 "icons/Icon-512.png": "3450af63f7c6b721856789186a352351",
 "manifest.json": "041dd755d5f15bc88d523b909bc8f2bb",
-"assets/AssetManifest.json": "71491400c088a575f24b0595dd7930ed",
+"assets/AssetManifest.json": "c8340a7f9b29a9eb9bdb45fd62a3d543",
 "assets/NOTICES": "7492bae30730ecab5db8f0afce3d473a",
 "assets/FontManifest.json": "860286ffeda13bdc25ddd5f45379f3fd",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "2aa350bd2aeab88b601a593f793734c0",
@@ -23,7 +23,7 @@ const RESOURCES = {
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
 "assets/assets/pixel_heart_canada_2.png": "6ec3759270015c73eedf9a40f7e1a7b0",
 "assets/assets/meetup.png": "1ecb252d1b2339334f91efa0b1916e7c",
-"assets/assets/preview.png": "f7b228ed4df1bb653e431916c4842cfd",
+"assets/assets/preview.png": "188a58c94cfd3f16b3a8d930da24d826",
 "assets/assets/slack_white.png": "b5990c2313e0deafd4c9c9387d999ec9",
 "assets/assets/goals.png": "ee9a24808e27ce41c1b811b0a6f90b87",
 "assets/assets/github.png": "4aed8381e217ca58ded3f25f38815dbb",
@@ -35,8 +35,7 @@ const RESOURCES = {
 "assets/assets/pair_programming.png": "651433b3c54dea5b2335140f5ad3488a",
 "assets/assets/conference_call.png": "5c2d5a5335c7743654db2889999035a7",
 "assets/assets/community/coming_soon.png": "383e066615fca7bd60ec33b4c6a60cd3",
-"assets/assets/community/people.png": "4907a80330a35e7b6dd7dd68f081277e",
-"assets/assets/vancity.png": "60de72ed29e752a9b929181f49c5109b"
+"assets/assets/community/people.png": "4907a80330a35e7b6dd7dd68f081277e"
 };
 
 // The application shell files that are downloaded before a service worker can
