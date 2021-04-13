@@ -36,9 +36,6 @@ flutter:
         - asset: fonts/SourceCodePro-Regular.ttf
         - asset: fonts/SourceCodePro-Regular.ttf
           weight: 700
-    - family: Roboto
-      fonts:
-        - asset: fonts/Roboto-Regular.ttf
     - family: JosefinSans
       fonts:
         - asset: fonts/JosefinSans-Regular.ttf    
