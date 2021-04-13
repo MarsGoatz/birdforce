@@ -88,12 +88,21 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                     ),
                   ),
                   Material(
-                    color: Colors.black,
+                    color: Colors.grey[850],
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: horizontalPadding,
                           vertical: verticalPadding),
                       child: MentorCard(),
+                    ),
+                  ),
+                  Material(
+                    color: Colors.grey[900],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
+                      child: ContributorsCard(),
                     ),
                   ),
                   Material(

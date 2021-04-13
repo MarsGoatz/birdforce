@@ -256,6 +256,79 @@ class MentorCard extends StatelessWidget {
   }
 }
 
+class ContributorsCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var breakPoint = 1000;
+    Axis direction = MediaQuery.of(context).size.width < breakPoint
+        ? Axis.vertical
+        : Axis.horizontal;
+    FlexFit fit = MediaQuery.of(context).size.width < breakPoint
+        ? FlexFit.loose
+        : FlexFit.tight;
+
+    var separtorWidth = MediaQuery.of(context).size.width < breakPoint ? 0 : 20;
+    var separtorHeight =
+        MediaQuery.of(context).size.width < breakPoint ? 50 : 0;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Contributors',
+                textAlign: TextAlign.left,
+                style: TextStyle(fontFamily: 'JosefinSans', fontSize: 40)),
+          ],
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Text(
+          'Members who have contributed to the community in one or another way!',
+          style: StyleConstants.kDefaultTextStyle,
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 50.0),
+          child: Center(
+            child: Flex(
+              mainAxisSize: MainAxisSize.min,
+              direction: direction,
+              children: [
+                Flexible(
+                    flex: 2,
+                    fit: fit,
+                    child: PersonDetails(
+                      networkImageUrl:
+                          "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/cal.jpg?alt=media&token=e6954d37-17ce-4201-b85f-eee82f75cb82",
+                      name: 'Calvin Holloway',
+                      message: 'Founder, Hippie Inc.',
+                      webLink: 'https://www.goodkarma.ai',
+                      email: 'cal@hippie.app',
+                    )),
+                Flexible(
+                    flex: 2,
+                    fit: fit,
+                    child: PersonDetails(
+                      networkImageUrl:
+                          "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/chris.jpg?alt=media&token=401f5a21-b76e-4e41-8c78-0fec7d11802b",
+                      name: 'Chris V',
+                      message: 'Flutter Tinkerer',
+                      email: 'chris.vervaeke@gmail.com',
+                    )),
+              ],
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
+
 class PersonDetails extends StatelessWidget {
   final String networkImageUrl;
   final String message;
@@ -263,16 +336,18 @@ class PersonDetails extends StatelessWidget {
   final String twitterHandle;
   final String linkedInHandle;
   final String email;
+  final String webLink;
 
-  const PersonDetails({
-    Key key,
-    this.networkImageUrl,
-    this.message,
-    this.name,
-    this.twitterHandle,
-    this.linkedInHandle,
-    this.email,
-  }) : super(key: key);
+  const PersonDetails(
+      {Key key,
+      this.networkImageUrl,
+      this.message,
+      this.name,
+      this.twitterHandle,
+      this.linkedInHandle,
+      this.email,
+      this.webLink})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -338,7 +413,15 @@ class PersonDetails extends StatelessWidget {
                       Icons.email,
                       size: 35,
                     ),
-                    onPressed: () => launch('mailto:$email'))
+                    onPressed: () => launch('mailto:$email')),
+              if (webLink != null)
+                TextButton(
+                    child: Icon(
+                      Icons.web,
+                      size: 35,
+                      color: Colors.blue[200],
+                    ),
+                    onPressed: () => launch(webLink))
             ],
           ),
           SizedBox(
