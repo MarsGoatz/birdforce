@@ -207,30 +207,25 @@ class HomeFlexibleSpacebar extends StatelessWidget {
       background: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
           colors: [
-            Color(0xffff9a44),
-            Color(0xfffc6076),
+            Color.fromRGBO(213, 41, 95, 1),
+            Color.fromRGBO(192, 88, 67, 1),
+            Color.fromRGBO(236, 80, 32, 1),
+            Color.fromRGBO(254, 55, 41, 1),
           ],
         )),
         child: Stack(
           children: [
             if (MediaQuery.of(context).size.width > 600 &&
                 MediaQuery.of(context).size.height > 600)
-              CachedNetworkImage(
-                imageUrl:
-                    'https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/vancity.png?alt=media&token=c2f0787c-ffe9-4cb5-b1d3-321f3e4063fa',
+              Image.asset(
+                'assets/vancity.png',
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 fit: BoxFit.cover,
               ),
-            // Image.asset(
-            //   'assets/vancity.png',
-            //   width: MediaQuery.of(context).size.width,
-            //   height: MediaQuery.of(context).size.height,
-            //   fit: BoxFit.cover,
-            // ),
             Center(
                 child: Column(
               mainAxisSize: MainAxisSize.min,

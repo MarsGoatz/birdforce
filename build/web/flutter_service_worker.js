@@ -7,11 +7,11 @@ const RESOURCES = {
 "index.html": "626d8239f7a6771c43920829c7d033da",
 "/": "626d8239f7a6771c43920829c7d033da",
 "netlify.toml": "dbaa08b4c062e1b125607fc702da8423",
-"main.dart.js": "658991c0e348baeb3152a4dc396baaed",
+"main.dart.js": "16f46ca0e99748515e860f3f01c55f30",
 "icons/Icon-192.png": "d13b53c1476ef167b81106a9f02e746d",
 "icons/Icon-512.png": "3450af63f7c6b721856789186a352351",
 "manifest.json": "041dd755d5f15bc88d523b909bc8f2bb",
-"assets/AssetManifest.json": "08c409319da694fc6b0b97a9c44cf025",
+"assets/AssetManifest.json": "a4a79e5f2967e7254d187b5c45ae2ceb",
 "assets/NOTICES": "7492bae30730ecab5db8f0afce3d473a",
 "assets/FontManifest.json": "c7085dce3fb9c9ede11b4189d2f7fc90",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "2aa350bd2aeab88b601a593f793734c0",
@@ -34,7 +34,8 @@ const RESOURCES = {
 "assets/assets/pair_programming.png": "651433b3c54dea5b2335140f5ad3488a",
 "assets/assets/conference_call.png": "5c2d5a5335c7743654db2889999035a7",
 "assets/assets/community/coming_soon.png": "383e066615fca7bd60ec33b4c6a60cd3",
-"assets/assets/community/people.png": "4907a80330a35e7b6dd7dd68f081277e"
+"assets/assets/community/people.png": "4907a80330a35e7b6dd7dd68f081277e",
+"assets/assets/vancity.png": "fa4c3a0fe5dc3ca813f62868004b2b48"
 };
 
 // The application shell files that are downloaded before a service worker can
