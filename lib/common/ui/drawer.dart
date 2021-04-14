@@ -36,8 +36,8 @@ class DrawerResponsive extends StatelessWidget {
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     colors: [
-                      Color(0xffff9a44),
-                      Color(0xfffc6076),
+                      Color(0xff09203f),
+                      Color(0xff537895),
                     ],
                   )),
             ),
@@ -74,12 +74,12 @@ class DrawerResponsive extends StatelessWidget {
                 ),
                 onPressed: () {
                   if (Uri.base.pathSegments.isNotEmpty) {
-                    Navigator.of(context).pop();
+                    Navigator.of(context, rootNavigator: true).pop();
                     return Navigator.popUntil(
                         context, (route) => route.isFirst);
                   }
 
-                  Navigator.of(context).pop();
+                  Navigator.of(context, rootNavigator: true).pop();
                 },
               ),
             ),
@@ -111,10 +111,11 @@ class DrawerResponsive extends StatelessWidget {
                 onPressed: () {
                   print('from about' + Uri.base.pathSegments.toString());
                   if (Uri.base.pathSegments.isEmpty) {
+                    Navigator.of(context, rootNavigator: true).pop();
                     return Navigator.pushNamed(context, '/about');
                   }
 
-                  Navigator.of(context).pop();
+                  Navigator.of(context, rootNavigator: true).pop();
                 },
               ),
             ),
