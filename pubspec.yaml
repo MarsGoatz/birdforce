@@ -44,7 +44,6 @@ flutter:
     - assets/meetup.png
     - assets/slack_white.png
     - assets/github.png
-    - assets/logo.png
     - assets/goals.png
     - assets/conference_call.png
     - assets/open_source.png

@@ -23,7 +23,12 @@ class FvAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     double fontSize = MediaQuery.of(context).size.width > 400 ? 12 : 25;
     return SliverAppBar(
-      leading: Image.asset("assets/logo.png"),
+      leading: Padding(
+        padding: const EdgeInsets.all(13.0),
+        child: FlutterLogo(
+          size: 15,
+        ),
+      ),
       actions: !shouldShowNavOptions(context) ? null : navOptions(context),
       pinned: true,
       title: flexibleSpaceBar != null ? null : title,

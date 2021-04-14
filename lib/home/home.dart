@@ -209,11 +209,21 @@ class HomeFlexibleSpacebar extends StatelessWidget {
             gradient: LinearGradient(
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,
-          colors: [
-            Color.fromRGBO(213, 41, 95, 1),
-            Color.fromRGBO(192, 88, 67, 1),
-            Color.fromRGBO(236, 80, 32, 1),
-            Color.fromRGBO(254, 55, 41, 1),
+          colors:
+              // (MediaQuery.of(context).size.width > 600 &&
+              //         MediaQuery.of(context).size.height > 600)
+              //     ? [
+              //         Color.fromRGBO(213, 41, 95, 1),
+              //         Color.fromRGBO(192, 88, 67, 1),
+              //         Color.fromRGBO(236, 80, 32, 1),
+              //         Color.fromRGBO(254, 55, 41, 1),
+              //       ]
+              //     :
+              [
+            // Color(0xff09203f),
+            // Color(0xff537895),
+            Color(0xff4e4376),
+            Color(0xff2b5876),
           ],
         )),
         child: Stack(
@@ -231,14 +241,11 @@ class HomeFlexibleSpacebar extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (MediaQuery.of(context).size.height > 600)
-                  Opacity(
-                    opacity: 0.8,
-                    child: FlutterLogo(
-                      size: (MediaQuery.of(context).size.width > 600 &&
-                              MediaQuery.of(context).size.height > 600)
-                          ? 400
-                          : 250,
-                    ),
+                  FlutterLogo(
+                    size: (MediaQuery.of(context).size.width > 600 &&
+                            MediaQuery.of(context).size.height > 600)
+                        ? 400
+                        : 250,
                   ),
                 Column(
                   children: [
@@ -325,7 +332,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontFamily: 'SourceCodePro',
-                                color: Colors.green[800],
+                                color: Colors.grey,
                                 fontSize: ResponsiveConstants.getSubTitleFont(
                                     context),
                                 height: 1.3),
