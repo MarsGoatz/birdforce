@@ -8,6 +8,7 @@
 .buildlog/
 .history
 .svn/
+build/
 android
 ios
 
