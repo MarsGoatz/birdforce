@@ -25,10 +25,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   ScrollController _pageScrollController;
   Text title;
+  AnimationController _controller;
+  Animation _animation;
 
   @override
   void initState() {
     super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 1500),
+      vsync: this,
+    )..repeat(reverse: true);
+
+    _animation = Tween(begin: 20, end: 30.0)
+        .animate(CurvedAnimation(curve: Curves.easeIn, parent: _controller));
 
     _pageScrollController = ScrollController();
 
@@ -38,6 +47,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void dispose() {
     _pageScrollController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -68,6 +78,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 titleFont: titleFont,
                 flexibleSpaceBar: HomeFlexibleSpacebar(
                   title: title,
+                  chevron: AnimatedBuilder(
+                    animation: _controller,
+                    builder: (BuildContext context, Widget child) {
+                      return IconButton(
+                        onPressed: () => _pageScrollController.animateTo(
+                            MediaQuery.of(context).size.height,
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeIn),
+                        icon: Icon(
+                          FontAwesomeIcons.chevronDown,
+                          color: Colors.white,
+                          size: _animation.value,
+                        ),
+                      );
+                    },
+                  ),
                 ),
                 navigationHeaderIconSize: navigationHeaderIconSize),
             SliverList(
@@ -187,8 +213,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
 class HomeFlexibleSpacebar extends StatelessWidget {
   final Text title;
+  final AnimatedBuilder chevron;
 
-  const HomeFlexibleSpacebar({Key key, this.title}) : super(key: key);
+  const HomeFlexibleSpacebar({Key key, this.title, this.chevron})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return FlexibleSpaceBar(
@@ -229,7 +257,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
         child: Stack(
           children: [
             if (MediaQuery.of(context).size.width > 600 &&
-                MediaQuery.of(context).size.height > 600)
+                MediaQuery.of(context).size.height > 650)
               Image.asset(
                 'assets/vancity.png',
                 width: MediaQuery.of(context).size.width,
@@ -243,7 +271,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                 if (MediaQuery.of(context).size.height > 600)
                   FlutterLogo(
                     size: (MediaQuery.of(context).size.width > 600 &&
-                            MediaQuery.of(context).size.height > 600)
+                            MediaQuery.of(context).size.height > 650)
                         ? 400
                         : 250,
                   ),
@@ -272,7 +300,8 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                         ),
                       ],
                     ),
-                    MediaQuery.of(context).size.width > 800
+                    MediaQuery.of(context).size.width > 800 &&
+                            MediaQuery.of(context).size.height > 700
                         ? Flex(
                             mainAxisSize: MainAxisSize.min,
                             direction: ResponsiveConstants.getAxis(context),
@@ -345,11 +374,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
               padding: EdgeInsets.only(left: 0, bottom: 40),
               child: Align(
                 alignment: Alignment.bottomCenter,
-                child: Icon(
-                  FontAwesomeIcons.chevronDown,
-                  color: Colors.white,
-                  size: 30,
-                ),
+                child: chevron,
               ),
             )
           ],
