@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -82,17 +84,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     animation: _controller,
                     builder: (BuildContext context, Widget child) {
                       return Padding(
-                        padding: EdgeInsets.all(_animation.value + 10),
+                        padding: EdgeInsets.all(_animation.value),
                         child: IconButton(
+                          hoverColor: Colors.orange,
+                          splashColor: Colors.orange,
                           onPressed: () => _pageScrollController.animateTo(
                               MediaQuery.of(context).size.height -
                                   kToolbarHeight,
                               duration: Duration(milliseconds: 300),
                               curve: Curves.easeIn),
-                          icon: Icon(
-                            FontAwesomeIcons.chevronDown,
-                            color: Colors.white,
-                            size: _animation.value,
+                          icon: Center(
+                            child: Icon(
+                              FontAwesomeIcons.chevronDown,
+                              color: Colors.tealAccent.withOpacity(
+                                max((30 - _animation.value) / 10, .09),
+                              ),
+                              size: 30,
+                            ),
                           ),
                         ),
                       );
