@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     )..repeat(reverse: true);
 
     _animation = Tween(begin: 20, end: 30.0)
-        .animate(CurvedAnimation(curve: Curves.easeIn, parent: _controller));
+        .animate(CurvedAnimation(curve: Curves.linear, parent: _controller));
 
     _pageScrollController = ScrollController();
 
@@ -81,15 +81,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   chevron: AnimatedBuilder(
                     animation: _controller,
                     builder: (BuildContext context, Widget child) {
-                      return IconButton(
-                        onPressed: () => _pageScrollController.animateTo(
-                            MediaQuery.of(context).size.height,
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.easeIn),
-                        icon: Icon(
-                          FontAwesomeIcons.chevronDown,
-                          color: Colors.white,
-                          size: _animation.value,
+                      return Padding(
+                        padding: EdgeInsets.all(_animation.value),
+                        child: IconButton(
+                          onPressed: () => _pageScrollController.animateTo(
+                              MediaQuery.of(context).size.height -
+                                  kToolbarHeight,
+                              duration: Duration(milliseconds: 300),
+                              curve: Curves.easeIn),
+                          icon: Icon(
+                            FontAwesomeIcons.chevronDown,
+                            color: Colors.white,
+                            size: _animation.value,
+                          ),
                         ),
                       );
                     },
@@ -257,7 +261,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
         child: Stack(
           children: [
             if (MediaQuery.of(context).size.width > 600 &&
-                MediaQuery.of(context).size.height > 650)
+                MediaQuery.of(context).size.height > 690)
               Image.asset(
                 'assets/vancity.png',
                 width: MediaQuery.of(context).size.width,
@@ -271,7 +275,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                 if (MediaQuery.of(context).size.height > 600)
                   FlutterLogo(
                     size: (MediaQuery.of(context).size.width > 600 &&
-                            MediaQuery.of(context).size.height > 650)
+                            MediaQuery.of(context).size.height > 690)
                         ? 400
                         : 250,
                   ),
@@ -356,26 +360,26 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                               ),
                             ],
                           )
-                        : Text(
-                            "Where the Vancouver Flutter community hangs out!",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'SourceCodePro',
-                                color: Colors.grey,
-                                fontSize: ResponsiveConstants.getSubTitleFont(
-                                    context),
-                                height: 1.3),
+                        : Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "Where the Vancouver Flutter community hangs out!",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: 'SourceCodePro',
+                                  color: Colors.grey,
+                                  fontSize: ResponsiveConstants.getSubTitleFont(
+                                      context),
+                                  height: 1.3),
+                            ),
                           ),
                   ],
                 )
               ],
             )),
-            Padding(
-              padding: EdgeInsets.only(left: 0, bottom: 40),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: chevron,
-              ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: chevron,
             )
           ],
         ),
