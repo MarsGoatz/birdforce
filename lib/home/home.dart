@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     animation: _controller,
                     builder: (BuildContext context, Widget child) {
                       return Padding(
-                        padding: EdgeInsets.all(_animation.value),
+                        padding: EdgeInsets.all(_animation.value + 10),
                         child: IconButton(
                           onPressed: () => _pageScrollController.animateTo(
                               MediaQuery.of(context).size.height -
@@ -367,7 +367,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontFamily: 'SourceCodePro',
-                                  color: Colors.grey,
+                                  color: Colors.grey[350],
                                   fontSize: ResponsiveConstants.getSubTitleFont(
                                       context),
                                   height: 1.3),
