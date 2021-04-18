@@ -4,7 +4,7 @@ import 'package:flutter_vancouver/common/style_constants.dart';
 
 class FvFooter extends StatelessWidget {
   const FvFooter({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

@@ -1,27 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_vancouver/common/style_constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_vancouver/common/responsive_constants.dart';
 
 class FvAppBar extends StatelessWidget {
   const FvAppBar({
-    Key key,
+    Key? key,
     this.title,
-    this.titleFont,
-    this.navigationHeaderIconSize,
     this.flexibleSpaceBar,
   }) : super(key: key);
 
-  final Text title;
-  final double titleFont;
-  final double navigationHeaderIconSize;
-  final Widget flexibleSpaceBar;
+  final Text? title;
+  final Widget? flexibleSpaceBar;
 
   @override
   Widget build(BuildContext context) {
-    double fontSize = MediaQuery.of(context).size.width > 400 ? 12 : 25;
     return SliverAppBar(
       leading: Padding(
         padding: const EdgeInsets.all(13.0),
@@ -57,9 +48,6 @@ class FvAppBar extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 4.0),
             child: Row(
               children: [
-                // SizedBox(
-                //   width: 4,
-                // ),
                 Icon(
                   Icons.home,
                   size: 21,
@@ -82,7 +70,6 @@ class FvAppBar extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            // print('from home' + Uri.base.pathSegments.toString());
             if (Uri.base.pathSegments.isNotEmpty) {
               return Navigator.popUntil(context, (route) => route.isFirst);
             }
@@ -115,21 +102,12 @@ class FvAppBar extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            // print('from about' + Uri.base.pathSegments.toString());
             if (Uri.base.pathSegments.isEmpty) {
-              return Navigator.pushNamed(context, '/about');
+              Navigator.pushNamed(context, '/about');
             }
           },
         ),
       ),
-      // IconButton(
-      //   padding: EdgeInsets.fromLTRB(0, 0, 8, 6),
-      //   icon: Icon(
-      //     FontAwesomeIcons.github,
-      //     size: navigationHeaderIconSize,
-      //   ),
-      //   onPressed: () => launch('https://github.com/FlutterVancouver'),
-      // )
       SizedBox(
         width: 10,
       )

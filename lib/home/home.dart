@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -16,19 +15,19 @@ import 'package:flutter_vancouver/home/join_us.dart';
 import 'package:flutter_vancouver/home/mission.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
+  HomePage({Key? key, this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  ScrollController _pageScrollController;
-  Text title;
-  AnimationController _controller;
-  Animation _animation;
+  late ScrollController _pageScrollController;
+  bool showTitle = false;
+  late AnimationController _controller;
+  late Animation _animation;
 
   @override
   void initState() {
@@ -40,7 +39,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
     _animation = Tween(begin: 20, end: 30.0)
         .animate(CurvedAnimation(curve: Curves.linear, parent: _controller));
-
     _pageScrollController = ScrollController();
 
     _titleController();
@@ -58,9 +56,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     double horizontalPadding =
         MediaQuery.of(context).size.width < 800 ? 50 : 150;
     double verticalPadding = 50;
-    double titleFont = MediaQuery.of(context).size.width > 960 ? 125 : 60;
-    double navigationHeaderIconSize =
-        MediaQuery.of(context).size.width < 400 ? 25 : 30;
 
     return Scaffold(
       endDrawer:
@@ -76,43 +71,53 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           scrollDirection: Axis.vertical,
           slivers: [
             FvAppBar(
-                title: title,
-                titleFont: titleFont,
-                flexibleSpaceBar: HomeFlexibleSpacebar(
-                  title: title,
-                  chevron: AnimatedBuilder(
-                    animation: _controller,
-                    builder: (BuildContext context, Widget child) {
-                      return Padding(
-                        padding: EdgeInsets.all(_animation.value),
-                        child: IconButton(
-                          hoverColor: Colors.orange,
-                          splashColor: Colors.orange,
-                          onPressed: () => _pageScrollController.animateTo(
-                              MediaQuery.of(context).size.height -
-                                  kToolbarHeight,
-                              duration: Duration(milliseconds: 300),
-                              curve: Curves.easeIn),
-                          icon: Center(
-                            child: Icon(
-                              FontAwesomeIcons.chevronDown,
-                              color: Colors.tealAccent.withOpacity(
-                                max((30 - _animation.value) / 10, .09),
-                              ),
-                              size: 30,
+              title: showTitle
+                  ? Text(
+                      "Flutter Vancouver",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    )
+                  : null,
+              flexibleSpaceBar: HomeFlexibleSpacebar(
+                title: showTitle
+                    ? Text(
+                        "Flutter Vancouver",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      )
+                    : null,
+                chevron: AnimatedBuilder(
+                  animation: _controller,
+                  builder: (BuildContext context, Widget? child) {
+                    return Padding(
+                      padding: EdgeInsets.all(_animation.value),
+                      child: IconButton(
+                        onPressed: () => _pageScrollController.animateTo(
+                            MediaQuery.of(context).size.height - kToolbarHeight,
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeIn),
+                        icon: Center(
+                          child: Icon(
+                            FontAwesomeIcons.chevronDown,
+                            color: Colors.tealAccent.withOpacity(
+                              max((30 - _animation.value) / 10, .09),
                             ),
+                            size: 30,
                           ),
                         ),
-                      );
-                    },
-                  ),
+                      ),
+                    );
+                  },
                 ),
-                navigationHeaderIconSize: navigationHeaderIconSize),
+              ),
+            ),
             SliverList(
               delegate: SliverChildListDelegate(
                 [
                   Material(
-                    color: Colors.amber[800].withOpacity(0.8),
+                    color: Colors.amber[800]!.withOpacity(0.8),
                     child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 12),
                       child: Padding(
@@ -205,18 +210,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void _titleController() {
     _pageScrollController.addListener(() {
       if (_pageScrollController.offset >=
-          MediaQuery.of(context).size.height / 2) {
+              MediaQuery.of(context).size.height / 2 &&
+          !showTitle) {
         setState(() {
-          title = Text(
-            "Flutter Vancouver",
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          );
+          showTitle = true;
         });
-      } else {
+      } else if (_pageScrollController.offset <
+              MediaQuery.of(context).size.height / 2 &&
+          showTitle) {
         setState(() {
-          title = null;
+          showTitle = false;
         });
       }
     });
@@ -224,10 +227,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 }
 
 class HomeFlexibleSpacebar extends StatelessWidget {
-  final Text title;
-  final AnimatedBuilder chevron;
+  final Text? title;
+  final AnimatedBuilder? chevron;
 
-  const HomeFlexibleSpacebar({Key key, this.title, this.chevron})
+  const HomeFlexibleSpacebar({Key? key, this.title, this.chevron})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -239,7 +242,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  title,
+                  title!,
                 ],
               ),
             )
@@ -249,19 +252,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
             gradient: LinearGradient(
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,
-          colors:
-              // (MediaQuery.of(context).size.width > 600 &&
-              //         MediaQuery.of(context).size.height > 600)
-              //     ? [
-              //         Color.fromRGBO(213, 41, 95, 1),
-              //         Color.fromRGBO(192, 88, 67, 1),
-              //         Color.fromRGBO(236, 80, 32, 1),
-              //         Color.fromRGBO(254, 55, 41, 1),
-              //       ]
-              //     :
-              [
-            // Color(0xff09203f),
-            // Color(0xff537895),
+          colors: [
             Color(0xff4e4376),
             Color(0xff2b5876),
           ],

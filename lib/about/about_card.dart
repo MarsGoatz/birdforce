@@ -343,17 +343,19 @@ class ContributorsCard extends StatelessWidget {
 }
 
 class PersonDetails extends StatelessWidget {
-  final String networkImageUrl;
-  final String message;
-  final String name;
-  final String twitterHandle;
-  final String linkedInHandle;
-  final String email;
-  final String webLink;
-  final String mediumLink;
+  final String? networkImageUrl;
+  @required
+  final String? message;
+  @required
+  final String? name;
+  final String? twitterHandle;
+  final String? linkedInHandle;
+  final String? email;
+  final String? webLink;
+  final String? mediumLink;
 
   const PersonDetails(
-      {Key key,
+      {Key? key,
       this.networkImageUrl,
       this.message,
       this.name,
@@ -391,7 +393,7 @@ class PersonDetails extends StatelessWidget {
                     child: CachedNetworkImage(
                       width: 100,
                       height: 100,
-                      imageUrl: networkImageUrl,
+                      imageUrl: networkImageUrl!,
                       placeholder: (context, url) {
                         return Icon(
                           Icons.person_rounded,
@@ -409,7 +411,7 @@ class PersonDetails extends StatelessWidget {
             children: [
               if (twitterHandle != null)
                 TextButton(
-                    onPressed: () => launch(twitterHandle),
+                    onPressed: () => launch(twitterHandle!),
                     child: Image.asset(
                       'assets/social/twitter.png',
                       width: 32,
@@ -417,7 +419,7 @@ class PersonDetails extends StatelessWidget {
                     )),
               if (linkedInHandle != null)
                 TextButton(
-                    onPressed: () => launch(linkedInHandle),
+                    onPressed: () => launch(linkedInHandle!),
                     child: Image.asset(
                       'assets/social/linkedin.png',
                       width: 35,
@@ -425,7 +427,7 @@ class PersonDetails extends StatelessWidget {
                     )),
               if (mediumLink != null)
                 TextButton(
-                    onPressed: () => launch(mediumLink),
+                    onPressed: () => launch(mediumLink!),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(3),
                       child: Image.asset(
@@ -448,7 +450,7 @@ class PersonDetails extends StatelessWidget {
                       size: 37,
                       color: Colors.pink,
                     ),
-                    onPressed: () => launch(webLink)),
+                    onPressed: () => launch(webLink!)),
             ],
           ),
           SizedBox(

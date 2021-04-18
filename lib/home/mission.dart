@@ -100,11 +100,13 @@ class Mission extends StatelessWidget {
 }
 
 class FvValue extends StatelessWidget {
-  final String asset;
-  final String message;
+  @required
+  final String? asset;
+  @required
+  final String? message;
 
   const FvValue({
-    Key key,
+    Key? key,
     this.asset,
     this.message,
   }) : super(key: key);
@@ -123,12 +125,12 @@ class FvValue extends StatelessWidget {
                 maxHeight: 300.0,
                 maxWidth: 300.0,
               ),
-              child: Image.asset(asset)),
+              child: Image.asset(asset!)),
           SizedBox(
             height: 20,
           ),
           Text(
-            message,
+            message!,
             style: StyleConstants.kDefaultTextStyle,
             textAlign: TextAlign.center,
           ),

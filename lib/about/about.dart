@@ -6,30 +6,18 @@ import 'package:flutter_vancouver/common/ui/app_bar.dart';
 import 'package:flutter_vancouver/common/ui/footer.dart';
 
 class AboutPage extends StatefulWidget {
-  AboutPage({Key key, this.title}) : super(key: key);
-
-  final String title;
+  AboutPage({Key? key}) : super(key: key);
 
   @override
   _AboutPageState createState() => _AboutPageState();
 }
 
 class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
-  ScrollController _pageScrollController;
-  Text title;
+  ScrollController _pageScrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
-
-    _pageScrollController = ScrollController();
-
-    title = Text(
-      "Flutter Vancouver",
-      style: TextStyle(
-        color: Colors.white,
-      ),
-    );
   }
 
   @override
@@ -43,9 +31,6 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
     double horizontalPadding =
         MediaQuery.of(context).size.width < 800 ? 50 : 150;
     double verticalPadding = 50;
-    double titleFont = MediaQuery.of(context).size.width > 960 ? 125 : 60;
-    double navigationHeaderIconSize =
-        MediaQuery.of(context).size.width < 400 ? 25 : 30;
 
     return Scaffold(
       endDrawer:
@@ -61,9 +46,13 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
           scrollDirection: Axis.vertical,
           slivers: [
             FvAppBar(
-                title: title,
-                titleFont: titleFont,
-                navigationHeaderIconSize: navigationHeaderIconSize),
+              title: Text(
+                "Flutter Vancouver",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
             SliverList(
               delegate: SliverChildListDelegate(
                 [

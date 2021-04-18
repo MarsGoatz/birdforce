@@ -6,7 +6,7 @@ import 'package:flutter_vancouver/common/style_constants.dart';
 
 class JoinUs extends StatelessWidget {
   const JoinUs({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

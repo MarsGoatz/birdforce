@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 
 class Community extends StatelessWidget {
   const Community({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
