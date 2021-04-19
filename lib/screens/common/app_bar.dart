@@ -20,7 +20,7 @@ class FvAppBar extends StatelessWidget {
           size: 15,
         ),
       ),
-      actions: !shouldShowNavOptions(context) ? null : navOptions(context),
+      actions: !shouldShowNavOptions(context) ? null : _navOptions(context),
       pinned: true,
       title: flexibleSpaceBar != null ? null : title,
       centerTitle: false,
@@ -39,7 +39,7 @@ class FvAppBar extends StatelessWidget {
         MediaQuery.of(context).size.height > 600);
   }
 
-  static List<Widget> navOptions(BuildContext context) {
+  List<Widget> _navOptions(BuildContext context) {
     return [
       Padding(
         padding: const EdgeInsets.all(8.0),

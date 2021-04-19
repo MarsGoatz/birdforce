@@ -14,9 +14,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
 
-import 'community.dart';
-import 'join_us.dart';
-import 'mission.dart';
+import 'child_widgets/community.dart';
+import 'child_widgets/join_us.dart';
+import 'child_widgets/mission.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, this.title}) : super(key: key);
