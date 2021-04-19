@@ -12,16 +12,16 @@ class HomeController with ChangeNotifier {
       if (_pageScrollController.offset >=
               MediaQuery.of(context).size.height / 2 &&
           !_showTitle) {
-        setTitle(true);
+        _setTitle(true);
       } else if (_pageScrollController.offset <
               MediaQuery.of(context).size.height / 2 &&
           _showTitle) {
-        setTitle(false);
+        _setTitle(false);
       }
     });
   }
 
-  void setTitle(bool value) {
+  void _setTitle(bool value) {
     _showTitle = value;
     notifyListeners();
   }
