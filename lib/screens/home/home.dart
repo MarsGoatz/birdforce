@@ -6,10 +6,13 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_vancouver/screens/common/app_bar.dart';
 import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
+import 'package:flutter_vancouver/screens/common/title.dart';
+import 'package:flutter_vancouver/screens/home/controller.dart';
 import 'package:flutter_vancouver/styles/responsive_constants.dart';
 import 'package:flutter_vancouver/widgets/mouse_region_span.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:provider/provider.dart';
 
 import 'community.dart';
 import 'join_us.dart';
@@ -26,7 +29,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late ScrollController _pageScrollController;
-  bool showTitle = false;
   late AnimationController _controller;
   late Animation _animation;
 
@@ -41,8 +43,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     _animation = Tween(begin: 20, end: 30.0)
         .animate(CurvedAnimation(curve: Curves.linear, parent: _controller));
     _pageScrollController = ScrollController();
-
-    _titleController();
   }
 
   @override
@@ -58,177 +58,159 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         MediaQuery.of(context).size.width < 800 ? 50 : 150;
     double verticalPadding = 50;
 
-    return Scaffold(
-      endDrawer:
-          FvAppBar.shouldShowNavOptions(context) ? null : DrawerResponsive(),
-      body: Scrollbar(
-        isAlwaysShown: _pageScrollController.hasClients &&
-                _pageScrollController.offset > 10
-            ? true
-            : false,
-        controller: _pageScrollController,
-        child: CustomScrollView(
-          controller: _pageScrollController,
-          scrollDirection: Axis.vertical,
-          slivers: [
-            FvAppBar(
-              title: showTitle
-                  ? Text(
-                      "Flutter Vancouver",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    )
-                  : null,
-              flexibleSpaceBar: HomeFlexibleSpacebar(
-                title: showTitle
-                    ? Text(
-                        "Flutter Vancouver",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      )
-                    : null,
-                chevron: AnimatedBuilder(
-                  animation: _controller,
-                  builder: (BuildContext context, Widget? child) {
-                    return Padding(
-                      padding: EdgeInsets.all(_animation.value),
-                      child: IconButton(
-                        onPressed: () => _pageScrollController.animateTo(
-                            MediaQuery.of(context).size.height - kToolbarHeight,
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.easeIn),
-                        icon: Center(
-                          child: Icon(
-                            FontAwesomeIcons.chevronDown,
-                            color: Colors.tealAccent.withOpacity(
-                              max((30 - _animation.value) / 10, .09),
-                            ),
-                            size: 30,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            SliverList(
-              delegate: SliverChildListDelegate(
-                [
-                  Material(
-                    color: Colors.amber[800]!.withOpacity(0.8),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 12),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Center(
-                            child: RichText(
-                          textAlign: TextAlign.center,
-                          text: new TextSpan(
-                            children: [
-                              new TextSpan(
-                                text: 'New to Flutter? Watch the 2 min ',
-                                style: TextStyle(
-                                    fontFamily: 'SourceCodePro',
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              MouseRegionSpan(
-                                mouseCursor: SystemMouseCursors.click,
-                                inlineSpan: TextSpan(
-                                  text: 'animation',
-                                  style: TextStyle(
-                                      fontFamily: 'SourceCodePro',
-                                      fontSize: 20,
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: FontWeight.bold),
-                                  recognizer: new TapGestureRecognizer()
-                                    ..onTap = () {
-                                      launch(
-                                          'https://www.youtube.com/watch?v=fq4N0hgOWzU');
-                                    },
+    return ChangeNotifierProvider(
+      create: (context) => HomeController(_pageScrollController, context),
+      builder: (context, child) {
+        return Scaffold(
+          endDrawer: FvAppBar.shouldShowNavOptions(context)
+              ? null
+              : DrawerResponsive(),
+          body: Scrollbar(
+            isAlwaysShown: _shouldShowScrollbar,
+            controller: _pageScrollController,
+            child: CustomScrollView(
+              controller: _pageScrollController,
+              scrollDirection: Axis.vertical,
+              slivers: [
+                FvAppBar(
+                  title: _shouldShowTitle(context) ? FvTitle() : null,
+                  flexibleSpaceBar: HomeFlexibleSpacebar(
+                    title: _shouldShowTitle(context) ? FvTitle() : null,
+                    chevron: AnimatedBuilder(
+                      animation: _controller,
+                      builder: (BuildContext context, Widget? child) {
+                        return Padding(
+                          padding: EdgeInsets.all(_animation.value),
+                          child: IconButton(
+                            onPressed: () => _pageScrollController.animateTo(
+                                MediaQuery.of(context).size.height -
+                                    kToolbarHeight,
+                                duration: Duration(milliseconds: 300),
+                                curve: Curves.easeIn),
+                            icon: Center(
+                              child: Icon(
+                                FontAwesomeIcons.chevronDown,
+                                color: Colors.tealAccent.withOpacity(
+                                  max((30 - _animation.value) / 10, .09),
                                 ),
+                                size: 30,
                               ),
-                              TextSpan(
-                                text: '.',
-                                style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                            ),
                           ),
-                        )),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                SliverList(
+                  delegate: SliverChildListDelegate(
+                    [
+                      Material(
+                        color: Colors.amber[800]!.withOpacity(0.8),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 12),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Center(
+                                child: RichText(
+                              textAlign: TextAlign.center,
+                              text: new TextSpan(
+                                children: [
+                                  new TextSpan(
+                                    text: 'New to Flutter? Watch the 2 min ',
+                                    style: TextStyle(
+                                        fontFamily: 'SourceCodePro',
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  MouseRegionSpan(
+                                    mouseCursor: SystemMouseCursors.click,
+                                    inlineSpan: TextSpan(
+                                      text: 'animation',
+                                      style: TextStyle(
+                                          fontFamily: 'SourceCodePro',
+                                          fontSize: 20,
+                                          color: Colors.black,
+                                          decoration: TextDecoration.underline,
+                                          fontWeight: FontWeight.bold),
+                                      recognizer: new TapGestureRecognizer()
+                                        ..onTap = () {
+                                          launch(
+                                              'https://www.youtube.com/watch?v=fq4N0hgOWzU');
+                                        },
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: '.',
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            )),
+                          ),
+                        ),
                       ),
-                    ),
+                      Material(
+                        color: Colors.grey[850],
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: horizontalPadding,
+                              vertical: verticalPadding),
+                          child: Mission(),
+                        ),
+                      ),
+                      Material(
+                          color: Colors.grey[900],
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: horizontalPadding,
+                                vertical: verticalPadding),
+                            child: JoinUs(),
+                          )),
+                      Material(
+                          color: Colors.black,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: horizontalPadding,
+                                vertical: verticalPadding),
+                            child: Community(),
+                          )),
+                      Material(
+                          color: Colors.grey[850],
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: horizontalPadding,
+                                vertical: verticalPadding),
+                            child: FvFooter(),
+                          )),
+                    ],
                   ),
-                  Material(
-                    color: Colors.grey[850],
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
-                          vertical: verticalPadding),
-                      child: Mission(),
-                    ),
-                  ),
-                  Material(
-                      color: Colors.grey[900],
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: horizontalPadding,
-                            vertical: verticalPadding),
-                        child: JoinUs(),
-                      )),
-                  Material(
-                      color: Colors.black,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: horizontalPadding,
-                            vertical: verticalPadding),
-                        child: Community(),
-                      )),
-                  Material(
-                      color: Colors.grey[850],
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: horizontalPadding,
-                            vertical: verticalPadding),
-                        child: FvFooter(),
-                      )),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 
-  void _titleController() {
-    _pageScrollController.addListener(() {
-      if (_pageScrollController.offset >=
-              MediaQuery.of(context).size.height / 2 &&
-          !showTitle) {
-        setState(() {
-          showTitle = true;
-        });
-      } else if (_pageScrollController.offset <
-              MediaQuery.of(context).size.height / 2 &&
-          showTitle) {
-        setState(() {
-          showTitle = false;
-        });
-      }
-    });
+  bool get _shouldShowScrollbar {
+    return _pageScrollController.hasClients &&
+        _pageScrollController.offset > 10;
+  }
+
+  bool _shouldShowTitle(BuildContext context) {
+    return Provider.of<HomeController>(context, listen: true).shouldShowTitle;
   }
 }
 
 class HomeFlexibleSpacebar extends StatelessWidget {
-  final Text? title;
+  final Widget? title;
   final AnimatedBuilder? chevron;
 
   const HomeFlexibleSpacebar({Key? key, this.title, this.chevron})

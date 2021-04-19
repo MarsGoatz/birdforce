@@ -8,7 +8,7 @@ class FvAppBar extends StatelessWidget {
     this.flexibleSpaceBar,
   }) : super(key: key);
 
-  final Text? title;
+  final Widget? title;
   final Widget? flexibleSpaceBar;
 
   @override
