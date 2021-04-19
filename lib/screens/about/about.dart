@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_vancouver/about/about_card.dart';
-import 'package:flutter_vancouver/common/ui/drawer.dart';
-import 'package:flutter_vancouver/common/ui/app_bar.dart';
-import 'package:flutter_vancouver/common/ui/footer.dart';
+import 'package:flutter_vancouver/screens/common/app_bar.dart';
+import 'package:flutter_vancouver/screens/common/drawer.dart';
+import 'package:flutter_vancouver/screens/common/footer.dart';
+
+import 'about_card.dart';
 
 class AboutPage extends StatefulWidget {
   AboutPage({Key? key}) : super(key: key);

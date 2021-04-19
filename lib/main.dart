@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vancouver/about/about.dart';
-import 'package:flutter_vancouver/common/no_transition_animation.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'package:flutter_vancouver/home/home.dart';
+
+import 'screens/about/about.dart';
+import 'screens/home/home.dart';
+import 'widgets/no_transition_animation.dart';
 
 void main() {
   setPathUrlStrategy();
