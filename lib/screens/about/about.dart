@@ -3,8 +3,12 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_vancouver/screens/common/app_bar.dart';
 import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
+import 'package:flutter_vancouver/screens/common/title.dart';
 
-import 'about_card.dart';
+import 'child_widgets/about_card.dart';
+import 'child_widgets/contributors_card.dart';
+import 'child_widgets/guest_speaker_card.dart';
+import 'child_widgets/mentor_card.dart';
 
 class AboutPage extends StatefulWidget {
   AboutPage({Key? key}) : super(key: key);
@@ -13,7 +17,7 @@ class AboutPage extends StatefulWidget {
   _AboutPageState createState() => _AboutPageState();
 }
 
-class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
+class _AboutPageState extends State<AboutPage> {
   ScrollController _pageScrollController = ScrollController();
 
   @override
@@ -47,12 +51,7 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
           scrollDirection: Axis.vertical,
           slivers: [
             FvAppBar(
-              title: Text(
-                "Flutter Vancouver",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
+              title: FvTitle(),
             ),
             SliverList(
               delegate: SliverChildListDelegate(
