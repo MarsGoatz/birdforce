@@ -69,12 +69,11 @@ class DrawerResponsive extends StatelessWidget {
                 ),
                 onPressed: () {
                   if (Uri.base.pathSegments.isNotEmpty) {
-                    Navigator.of(context, rootNavigator: true).pop();
                     return Navigator.popUntil(
                         context, (route) => route.isFirst);
+                  } else {
+                    Navigator.of(context).pop();
                   }
-
-                  Navigator.of(context, rootNavigator: true).pop();
                 },
               ),
             ),
@@ -105,11 +104,10 @@ class DrawerResponsive extends StatelessWidget {
                 ),
                 onPressed: () {
                   if (Uri.base.pathSegments.isEmpty) {
-                    Navigator.of(context, rootNavigator: true).pop();
-                    Navigator.pushNamed(context, '/about');
+                    Navigator.popAndPushNamed(context, '/about');
+                  } else {
+                    Navigator.pop(context);
                   }
-
-                  Navigator.of(context, rootNavigator: true).pop();
                 },
               ),
             ),
