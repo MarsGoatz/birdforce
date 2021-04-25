@@ -3,7 +3,7 @@ import 'package:url_strategy/url_strategy.dart';
 
 import 'screens/about/about.dart';
 import 'screens/home/home.dart';
-import 'widgets/no_transition_animation.dart';
+import 'no_transition_animation.dart';
 
 void main() {
   setPathUrlStrategy();
