@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_vancouver/screens/common/app_bar.dart';
 import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
@@ -14,7 +15,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
 
-import 'child_widgets/community.dart';
+import 'child_widgets/email.dart';
 import 'child_widgets/join_us.dart';
 import 'child_widgets/mission.dart';
 
@@ -31,10 +32,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late ScrollController _pageScrollController;
   late AnimationController _controller;
   late Animation _animation;
+  late String emailData;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance!.addPostFrameCallback((_) async {
+      emailData = await rootBundle.loadString('assets/json/email.json');
+    });
+
     _controller = AnimationController(
       duration: const Duration(milliseconds: 1500),
       vsync: this,
@@ -178,7 +184,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             padding: EdgeInsets.symmetric(
                                 horizontal: horizontalPadding,
                                 vertical: verticalPadding),
-                            child: Community(),
+                            child: Email(),
                           )),
                       Material(
                           color: Colors.grey[850],
