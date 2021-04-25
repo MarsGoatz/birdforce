@@ -31,23 +31,23 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late ScrollController _pageScrollController;
   late AnimationController _controller;
-  late Animation _animation;
-  late String emailData;
+  late Animation _paddingAnimation;
+  late Animation _opacityAnimation;
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) async {
-      emailData = await rootBundle.loadString('assets/json/email.json');
-    });
 
     _controller = AnimationController(
       duration: const Duration(milliseconds: 1500),
       vsync: this,
     )..repeat(reverse: true);
 
-    _animation = Tween(begin: 20, end: 30.0)
+    _paddingAnimation = Tween(begin: 20, end: 30.0)
         .animate(CurvedAnimation(curve: Curves.linear, parent: _controller));
+    _opacityAnimation = Tween(begin: 1, end: 0.2)
+        .animate(CurvedAnimation(curve: Curves.linear, parent: _controller));
+
     _pageScrollController = ScrollController();
   }
 
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       animation: _controller,
                       builder: (BuildContext context, Widget? child) {
                         return Padding(
-                          padding: EdgeInsets.all(_animation.value),
+                          padding: EdgeInsets.all(_paddingAnimation.value),
                           child: IconButton(
                             onPressed: () => _pageScrollController.animateTo(
                                 MediaQuery.of(context).size.height -
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               child: Icon(
                                 FontAwesomeIcons.chevronDown,
                                 color: Colors.tealAccent.withOpacity(
-                                  max((30 - _animation.value) / 10, .09),
+                                  _opacityAnimation.value,
                                 ),
                                 size: 30,
                               ),
