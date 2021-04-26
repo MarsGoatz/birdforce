@@ -69,6 +69,7 @@ class DrawerResponsive extends StatelessWidget {
                 ),
                 onPressed: () {
                   if (Uri.base.pathSegments.isNotEmpty) {
+                    // Navigator.of(context, rootNavigator: true).pop();
                     return Navigator.popUntil(
                         context, (route) => route.isFirst);
                   } else {
