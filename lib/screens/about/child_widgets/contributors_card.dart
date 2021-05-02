@@ -37,7 +37,7 @@ class ContributorsCard extends StatelessWidget {
               networkImageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/jeff.jpg?alt=media&token=d6209663-8a7c-41c0-9294-ac475d370d1f",
               name: 'Jeffrey Bunn',
-              message: 'Founder, Clearful Journal',
+              message: 'Co-Founder, Clearful Journal',
               webLink: 'https://www.clearful.com',
               email: 'jeff@jeffreybunn.com',
             )),
