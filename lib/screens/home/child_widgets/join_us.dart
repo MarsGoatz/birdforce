@@ -47,7 +47,13 @@ class JoinUs extends StatelessWidget {
                   style: StyleConstants.kButtonTextStyle,
                 ),
                 shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0)))
+                    borderRadius: new BorderRadius.circular(20.0))),
+            SizedBox(height: 20),
+            Text(
+              'The hangout place for the community. We talk about performance tips, the latest news, state management and what not.',
+              style: StyleConstants.kDefaultTextStyle,
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),
@@ -81,7 +87,13 @@ class JoinUs extends StatelessWidget {
                     style: StyleConstants.kButtonTextStyle,
                   ),
                   shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(20.0)))
+                      borderRadius: new BorderRadius.circular(20.0))),
+              SizedBox(height: 20),
+              Text(
+                'All our events are managed via Meetup. Here you you can RSVP and get notifications about our latest events.',
+                style: StyleConstants.kDefaultTextStyle,
+                textAlign: TextAlign.center,
+              ),
             ],
           )),
       FlexResponsiveItem(
@@ -113,9 +125,15 @@ class JoinUs extends StatelessWidget {
                     style: StyleConstants.kButtonTextStyle,
                   ),
                   shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(20.0)))
+                      borderRadius: new BorderRadius.circular(20.0))),
+              SizedBox(height: 20),
+              Text(
+                'Github is the place where we post our content related to our talks or any other code we want to share.',
+                style: StyleConstants.kDefaultTextStyle,
+                textAlign: TextAlign.center,
+              ),
             ],
-          ))
+          )),
     ]);
   }
 }
