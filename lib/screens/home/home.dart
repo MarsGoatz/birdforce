@@ -8,6 +8,7 @@ import 'package:flutter_vancouver/screens/common/app_bar.dart';
 import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
 import 'package:flutter_vancouver/screens/common/title.dart';
+import 'package:flutter_vancouver/screens/home/child_widgets/follow_us.dart';
 import 'package:flutter_vancouver/screens/home/controller.dart';
 import 'package:flutter_vancouver/styles/responsive_constants.dart';
 import 'package:flutter_vancouver/widgets/mouse_region_span.dart';
@@ -185,6 +186,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 horizontal: horizontalPadding,
                                 vertical: verticalPadding),
                             child: Email(),
+                          )),
+                      Material(
+                          color: Colors.grey[900],
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: horizontalPadding,
+                                vertical: verticalPadding),
+                            child: FollowUs(),
                           )),
                       Material(
                           color: Colors.grey[850],
