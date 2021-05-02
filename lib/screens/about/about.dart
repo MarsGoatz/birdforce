@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_vancouver/screens/about/child_widgets/contributors_active.dart';
 import 'package:flutter_vancouver/screens/common/app_bar.dart';
 import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
@@ -67,6 +68,15 @@ class _AboutPageState extends State<AboutPage> {
                   ),
                   Material(
                     color: Colors.grey[900],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
+                      child: ActiveContributorsCard(),
+                    ),
+                  ),
+                  Material(
+                    color: Colors.grey[850],
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: horizontalPadding,
