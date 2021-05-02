@@ -19,7 +19,7 @@ class ContributorsCard extends StatelessWidget {
               name: 'Kirk Wight',
               message: 'Senior Software Engineer and team lead at Automattic',
               webLink: 'https://kwight.ca',
-              twitterHandle: 'kwight',
+              twitterHandle: 'https://twitter.com/kwight',
               email: 'kwight@kwight.ca',
             )),
         FlexResponsiveItem(
