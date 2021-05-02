@@ -33,6 +33,15 @@ class ActiveContributorsCard extends StatelessWidget {
               linkedInHandle: 'https://www.linkedin.com/in/lutang123/',
               email: 'lutang908@gmail.com',
             )),
+        FlexResponsiveItem(
+            flex: 2,
+            child: PersonDetails(
+              networkImageUrl:
+                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/chris.jpg?alt=media&token=401f5a21-b76e-4e41-8c78-0fec7d11802b",
+              name: 'Chris V',
+              message: 'Flutter Tinkerer',
+              email: 'chris.vervaeke@gmail.com',
+            )),
       ],
     );
   }
