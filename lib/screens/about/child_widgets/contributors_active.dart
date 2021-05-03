@@ -9,7 +9,8 @@ class ActiveContributorsCard extends StatelessWidget {
     return FlexCard(
       title: 'Active Contributors',
       message:
-          'These people go above and beyond by actively contributing to the community by either answering questions or even asking questions! A shout out to them!',
+          'These people go above and beyond by actively contributing to the community by either answering questions or even asking questions!' +
+              ' A special shout out to Boris who is like the Gandalf of our group. On top of being highly experienced and sharing his knowledge as a speaker, he also helps people in the community by answering questions and doing 1-1 calls!',
       items: [
         FlexResponsiveItem(
             flex: 2,
