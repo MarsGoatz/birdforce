@@ -13,94 +13,97 @@ class FollowUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlexCard(title: 'Follow Us', items: [
-      FlexResponsiveItem(
-        flex: 2,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              height: 40,
-            ),
-            MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () => launch('https://twitter.com/FlutterVancity'),
-                child: Image.asset(
-                  "assets/social/twitter.png",
-                  height: 120,
-                  width: 120,
+    return FlexCard(
+        title: 'Follow Us',
+        message: 'Our past events and our social channels!',
+        items: [
+          FlexResponsiveItem(
+            flex: 2,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(
+                  height: 40,
                 ),
-              ),
-            ),
-            SizedBox(
-              height: 60,
-            ),
-            OutlineButton(
-                padding: EdgeInsets.all(16),
-                borderSide: BorderSide(width: 2.0, color: Colors.blue),
-                color: Colors.amber[850],
-                onPressed: () {
-                  launch('hhttps://twitter.com/FlutterVancity');
-                },
-                child: Text(
-                  'Twitter',
-                  style: StyleConstants.kButtonTextStyle,
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () => launch('https://twitter.com/FlutterVancity'),
+                    child: Image.asset(
+                      "assets/social/twitter.png",
+                      height: 120,
+                      width: 120,
+                    ),
+                  ),
                 ),
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0))),
-            SizedBox(height: 20),
-            Text(
-              'Follow us on Twitter where we always announce important information!',
-              style: StyleConstants.kDefaultTextStyle,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-      FlexResponsiveItem(
-        flex: 2,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () => launch(
-                    'https://www.youtube.com/channel/UCiBD1H_RTwWLyhUTPFFpFeA'),
-                child: Image.asset(
-                  "assets/social/youtube.png",
-                  height: 200,
-                  width: 200,
+                SizedBox(
+                  height: 60,
                 ),
-              ),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            OutlineButton(
-                padding: EdgeInsets.all(16),
-                borderSide: BorderSide(width: 2.0, color: Colors.red),
-                color: Colors.red[850],
-                onPressed: () {
-                  launch(
-                      'https://www.youtube.com/channel/UCiBD1H_RTwWLyhUTPFFpFeA');
-                },
-                child: Text(
-                  'Youtube',
-                  style: StyleConstants.kButtonTextStyle,
+                OutlineButton(
+                    padding: EdgeInsets.all(16),
+                    borderSide: BorderSide(width: 2.0, color: Colors.blue),
+                    color: Colors.amber[850],
+                    onPressed: () {
+                      launch('hhttps://twitter.com/FlutterVancity');
+                    },
+                    child: Text(
+                      'Twitter',
+                      style: StyleConstants.kButtonTextStyle,
+                    ),
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(20.0))),
+                SizedBox(height: 20),
+                Text(
+                  'Follow us on Twitter where we always announce important information!',
+                  style: StyleConstants.kDefaultTextStyle,
+                  textAlign: TextAlign.center,
                 ),
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0))),
-            SizedBox(height: 20),
-            Text(
-              'Checkout our previous events. Like and subscribe!',
-              style: StyleConstants.kDefaultTextStyle,
-              textAlign: TextAlign.center,
+              ],
             ),
-          ],
-        ),
-      ),
-    ]);
+          ),
+          FlexResponsiveItem(
+            flex: 2,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () => launch(
+                        'https://www.youtube.com/channel/UCiBD1H_RTwWLyhUTPFFpFeA'),
+                    child: Image.asset(
+                      "assets/social/youtube.png",
+                      height: 200,
+                      width: 200,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                OutlineButton(
+                    padding: EdgeInsets.all(16),
+                    borderSide: BorderSide(width: 2.0, color: Colors.red),
+                    color: Colors.red[850],
+                    onPressed: () {
+                      launch(
+                          'https://www.youtube.com/channel/UCiBD1H_RTwWLyhUTPFFpFeA');
+                    },
+                    child: Text(
+                      'Youtube',
+                      style: StyleConstants.kButtonTextStyle,
+                    ),
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(20.0))),
+                SizedBox(height: 20),
+                Text(
+                  'Checkout our previous events. Like and subscribe!',
+                  style: StyleConstants.kDefaultTextStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ]);
   }
 }
