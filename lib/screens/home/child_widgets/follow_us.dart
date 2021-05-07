@@ -44,7 +44,7 @@ class FollowUs extends StatelessWidget {
                     borderSide: BorderSide(width: 2.0, color: Colors.blue),
                     color: Colors.amber[850],
                     onPressed: () {
-                      launch('hhttps://twitter.com/FlutterVancity');
+                      launch('https://twitter.com/FlutterVancity');
                     },
                     child: Text(
                       'Twitter',
