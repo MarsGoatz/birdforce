@@ -19,4 +19,4 @@ The builds are automatic from the ```master``` branch. Netlify site gets a notif
 if cd flutter; then git pull && cd ..; else git clone https://github.com/flutter/flutter.git; fi && flutter/bin/flutter config --enable-web && flutter/bin/flutter build web --release --web-renderer html;ls -l;cp netlify.toml build/web/netlify.toml;
 ```
 
-So the command loads Flutter, builds the web release version, copies the netlify config.
+So the command loads Flutter, builds the web release version, copies the netlify config and publishes build/web folder.
