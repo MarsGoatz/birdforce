@@ -134,23 +134,6 @@
     <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
-    <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyA5htdf6de2TBun3KjHw5mI55SljTE0_gM",
-        authDomain: "fluttervancity.firebaseapp.com",
-        databaseURL: "fluttervancity.firebaseio.com",
-        projectId: "fluttervancity",
-        storageBucket: "fluttervancity.appspot.com",
-        messagingSenderId: "667832016865",
-        appId: "1:667832016865:web:18e9278364b3147013bca0",
-        measurementId: "1:667832016865:web:18e9278364b3147013bca0",
-      };
-
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("flutter-first-frame", function () {
