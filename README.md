@@ -2,12 +2,18 @@
 
 # Info
 
-fluttervancouver.ca using Flutter Web. Currently in beta stage.
+fluttervancouver.ca using Flutter Web. The repo is not configured for other platforms, if you test the navigation might fail.
 
 # Test
 
-Switch flutter channel to ```beta``` and then run ```flutter run -d chrome```.
+From your terminal run ```flutter run -d chrome --web-renderer html```. We use the html renderer instead of the default canvas as canvas adds 2mb to the website.
 
 # Deploy
 
-Build locally using ```flutter build web``` and add the ```build``` contents to the commit. Once the code is pushed to Github repo, Netlify will trigger a build and deploy the changes from the ```build/web``` folder.
+The builds are automatic from the ```master``` branch. Netlify site gets a notification when a new commit is added to the ```master``` branch and the following commands are run:
+
+```
+if cd flutter; then git pull && cd ..; else git clone https://github.com/flutter/flutter.git; fi && flutter/bin/flutter config --enable-web && flutter/bin/flutter build web --release --web-renderer html;ls -l;cp netlify.toml build/web/netlify.toml;
+```
+
+So the command loads Flutter, builds the web release version, copies the netlify config.
