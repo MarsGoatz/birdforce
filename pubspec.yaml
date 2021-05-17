@@ -1,18 +1,17 @@
-name: flutter_vancouver
-description: Vancouver community building next gen apps. Vancouver Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections.
+name: flutter_Canada
+description: Canada community building next gen apps. Canada Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections.
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  
   font_awesome_flutter: ^9.0.0
   url_launcher: ^6.0.3
   url_strategy: ^0.2.0
@@ -34,7 +33,7 @@ flutter:
           weight: 700
     - family: JosefinSans
       fonts:
-        - asset: fonts/JosefinSans-Regular.ttf    
+        - asset: fonts/JosefinSans-Regular.ttf
 
   assets:
     - assets/meetup.png

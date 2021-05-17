@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_vancouver/styles/responsive_constants.dart';
-import 'package:flutter_vancouver/styles/style_constants.dart';
+import 'package:flutter_Canada/styles/responsive_constants.dart';
+import 'package:flutter_Canada/styles/style_constants.dart';
 
 class FvFooter extends StatelessWidget {
   const FvFooter({
@@ -14,7 +14,7 @@ class FvFooter extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Flutter Vancouver',
+            'Flutter Canada',
             style: StyleConstants.kMissionTextStyle,
           ),
           Flex(
@@ -30,7 +30,7 @@ class FvFooter extends StatelessWidget {
                     height: 1.3),
               ),
               Text(
-                'Made In Vancouver.',
+                'Made In Canada.',
                 maxLines: 1,
                 style: TextStyle(
                     fontFamily: 'SourceCodePro',

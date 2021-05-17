@@ -8,7 +8,7 @@ class FvTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Flutter Vancouver",
+      "Flutter Canada",
       style: TextStyle(
         color: Colors.white,
       ),

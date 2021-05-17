@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vancouver/widgets/flex_card.dart';
-import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
-import 'package:flutter_vancouver/screens/common/person_details.dart';
+import 'package:flutter_Canada/widgets/flex_card.dart';
+import 'package:flutter_Canada/widgets/flex_repsonsive.dart';
+import 'package:flutter_Canada/screens/common/person_details.dart';
 
 class GuestCard extends StatelessWidget {
   @override
@@ -9,7 +9,7 @@ class GuestCard extends StatelessWidget {
     return FlexCard(
       title: 'Guest Speakers',
       message:
-          'A special mention to our speakers who take time off of their busy schedule to empower our Flutter Vancouver community.',
+          'A special mention to our speakers who take time off of their busy schedule to empower our Flutter Canada community.',
       items: [
         FlexResponsiveItem(
             flex: 2,

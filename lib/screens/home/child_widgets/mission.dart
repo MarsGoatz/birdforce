@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_vancouver/widgets/flex_card.dart';
-import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
-import 'package:flutter_vancouver/styles/style_constants.dart';
+import 'package:flutter_Canada/widgets/flex_card.dart';
+import 'package:flutter_Canada/widgets/flex_repsonsive.dart';
+import 'package:flutter_Canada/styles/style_constants.dart';
 
 class Mission extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class Mission extends StatelessWidget {
       title: 'Mission',
       messageImage: 'assets/goals.png',
       message:
-          'Flutter is an UI framework by Google to design and build beautiful mobile, web and desktop apps from a single codebase at lightning fast speeds. Vancouver Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections',
+          'Flutter is an UI framework by Google to design and build beautiful mobile, web and desktop apps from a single codebase at lightning fast speeds. Canada Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections',
       items: [
         FlexResponsiveItem(
           flex: 2,

@@ -2,7 +2,7 @@
 
 # Info
 
-fluttervancouver.ca using Flutter Web. The repo is not configured for other platforms, if you test the navigation might fail.
+flutterCanada.ca using Flutter Web. The repo is not configured for other platforms, if you test the navigation might fail.
 
 # Test
 

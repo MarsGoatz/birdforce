@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vancouver/widgets/flex_card.dart';
-import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
-import 'package:flutter_vancouver/screens/common/person_details.dart';
+import 'package:flutter_Canada/widgets/flex_card.dart';
+import 'package:flutter_Canada/widgets/flex_repsonsive.dart';
+import 'package:flutter_Canada/screens/common/person_details.dart';
 
 class MentorCard extends StatelessWidget {
   @override
@@ -16,7 +16,7 @@ class MentorCard extends StatelessWidget {
               networkImageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/ria.jpg?alt=media&token=87781e2c-96ab-4b67-ac4c-ed0c38bc61c6",
               name: 'Ria Carmin',
-              message: 'Organizer, React Vancouver & Frontend Developer, Hopin',
+              message: 'Organizer, React Canada & Frontend Developer, Hopin',
               twitterHandle: 'https://twitter.com/RiaCarmin',
               webLink: 'http://riacarmin.com/',
             )),

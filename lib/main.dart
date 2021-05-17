@@ -15,7 +15,7 @@ class FvApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Vancouver',
+      title: 'Flutter Canada',
       theme: ThemeData(
         pageTransitionsTheme: NoTransitionsOnWeb(),
         primarySwatch: Colors.amber,

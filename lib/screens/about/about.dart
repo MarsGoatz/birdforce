@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_vancouver/screens/about/child_widgets/contributors_active.dart';
-import 'package:flutter_vancouver/screens/common/app_bar.dart';
-import 'package:flutter_vancouver/screens/common/drawer.dart';
-import 'package:flutter_vancouver/screens/common/footer.dart';
-import 'package:flutter_vancouver/screens/common/title.dart';
+import 'package:flutter_Canada/screens/about/child_widgets/contributors_active.dart';
+import 'package:flutter_Canada/screens/common/app_bar.dart';
+import 'package:flutter_Canada/screens/common/drawer.dart';
+import 'package:flutter_Canada/screens/common/footer.dart';
+import 'package:flutter_Canada/screens/common/title.dart';
 
 import 'child_widgets/about_card.dart';
 import 'child_widgets/contributors_card.dart';

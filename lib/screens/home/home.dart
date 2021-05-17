@@ -4,14 +4,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_vancouver/screens/common/app_bar.dart';
-import 'package:flutter_vancouver/screens/common/drawer.dart';
-import 'package:flutter_vancouver/screens/common/footer.dart';
-import 'package:flutter_vancouver/screens/common/title.dart';
-import 'package:flutter_vancouver/screens/home/child_widgets/follow_us.dart';
-import 'package:flutter_vancouver/screens/home/controller.dart';
-import 'package:flutter_vancouver/styles/responsive_constants.dart';
-import 'package:flutter_vancouver/widgets/mouse_region_span.dart';
+import 'package:flutter_Canada/screens/common/app_bar.dart';
+import 'package:flutter_Canada/screens/common/drawer.dart';
+import 'package:flutter_Canada/screens/common/footer.dart';
+import 'package:flutter_Canada/screens/common/title.dart';
+import 'package:flutter_Canada/screens/home/child_widgets/follow_us.dart';
+import 'package:flutter_Canada/screens/home/controller.dart';
+import 'package:flutter_Canada/styles/responsive_constants.dart';
+import 'package:flutter_Canada/widgets/mouse_region_span.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
@@ -286,7 +286,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                "Flutter Vancouver",
+                                "Flutter Canada",
                                 style: TextStyle(
                                   fontFamily: 'Roboto',
                                   color: Colors.white,
@@ -338,7 +338,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    "Made In Vancouver ",
+                                    "Made In Canada ",
                                     style: TextStyle(
                                         fontFamily: 'SourceCodePro',
                                         color: Colors.grey[300],
@@ -360,7 +360,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                         : Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                              "Where the Vancouver Flutter community hangs out!",
+                              "Where the Canada Flutter community hangs out!",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontFamily: 'SourceCodePro',

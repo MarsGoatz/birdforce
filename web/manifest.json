@@ -1,11 +1,11 @@
 {
-  "name": "flutter_vancouver",
-  "short_name": "Flutter Vancouver",
+  "name": "flutter_Canada",
+  "short_name": "Flutter Canada",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",
   "theme_color": "#0175C2",
-  "description": "Vancouver community building next gen apps. Vancouver Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections.",
+  "description": "Canada community building next gen apps. Canada Flutter Group is formed to bring people together who are using Flutter to create beautiful apps, looking to learn mobile development and making lasting connections.",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "icons": [

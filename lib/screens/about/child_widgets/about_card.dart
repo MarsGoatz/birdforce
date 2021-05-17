@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_vancouver/widgets/flex_card.dart';
-import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
-import 'package:flutter_vancouver/screens/common/person_details.dart';
+import 'package:flutter_Canada/widgets/flex_card.dart';
+import 'package:flutter_Canada/widgets/flex_repsonsive.dart';
+import 'package:flutter_Canada/screens/common/person_details.dart';
 
 class AboutCard extends StatelessWidget {
   @override
@@ -10,7 +10,7 @@ class AboutCard extends StatelessWidget {
     return FlexCard(
       title: 'About',
       message:
-          'Flutter Vancouver was created by Siddharth Molleti after falling in love with Flutter and his interest for creating a community and teaching others came together. In addition to being a speaker, Sid actively maintains and organizes events in the community. If you are interested in being co-organizer, please reach out!',
+          'Flutter Canada was created by Siddharth Molleti after falling in love with Flutter and his interest for creating a community and teaching others came together. In addition to being a speaker, Sid actively maintains and organizes events in the community. If you are interested in being co-organizer, please reach out!',
       items: [
         FlexResponsiveItem(
             flex: 2,
