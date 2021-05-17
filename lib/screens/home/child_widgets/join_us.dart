@@ -66,7 +66,7 @@ class JoinUs extends StatelessWidget {
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () =>
-                      launch('https://www.meetup.com/meetup-group-eBaLiZyW'),
+                      launch('https://www.meetup.com/Flutter-Canada-Group/'),
                   child: Image.asset(
                     "assets/meetup.png",
                     height: 200,
@@ -80,7 +80,7 @@ class JoinUs extends StatelessWidget {
                   borderSide: BorderSide(width: 2.0, color: Colors.red),
                   color: Colors.redAccent,
                   onPressed: () {
-                    launch('https://www.meetup.com/meetup-group-eBaLiZyW');
+                    launch('https://www.meetup.com/Flutter-Canada-Group/');
                   },
                   child: Text(
                     'Meetup',
