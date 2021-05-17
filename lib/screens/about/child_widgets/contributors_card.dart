@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_Canada/widgets/flex_card.dart';
-import 'package:flutter_Canada/widgets/flex_repsonsive.dart';
-import 'package:flutter_Canada/screens/common/person_details.dart';
+import 'package:flutter_vancouver/widgets/flex_card.dart';
+import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
+import 'package:flutter_vancouver/screens/common/person_details.dart';
 
 class ContributorsCard extends StatelessWidget {
   @override

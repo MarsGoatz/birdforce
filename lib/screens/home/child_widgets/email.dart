@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_Canada/widgets/flex_card.dart';
-import 'package:flutter_Canada/widgets/flex_repsonsive.dart';
+import 'package:flutter_vancouver/widgets/flex_card.dart';
+import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Email extends StatelessWidget {
@@ -31,7 +31,7 @@ class Email extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      'admin@fluttervancouver.ca',
+                      'admin@fluttercanada.ca',
                       style: TextStyle(
                           fontFamily: 'SourceCodePro',
                           color: Colors.white,
@@ -42,7 +42,7 @@ class Email extends StatelessWidget {
                     ),
                   ),
                 ),
-                onPressed: () => launch('mailto:admin@fluttervancouver.ca')),
+                onPressed: () => launch('mailto:admin@fluttercanada.ca')),
           ),
         ],
         title: 'Contribute');

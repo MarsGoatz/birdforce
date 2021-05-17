@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_Canada/screens/about/child_widgets/contributors_active.dart';
-import 'package:flutter_Canada/screens/common/app_bar.dart';
-import 'package:flutter_Canada/screens/common/drawer.dart';
-import 'package:flutter_Canada/screens/common/footer.dart';
-import 'package:flutter_Canada/screens/common/title.dart';
+import 'package:flutter_vancouver/screens/about/child_widgets/contributors_active.dart';
+import 'package:flutter_vancouver/screens/common/app_bar.dart';
+import 'package:flutter_vancouver/screens/common/drawer.dart';
+import 'package:flutter_vancouver/screens/common/footer.dart';
+import 'package:flutter_vancouver/screens/common/title.dart';
 
 import 'child_widgets/about_card.dart';
 import 'child_widgets/contributors_card.dart';
@@ -66,17 +66,17 @@ class _AboutPageState extends State<AboutPage> {
                       child: AboutCard(),
                     ),
                   ),
+                  // Material(
+                  //   color: Colors.grey[900],
+                  //   child: Padding(
+                  //     padding: EdgeInsets.symmetric(
+                  //         horizontal: horizontalPadding,
+                  //         vertical: verticalPadding),
+                  //     child: ActiveContributorsCard(),
+                  //   ),
+                  // ),
                   Material(
-                    color: Colors.grey[900],
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
-                          vertical: verticalPadding),
-                      child: ActiveContributorsCard(),
-                    ),
-                  ),
-                  Material(
-                    color: Colors.grey[850],
+                    color: Colors.black,
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: horizontalPadding,
@@ -84,24 +84,24 @@ class _AboutPageState extends State<AboutPage> {
                       child: GuestCard(),
                     ),
                   ),
-                  Material(
-                    color: Colors.black,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
-                          vertical: verticalPadding),
-                      child: MentorCard(),
-                    ),
-                  ),
-                  Material(
-                    color: Colors.grey[900],
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
-                          vertical: verticalPadding),
-                      child: ContributorsCard(),
-                    ),
-                  ),
+                  // Material(
+                  //   color: Colors.black,
+                  //   child: Padding(
+                  //     padding: EdgeInsets.symmetric(
+                  //         horizontal: horizontalPadding,
+                  //         vertical: verticalPadding),
+                  //     child: MentorCard(),
+                  //   ),
+                  // ),
+                  // Material(
+                  //   color: Colors.grey[900],
+                  //   child: Padding(
+                  //     padding: EdgeInsets.symmetric(
+                  //         horizontal: horizontalPadding,
+                  //         vertical: verticalPadding),
+                  //     child: ContributorsCard(),
+                  //   ),
+                  // ),
                   Material(
                       color: Colors.grey[850],
                       child: Padding(

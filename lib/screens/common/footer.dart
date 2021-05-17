@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_Canada/styles/responsive_constants.dart';
-import 'package:flutter_Canada/styles/style_constants.dart';
+import 'package:flutter_vancouver/styles/responsive_constants.dart';
+import 'package:flutter_vancouver/styles/style_constants.dart';
 
 class FvFooter extends StatelessWidget {
   const FvFooter({
