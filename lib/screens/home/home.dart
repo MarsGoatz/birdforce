@@ -1,9 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_vancouver/screens/common/app_bar.dart';
 import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
@@ -109,9 +106,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                SliverList(
-                  delegate: SliverChildListDelegate(
-                    [
+                SliverToBoxAdapter(
+                  child: ListView(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    children: [
                       Material(
                         color: Colors.amber[800]!.withOpacity(0.8),
                         child: Padding(
@@ -205,7 +204,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           )),
                     ],
                   ),
-                ),
+                )
               ],
             ),
           ),
