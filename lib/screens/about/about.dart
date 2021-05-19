@@ -54,9 +54,11 @@ class _AboutPageState extends State<AboutPage> {
             FvAppBar(
               title: FvTitle(),
             ),
-            SliverList(
-              delegate: SliverChildListDelegate(
-                [
+            SliverToBoxAdapter(
+              child: ListView(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: [
                   Material(
                     color: Colors.grey[850],
                     child: Padding(
@@ -103,13 +105,14 @@ class _AboutPageState extends State<AboutPage> {
                     ),
                   ),
                   Material(
-                      color: Colors.grey[850],
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: horizontalPadding,
-                            vertical: verticalPadding),
-                        child: FvFooter(),
-                      )),
+                    color: Colors.grey[850],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
+                      child: FvFooter(),
+                    ),
+                  ),
                 ],
               ),
             ),

@@ -109,9 +109,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                SliverList(
-                  delegate: SliverChildListDelegate(
-                    [
+                SliverToBoxAdapter(
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
                       Material(
                         color: Colors.amber[800]!.withOpacity(0.8),
                         child: Padding(
@@ -205,7 +207,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           )),
                     ],
                   ),
-                ),
+                )
               ],
             ),
           ),
