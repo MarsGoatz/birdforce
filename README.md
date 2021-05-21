@@ -11,7 +11,13 @@ fluttervancouver.ca using Flutter Web. The repo is not configured for other plat
 
 # Test
 
+## Devo
+
 From your terminal run ```flutter run -d chrome --web-renderer html```. We use the html renderer instead of the default canvas as canvas adds 2mb to the website.
+
+## Release
+
+From your terimal run ```flutter build web && cd build/web --web-renderer=html && (python -mSimpleHTTPServer &) && open http://localhost:8000/```. Feel free to change the port number as needed.
 
 # Deploy
 
