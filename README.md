@@ -13,17 +13,25 @@ fluttervancouver.ca using Flutter Web. The repo is not configured for other plat
 
 ## Devo
 
-From your terminal run ```flutter run -d chrome --web-renderer html```. We use the html renderer instead of the default canvas as canvas adds 2mb to the website.
+From your terminal run the following command. We use the html renderer instead of the default canvas as canvas adds 2mb to the website.
+
+```console
+flutter run -d chrome --web-renderer html
+```
 
 ## Release
 
-From your terimal run ```flutter build web && cd build/web --web-renderer=html && (python -mSimpleHTTPServer &) && open http://localhost:8000/```. Feel free to change the port number as needed.
+From your terimal run the following command. Feel free to change the port number as needed.
+
+```console
+flutter build web && cd build/web --web-renderer=html && (python -mSimpleHTTPServer &) && open http://localhost:8000/`
+```
 
 # Deploy
 
 The builds are automatic from the ```master``` branch. Netlify site gets a notification when a new commit is added to the ```master``` branch and the following commands are run:
 
-```
+```console
 if cd flutter; then git pull && cd ..; else git clone https://github.com/flutter/flutter.git; fi && flutter/bin/flutter config --enable-web && flutter/bin/flutter build web --release --web-renderer html;ls -l;cp netlify.toml build/web/netlify.toml;
 ```
 
