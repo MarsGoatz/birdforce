@@ -7,10 +7,10 @@ class ActiveContributorsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlexCard(
-      title: 'Active Contributors',
+      title: 'Top Contributors',
+      messageImage: 'assets/award.png',
       message:
-          'These people go above and beyond by actively contributing to the community by either answering questions or even asking questions!' +
-              ' A special shout out to Boris who is like the Gandalf of our group. On top of being highly experienced and sharing his knowledge as a speaker, he also helps people in the community by answering questions and doing 1-1 calls!',
+          'These people go above and beyond by actively contributing to the community by either answering questions, asking questions and keeping the community engaged! A special shoutout to them!',
       items: [
         FlexResponsiveItem(
             flex: 2,
@@ -38,10 +38,11 @@ class ActiveContributorsCard extends StatelessWidget {
             flex: 2,
             child: PersonDetails(
               networkImageUrl:
-                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/chris.jpg?alt=media&token=401f5a21-b76e-4e41-8c78-0fec7d11802b",
-              name: 'Chris V',
-              message: 'Flutter Tinkerer',
-              email: 'chris.vervaeke@gmail.com',
+                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/lenz.png?alt=media&token=a0d4b0e1-76cc-48d3-949d-233c772ec4c4",
+              name: 'Lenz Paul',
+              message: 'Flutter developer & DSC Alumni @GoogleDevs',
+              email: 'lenztpaul@gmail.com',
+              twitterHandle: 'https://twitter.com/bringbackthedog',
             )),
       ],
     );

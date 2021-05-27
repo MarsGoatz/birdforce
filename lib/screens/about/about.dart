@@ -69,16 +69,31 @@ class _AboutPageState extends State<AboutPage> {
                     ),
                   ),
                   Material(
-                    color: Colors.grey[900],
+                    color: Colors.grey[850],
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: horizontalPadding,
                           vertical: verticalPadding),
-                      child: ActiveContributorsCard(),
+                      child: Container(
+                          decoration: BoxDecoration(
+                            // color: Colors.orange,
+                            border:
+                                Border.all(width: 5.0, color: Colors.redAccent),
+                            borderRadius: BorderRadius.all(Radius.circular(
+                                    5.0) //         <--- border radius here
+                                ),
+                          ),
+                          child: Material(
+                            color: Colors.black,
+                            child: Padding(
+                              padding: const EdgeInsets.all(40.0),
+                              child: ActiveContributorsCard(),
+                            ),
+                          )),
                     ),
                   ),
                   Material(
-                    color: Colors.grey[850],
+                    color: Colors.grey[900],
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: horizontalPadding,

@@ -15,12 +15,10 @@ class ContributorsCard extends StatelessWidget {
             flex: 2,
             child: PersonDetails(
               networkImageUrl:
-                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/kirk.jpg?alt=media&token=16b09e21-950c-45e7-80e8-29bf5508aa0a",
-              name: 'Kirk Wight',
-              message: 'Senior Software Engineer and team lead at Automattic',
-              webLink: 'https://kwight.ca',
-              twitterHandle: 'https://twitter.com/kwight',
-              email: 'kwight@kwight.ca',
+                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/chris.jpg?alt=media&token=401f5a21-b76e-4e41-8c78-0fec7d11802b",
+              name: 'Chris V',
+              message: 'Flutter Tinkerer',
+              email: 'chris.vervaeke@gmail.com',
             )),
         FlexResponsiveItem(
             flex: 2,
