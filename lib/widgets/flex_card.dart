@@ -19,6 +19,12 @@ class FlexCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double fontSize = MediaQuery.of(context).size.width < 800
+        ? MediaQuery.of(context).size.width < 400
+            ? 25
+            : 30
+        : 40;
+    double iconSize = MediaQuery.of(context).size.width < 800 ? 55 : 80;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -26,12 +32,13 @@ class FlexCard extends StatelessWidget {
           children: [
             Text(title,
                 textAlign: TextAlign.left,
-                style: TextStyle(fontFamily: 'JosefinSans', fontSize: 40)),
+                style:
+                    TextStyle(fontFamily: 'JosefinSans', fontSize: fontSize)),
             if (messageImage != null)
               Image.asset(
                 messageImage!,
-                width: 80,
-                height: 80,
+                width: iconSize,
+                height: iconSize,
               )
           ],
         ),

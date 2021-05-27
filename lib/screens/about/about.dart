@@ -38,6 +38,12 @@ class _AboutPageState extends State<AboutPage> {
         MediaQuery.of(context).size.width < 800 ? 50 : 150;
     double verticalPadding = 50;
 
+    double topContributorsPadding =
+        MediaQuery.of(context).size.width < 800 ? 15 : 40;
+
+    double borderWidth = MediaQuery.of(context).size.width < 800 ? 1.5 : 4;
+    double borderRadius = MediaQuery.of(context).size.width < 800 ? 2.5 : 5;
+
     return Scaffold(
       endDrawer:
           FvAppBar.shouldShowNavOptions(context) ? null : DrawerResponsive(),
@@ -72,21 +78,20 @@ class _AboutPageState extends State<AboutPage> {
                     color: Colors.grey[850],
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
+                          horizontal: horizontalPadding / 2,
                           vertical: verticalPadding),
                       child: Container(
                           decoration: BoxDecoration(
                             // color: Colors.orange,
-                            border:
-                                Border.all(width: 5.0, color: Colors.redAccent),
-                            borderRadius: BorderRadius.all(Radius.circular(
-                                    5.0) //         <--- border radius here
-                                ),
+                            border: Border.all(
+                                width: borderWidth, color: Colors.redAccent),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(borderRadius)),
                           ),
                           child: Material(
                             color: Colors.black,
                             child: Padding(
-                              padding: const EdgeInsets.all(40.0),
+                              padding: EdgeInsets.all(topContributorsPadding),
                               child: ActiveContributorsCard(),
                             ),
                           )),
