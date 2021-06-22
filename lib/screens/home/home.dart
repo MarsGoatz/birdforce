@@ -108,8 +108,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ),
                 SliverToBoxAdapter(
                   child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     children: [
                       Material(
                         color: Colors.amber[800]!.withOpacity(0.8),

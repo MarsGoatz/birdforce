@@ -6,7 +6,7 @@ import 'package:flutter_vancouver/screens/common/footer.dart';
 import 'package:flutter_vancouver/screens/common/title.dart';
 
 import 'child_widgets/about_card.dart';
-import 'child_widgets/guest_speaker_card.dart';
+import 'child_widgets/flutter_canada_card.dart';
 
 class AboutPage extends StatefulWidget {
   AboutPage({Key? key}) : super(key: key);
@@ -35,6 +35,12 @@ class _AboutPageState extends State<AboutPage> {
         MediaQuery.of(context).size.width < 800 ? 50 : 150;
     double verticalPadding = 50;
 
+    double topContributorsPadding =
+        MediaQuery.of(context).size.width < 800 ? 15 : 40;
+
+    double borderWidth = MediaQuery.of(context).size.width < 800 ? 1.5 : 4;
+    double borderRadius = MediaQuery.of(context).size.width < 800 ? 2.5 : 5;
+
     return Scaffold(
       endDrawer:
           FvAppBar.shouldShowNavOptions(context) ? null : DrawerResponsive(),
@@ -52,38 +58,49 @@ class _AboutPageState extends State<AboutPage> {
               title: FvTitle(),
             ),
             SliverToBoxAdapter(
-                child: ListView(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                Material(
-                  color: Colors.grey[850],
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: horizontalPadding,
-                        vertical: verticalPadding),
-                    child: AboutCard(),
-                  ),
-                ),
-                Material(
-                  color: Colors.black,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: horizontalPadding,
-                        vertical: verticalPadding),
-                    child: GuestCard(),
-                  ),
-                ),
-                Material(
+              child: ListView(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                  Material(
                     color: Colors.grey[850],
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: horizontalPadding,
                           vertical: verticalPadding),
+                      child: AboutCard(),
+                    ),
+                  ),
+                  Material(
+                    color: Colors.black,
+                    child: Container(
+                        decoration: BoxDecoration(
+                          // color: Colors.orange,
+                          border: Border.all(
+                              width: borderWidth, color: Colors.redAccent),
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(borderRadius)),
+                        ),
+                        child: Material(
+                          color: Colors.black,
+                          child: Padding(
+                            padding: EdgeInsets.all(topContributorsPadding),
+                            child: FluterCanadaCard(),
+                          ),
+                        )),
+                  ),
+                  Material(
+                    color: Colors.grey[900],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
                       child: FvFooter(),
-                    )),
-              ],
-            ))
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

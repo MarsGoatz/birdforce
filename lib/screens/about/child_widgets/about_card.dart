@@ -24,14 +24,6 @@ class AboutCard extends StatelessWidget {
               email: 'sid.310@icloud.com',
               mediumLink: 'https://marsgoat.medium.com/',
             )),
-        FlexResponsiveItem(
-            flex: 2,
-            child: PersonDetails(
-              name: 'Your Name',
-              message:
-                  'As an organizer, you will create, host and promote events.',
-              email: 'admin@fluttervancouver.ca',
-            )),
       ],
     );
   }
