@@ -6,6 +6,7 @@ import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
 import 'package:flutter_vancouver/screens/common/title.dart';
 import 'package:flutter_vancouver/screens/home/child_widgets/follow_us.dart';
+import 'package:flutter_vancouver/screens/home/child_widgets/join_us_local.dart';
 import 'package:flutter_vancouver/screens/home/controller.dart';
 import 'package:flutter_vancouver/styles/responsive_constants.dart';
 import 'package:flutter_vancouver/widgets/mouse_region_span.dart';
@@ -14,7 +15,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
 
 import 'child_widgets/email.dart';
-import 'child_widgets/join_us.dart';
+import 'child_widgets/join_us_online.dart';
 import 'child_widgets/mission.dart';
 
 class HomePage extends StatefulWidget {
@@ -176,7 +177,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             padding: EdgeInsets.symmetric(
                                 horizontal: horizontalPadding,
                                 vertical: verticalPadding),
-                            child: JoinUs(),
+                            child: JoinUsOnline(),
                           )),
                       Material(
                           color: Colors.black,
@@ -184,10 +185,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             padding: EdgeInsets.symmetric(
                                 horizontal: horizontalPadding,
                                 vertical: verticalPadding),
-                            child: Email(),
+                            child: JoinUsLocal(),
                           )),
                       Material(
                           color: Colors.grey[900],
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: horizontalPadding,
+                                vertical: verticalPadding),
+                            child: Email(),
+                          )),
+                      Material(
+                          color: Colors.black,
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: horizontalPadding,

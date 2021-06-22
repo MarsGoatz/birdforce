@@ -47,5 +47,7 @@ flutter:
     - assets/preview.png
     - assets/vancity.png
     - assets/flutter_can.png
+    - assets/vancouver.png
+    - assets/toronto.png
     - assets/community/
     - assets/social/
