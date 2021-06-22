@@ -28,7 +28,7 @@ class FollowUs extends StatelessWidget {
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () => launch('https://twitter.com/FlutterVancity'),
+                    onTap: () => launch('https://twitter.com/FlutterCan'),
                     child: Image.asset(
                       "assets/social/twitter.png",
                       height: 120,
@@ -44,7 +44,7 @@ class FollowUs extends StatelessWidget {
                     borderSide: BorderSide(width: 2.0, color: Colors.blue),
                     color: Colors.amber[850],
                     onPressed: () {
-                      launch('https://twitter.com/FlutterVancity');
+                      launch('https://twitter.com/FlutterCan');
                     },
                     child: Text(
                       'Twitter',
