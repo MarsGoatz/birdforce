@@ -6,7 +6,7 @@ import 'package:flutter_vancouver/screens/common/footer.dart';
 import 'package:flutter_vancouver/screens/common/title.dart';
 
 import 'child_widgets/about_card.dart';
-import 'child_widgets/flutter_canada_card.dart';
+import 'child_widgets/open_source_card.dart';
 
 class AboutPage extends StatefulWidget {
   AboutPage({Key? key}) : super(key: key);
@@ -72,22 +72,27 @@ class _AboutPageState extends State<AboutPage> {
                     ),
                   ),
                   Material(
-                    color: Colors.black,
-                    child: Container(
-                        decoration: BoxDecoration(
-                          // color: Colors.orange,
-                          border: Border.all(
-                              width: borderWidth, color: Colors.redAccent),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(borderRadius)),
-                        ),
-                        child: Material(
-                          color: Colors.black,
-                          child: Padding(
-                            padding: EdgeInsets.all(topContributorsPadding),
-                            child: FluterCanadaCard(),
+                    color: Colors.grey[850],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding / 2,
+                          vertical: verticalPadding),
+                      child: Container(
+                          decoration: BoxDecoration(
+                            // color: Colors.orange,
+                            border: Border.all(
+                                width: borderWidth, color: Colors.redAccent),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(borderRadius)),
                           ),
-                        )),
+                          child: Material(
+                            color: Colors.black,
+                            child: Padding(
+                              padding: EdgeInsets.all(topContributorsPadding),
+                              child: OpenSourceCard(),
+                            ),
+                          )),
+                    ),
                   ),
                   Material(
                     color: Colors.grey[900],
