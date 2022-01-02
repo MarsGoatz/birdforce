@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_vancouver/screens/common/founder_details.dart';
 import 'package:flutter_vancouver/widgets/flex_card.dart';
 import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
 import 'package:flutter_vancouver/screens/common/person_details.dart';
@@ -14,15 +15,16 @@ class AboutCard extends StatelessWidget {
       items: [
         FlexResponsiveItem(
             flex: 2,
-            child: PersonDetails(
+            child: FounderDetails(
               networkImageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/sid.png?alt=media&token=f13cccbc-f093-4f60-829c-3b4cee60e4f2",
               name: 'Siddharth Molleti',
-              message: 'Organizer & Software Developer',
+              message: 'Founder & Organizer',
               twitterHandle: 'https://twitter.com/marsgoatzz',
               linkedInHandle: 'https://www.linkedin.com/in/smllti',
               email: 'sid.310@icloud.com',
               mediumLink: 'https://marsgoat.medium.com/',
+              webLink: 'https://marsgoat.com',
             )),
       ],
     );
