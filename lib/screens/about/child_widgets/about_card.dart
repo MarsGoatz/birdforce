@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_vancouver/screens/common/founder_details.dart';
 import 'package:flutter_vancouver/widgets/flex_card.dart';
 import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
-import 'package:flutter_vancouver/screens/common/person_details.dart';
 
 class AboutCard extends StatelessWidget {
   @override
