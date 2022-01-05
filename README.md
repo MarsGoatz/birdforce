@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/18f570a1-97f9-4e64-be23-f9b26ebf1279/deploy-status)](https://app.netlify.com/sites/compassionate-chandrasekhar-dfa50c/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dcd7fe8f-631b-409e-b4c6-731f768ada25/deploy-status)](https://app.netlify.com/sites/lucid-villani-3c301a/deploys)
 
 # License
 One thing to note that all the code is under BSD-2 license ***except the assets***. If you have Canva Pro account, then you can reuse the assets too. For the social assets, please refer to the rules of the specific product, for example for twitter, checkout their brand rules and youtube, you will need to check theirs etc. 
