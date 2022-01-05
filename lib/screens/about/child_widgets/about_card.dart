@@ -25,6 +25,20 @@ class AboutCard extends StatelessWidget {
               mediumLink: 'https://marsgoat.medium.com/',
               webLink: 'https://marsgoat.com',
             )),
+        FlexResponsiveItem(
+            flex: 2,
+            child: FounderDetails(
+              networkImageUrl:
+                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/alan.png?alt=media&token=8aabe801-f901-4241-86f3-a8f9f4a390d2",
+              name: 'Alan Hill',
+              message: 'Co-Organizer',
+              twitterHandle: 'https://twitter.com/palge',
+              //placeholder for Alan to fill his details if he wants to
+              linkedInHandle: null,
+              email: null,
+              mediumLink: null,
+              webLink: null,
+            )),
       ],
     );
   }
