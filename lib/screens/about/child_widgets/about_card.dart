@@ -33,10 +33,9 @@ class AboutCard extends StatelessWidget {
               name: 'Alan Hill',
               message: 'Co-Organizer',
               twitterHandle: 'https://twitter.com/palge',
-              //placeholder for Alan to fill his details if he wants to
-              linkedInHandle: null,
-              email: null,
-              mediumLink: null,
+              linkedInHandle: 'https://www.linkedin.com/in/alanjhill/',
+              email: 'alan@octopology.com',
+              mediumLink: 'https://medium.com/@alanjhill',
               webLink: null,
             )),
       ],
