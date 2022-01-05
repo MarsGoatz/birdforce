@@ -14,7 +14,7 @@ class AboutCard extends StatelessWidget {
       items: [
         FlexResponsiveItem(
             flex: 2,
-            child: FounderDetails(
+            child: OrganizerDetails(
               networkImageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/sid.png?alt=media&token=f13cccbc-f093-4f60-829c-3b4cee60e4f2",
               name: 'Siddharth Molleti',
@@ -27,7 +27,7 @@ class AboutCard extends StatelessWidget {
             )),
         FlexResponsiveItem(
             flex: 2,
-            child: FounderDetails(
+            child: OrganizerDetails(
               networkImageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/alan.png?alt=media&token=8aabe801-f901-4241-86f3-a8f9f4a390d2",
               name: 'Alan Hill',

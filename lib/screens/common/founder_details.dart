@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class FounderDetails extends StatelessWidget {
+class OrganizerDetails extends StatelessWidget {
   final String? networkImageUrl;
   @required
   final String? message;
@@ -14,7 +14,7 @@ class FounderDetails extends StatelessWidget {
   final String? webLink;
   final String? mediumLink;
 
-  const FounderDetails(
+  const OrganizerDetails(
       {Key? key,
       this.networkImageUrl,
       this.message,
