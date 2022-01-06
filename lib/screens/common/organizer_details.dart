@@ -52,13 +52,13 @@ class OrganizerDetails extends StatelessWidget {
                   ),
                   child: networkImageUrl != null
                       ? CachedNetworkImage(
-                          width: 400,
-                          height: 400,
+                          width: 300,
+                          height: 300,
                           imageUrl: networkImageUrl!,
                           placeholder: (context, url) {
                             return Icon(
                               Icons.person_rounded,
-                              size: 80,
+                              size: 200,
                               color: Colors.cyan,
                             );
                           },
