@@ -43,32 +43,31 @@ class PersonDetails extends StatelessWidget {
               ),
               child: Container(
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(10.0),
                     border: new Border.all(
-                      color: Colors.deepOrange,
-                      width: 3.0,
+                      color: Colors.transparent,
+                      width: 2.0,
                     ),
                   ),
-                  child: ClipOval(
-                    child: networkImageUrl != null
-                        ? CachedNetworkImage(
-                            width: 100,
-                            height: 100,
-                            imageUrl: networkImageUrl!,
-                            placeholder: (context, url) {
-                              return Icon(
-                                Icons.person_rounded,
-                                size: 80,
-                                color: Colors.cyan,
-                              );
-                            },
-                          )
-                        : Icon(
-                            Icons.person_rounded,
-                            size: 100,
-                            color: Colors.cyan,
-                          ),
-                  ))),
+                  child: networkImageUrl != null
+                      ? CachedNetworkImage(
+                          width: 250,
+                          height: 250,
+                          imageUrl: networkImageUrl!,
+                          placeholder: (context, url) {
+                            return Icon(
+                              Icons.person_rounded,
+                              size: 200,
+                              color: Colors.cyan,
+                            );
+                          },
+                        )
+                      : Icon(
+                          Icons.person_rounded,
+                          size: 200,
+                          color: Colors.cyan,
+                        ))),
           SizedBox(
             height: 20,
           ),
@@ -76,47 +75,62 @@ class PersonDetails extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (twitterHandle != null)
-                TextButton(
-                    onPressed: () => launch(twitterHandle!),
-                    child: Image.asset(
-                      'assets/social/twitter.png',
-                      width: 32,
-                      height: 32,
-                    )),
-              if (linkedInHandle != null)
-                TextButton(
-                    onPressed: () => launch(linkedInHandle!),
-                    child: Image.asset(
-                      'assets/social/linkedin.png',
-                      width: 35,
-                      height: 35,
-                    )),
-              if (mediumLink != null)
-                TextButton(
-                    onPressed: () => launch(mediumLink!),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(3),
+                Flexible(
+                  fit: FlexFit.loose,
+                  child: TextButton(
+                      onPressed: () => launch(twitterHandle!),
                       child: Image.asset(
-                        'assets/social/medium.png',
-                        width: 31.5,
-                        height: 31.5,
-                      ),
-                    )),
+                        'assets/social/twitter.png',
+                        width: 32,
+                        height: 32,
+                      )),
+                ),
+              if (linkedInHandle != null)
+                Flexible(
+                  fit: FlexFit.loose,
+                  child: TextButton(
+                      onPressed: () => launch(linkedInHandle!),
+                      child: Image.asset(
+                        'assets/social/linkedin.png',
+                        width: 35,
+                        height: 35,
+                      )),
+                ),
+              if (mediumLink != null)
+                Flexible(
+                  fit: FlexFit.loose,
+                  child: TextButton(
+                      onPressed: () => launch(mediumLink!),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(3),
+                        child: Image.asset(
+                          'assets/social/medium.png',
+                          width: 31.5,
+                          height: 31.5,
+                        ),
+                      )),
+                ),
               if (email != null)
-                TextButton(
-                    child: Icon(
-                      Icons.email,
-                      size: 37,
-                    ),
-                    onPressed: () => launch('mailto:$email')),
+                Flexible(
+                  fit: FlexFit.loose,
+                  child: TextButton(
+                      child: Icon(
+                        Icons.email,
+                        size: 37,
+                      ),
+                      onPressed: () => launch('mailto:$email')),
+                ),
               if (webLink != null)
-                TextButton(
-                    child: Icon(
-                      Icons.web,
-                      size: 37,
-                      color: Colors.pink,
-                    ),
-                    onPressed: () => launch(webLink!)),
+                Flexible(
+                  fit: FlexFit.loose,
+                  child: TextButton(
+                      child: Icon(
+                        Icons.web,
+                        size: 37,
+                        color: Colors.pink,
+                      ),
+                      onPressed: () => launch(webLink!)),
+                ),
             ],
           ),
           SizedBox(
@@ -124,7 +138,7 @@ class PersonDetails extends StatelessWidget {
           ),
           Text(
             name ?? 'Placeholder',
-            style: TextStyle(fontFamily: 'josefinsans', fontSize: 25),
+            style: TextStyle(fontFamily: 'josefinsans', fontSize: 30),
             textAlign: TextAlign.center,
           ),
           SizedBox(
