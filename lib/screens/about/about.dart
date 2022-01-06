@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_vancouver/screens/about/child_widgets/ambassador_card.dart';
 import 'package:flutter_vancouver/screens/common/app_bar.dart';
 import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
@@ -69,6 +70,15 @@ class _AboutPageState extends State<AboutPage> {
                           horizontal: horizontalPadding,
                           vertical: verticalPadding),
                       child: AboutCard(),
+                    ),
+                  ),
+                  Material(
+                    color: Colors.grey[900],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: verticalPadding),
+                      child: GuestCard(),
                     ),
                   ),
                   Material(
