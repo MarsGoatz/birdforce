@@ -52,11 +52,11 @@ class GuestCard extends StatelessWidget {
               message: 'Flutter Developer & Content Creator',
               twitterHandle: 'https://twitter.com/GopinathanAswin',
 
-              /*placeholder for Kevin to fill in extra details*/
+              /*placeholder for Aswin to fill in extra details*/
 
-              // linkedInHandle: null,
-              // email: null,
-              // mediumLink: null,
+              linkedInHandle: 'https://www.linkedin.com/in/aswin-gopinathan-69556716a/',
+              email: 'aswingopinathan1871@gmail.com',
+              mediumLink: 'https://dev.to/infiniteoverflow',
               // webLink: null,
             )),
       ],
