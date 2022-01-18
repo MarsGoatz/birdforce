@@ -43,22 +43,51 @@ class GuestCard extends StatelessWidget {
               // mediumLink: null,
               // webLink: null,
             )),
+      ],
+    );
+  }
+}
+
+class GuestCard2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FlexResponsive(
+      items: [
         FlexResponsiveItem(
-            flex: 5,
-            child: PersonDetails(
-              networkImageUrl:
-                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/aswin.png?alt=media&token=8f95990b-06d2-40ab-8057-b7088a9c33e1",
-              name: 'Aswin Gopinathan',
-              message: 'Flutter Developer & Content Creator',
-              twitterHandle: 'https://twitter.com/GopinathanAswin',
+          flex: 5,
+          child: PersonDetails(
+            networkImageUrl:
+                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/aswin.png?alt=media&token=8f95990b-06d2-40ab-8057-b7088a9c33e1",
+            name: 'Aswin Gopinathan',
+            message: 'Flutter Developer & Content Creator',
+            twitterHandle: 'https://twitter.com/GopinathanAswin',
 
-              /*placeholder for Aswin to fill in extra details*/
+            /*placeholder for Aswin to fill in extra details*/
 
-              linkedInHandle: 'https://www.linkedin.com/in/aswin-gopinathan-69556716a/',
-              email: 'aswingopinathan1871@gmail.com',
-              mediumLink: 'https://dev.to/infiniteoverflow',
-              // webLink: null,
-            )),
+            linkedInHandle:
+                'https://www.linkedin.com/in/aswin-gopinathan-69556716a/',
+            email: 'aswingopinathan1871@gmail.com',
+            mediumLink: 'https://dev.to/infiniteoverflow',
+            // webLink: null,
+          ),
+        ),
+        FlexResponsiveItem(
+          flex: 5,
+          child: PersonDetails(
+            networkImageUrl:
+                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/fernando.png?alt=media&token=09b56f87-b0a5-460e-856f-971c558f0b13",
+            name: 'Fernando Rocha',
+            message: 'Solutions Architect, AWS Amplify, Amazon',
+            twitterHandle: 'https://twitter.com/rochatron',
+
+            /*placeholder for Fernando to fill in extra details*/
+
+            linkedInHandle: null,
+            email: null,
+            mediumLink: null,
+            // webLink: null,
+          ),
+        ),
       ],
     );
   }

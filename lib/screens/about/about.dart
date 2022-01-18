@@ -78,7 +78,14 @@ class _AboutPageState extends State<AboutPage> {
                       padding: EdgeInsets.symmetric(
                           horizontal: horizontalPadding,
                           vertical: verticalPadding),
-                      child: GuestCard(),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          GuestCard(),
+                          SizedBox(height: 40),
+                          GuestCard2(),
+                        ],
+                      ),
                     ),
                   ),
                   Material(
