@@ -77,15 +77,12 @@ class GuestCard2 extends StatelessWidget {
             networkImageUrl:
                 "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/fernando.png?alt=media&token=09b56f87-b0a5-460e-856f-971c558f0b13",
             name: 'Fernando Rocha',
-            message: 'Solutions Architect, AWS Amplify, Amazon',
+            message: 'Senior Solutions Architect, AWS Amplify, Amazon',
             twitterHandle: 'https://twitter.com/rochatron',
-
-            /*placeholder for Fernando to fill in extra details*/
-
-            linkedInHandle: null,
+            linkedInHandle: "https://www.linkedin.com/in/fernandorochas",
             email: null,
             mediumLink: null,
-            // webLink: null,
+            webLink: null,
           ),
         ),
       ],
