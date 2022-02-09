@@ -33,7 +33,7 @@ class AboutCard extends StatelessWidget {
                 "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/alan.jpg?alt=media&token=81805921-5bd7-4ee6-93b6-5764ad281de5",
             name: 'Alan Hill',
             message: 'Lead Organizer',
-            twitterHandle: 'https://twitter.com/palge',
+            twitterHandle: 'https://twitter.com/iloveflutter',
             linkedInHandle: 'https://www.linkedin.com/in/alanjhill/',
             email: 'alan@octopology.com',
             mediumLink: 'https://medium.com/@alanjhill',
