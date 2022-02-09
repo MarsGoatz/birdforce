@@ -55,20 +55,19 @@ class PersonDetails extends StatelessWidget {
                   child: ClipOval(
                     child: networkImageUrl != null
                         ? CachedNetworkImage(
-                            width: 300,
-                            height: 300,
+                            fit: BoxFit.cover,
                             imageUrl: networkImageUrl!,
                             placeholder: (context, url) {
                               return Icon(
                                 Icons.person_rounded,
-                                size: 200,
+                                size: 300,
                                 color: Colors.cyan,
                               );
                             },
                           )
                         : Icon(
                             Icons.person_rounded,
-                            size: 200,
+                            size: 300,
                             color: Colors.cyan,
                           ),
                   ))),
