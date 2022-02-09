@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_vancouver/screens/common/organizer_details.dart';
+import 'package:flutter_vancouver/screens/common/person_details.dart';
 import 'package:flutter_vancouver/widgets/flex_card.dart';
 import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
 
@@ -14,7 +13,7 @@ class AboutCard extends StatelessWidget {
       items: [
         FlexResponsiveItem(
             flex: 2,
-            child: OrganizerDetails(
+            child: PersonDetails(
               networkImageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/sid.png?alt=media&token=f13cccbc-f093-4f60-829c-3b4cee60e4f2",
               name: 'Siddharth Molleti',
@@ -24,10 +23,11 @@ class AboutCard extends StatelessWidget {
               email: 'sid.310@icloud.com',
               mediumLink: 'https://marsgoat.medium.com/',
               webLink: 'https://marsgoat.com',
+              borderColor: Colors.cyan,
             )),
         FlexResponsiveItem(
             flex: 2,
-            child: OrganizerDetails(
+            child: PersonDetails(
               networkImageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/alan.png?alt=media&token=8aabe801-f901-4241-86f3-a8f9f4a390d2",
               name: 'Alan Hill',
@@ -37,6 +37,7 @@ class AboutCard extends StatelessWidget {
               email: 'alan@octopology.com',
               mediumLink: 'https://medium.com/@alanjhill',
               webLink: null,
+              borderColor: Colors.cyan,
             )),
       ],
     );

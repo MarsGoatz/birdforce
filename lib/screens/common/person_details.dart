@@ -13,6 +13,7 @@ class PersonDetails extends StatelessWidget {
   final String? email;
   final String? webLink;
   final String? mediumLink;
+  final Color? borderColor;
 
   const PersonDetails(
       {Key? key,
@@ -23,7 +24,8 @@ class PersonDetails extends StatelessWidget {
       this.linkedInHandle,
       this.email,
       this.webLink,
-      this.mediumLink})
+      this.mediumLink,
+      this.borderColor})
       : super(key: key);
 
   @override
@@ -43,31 +45,33 @@ class PersonDetails extends StatelessWidget {
               ),
               child: Container(
                   decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(10.0),
+                    shape: BoxShape.circle,
+                    // borderRadius: BorderRadius.circular(10.0),
                     border: new Border.all(
-                      color: Colors.transparent,
-                      width: 2.0,
+                      color: borderColor ?? Colors.deepOrange,
+                      width: 4.0,
                     ),
                   ),
-                  child: networkImageUrl != null
-                      ? CachedNetworkImage(
-                          width: 250,
-                          height: 250,
-                          imageUrl: networkImageUrl!,
-                          placeholder: (context, url) {
-                            return Icon(
-                              Icons.person_rounded,
-                              size: 200,
-                              color: Colors.cyan,
-                            );
-                          },
-                        )
-                      : Icon(
-                          Icons.person_rounded,
-                          size: 200,
-                          color: Colors.cyan,
-                        ))),
+                  child: ClipOval(
+                    child: networkImageUrl != null
+                        ? CachedNetworkImage(
+                            width: 300,
+                            height: 300,
+                            imageUrl: networkImageUrl!,
+                            placeholder: (context, url) {
+                              return Icon(
+                                Icons.person_rounded,
+                                size: 200,
+                                color: Colors.cyan,
+                              );
+                            },
+                          )
+                        : Icon(
+                            Icons.person_rounded,
+                            size: 200,
+                            color: Colors.cyan,
+                          ),
+                  ))),
           SizedBox(
             height: 20,
           ),
