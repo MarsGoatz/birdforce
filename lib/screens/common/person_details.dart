@@ -30,9 +30,11 @@ class PersonDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double imageSize = MediaQuery.of(context).size.width > 1400 ? 250 : 200;
+    double fontSize = MediaQuery.of(context).size.width > 1400 ? 30 : 25;
     return ConstrainedBox(
       constraints: new BoxConstraints(
-        maxWidth: 500.0,
+        maxWidth: 300.0,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,13 +42,12 @@ class PersonDetails extends StatelessWidget {
         children: [
           ConstrainedBox(
               constraints: new BoxConstraints(
-                maxHeight: 300.0,
-                maxWidth: 300.0,
+                maxHeight: imageSize,
+                maxWidth: imageSize,
               ),
               child: Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    // borderRadius: BorderRadius.circular(10.0),
                     border: new Border.all(
                       color: borderColor ?? Colors.deepOrange,
                       width: 4.0,
@@ -60,14 +61,14 @@ class PersonDetails extends StatelessWidget {
                             placeholder: (context, url) {
                               return Icon(
                                 Icons.person_rounded,
-                                size: 300,
+                                size: imageSize,
                                 color: Colors.cyan,
                               );
                             },
                           )
                         : Icon(
                             Icons.person_rounded,
-                            size: 300,
+                            size: imageSize,
                             color: Colors.cyan,
                           ),
                   ))),
@@ -141,7 +142,7 @@ class PersonDetails extends StatelessWidget {
           ),
           Text(
             name ?? 'Placeholder',
-            style: TextStyle(fontFamily: 'josefinsans', fontSize: 30),
+            style: TextStyle(fontFamily: 'josefinsans', fontSize: fontSize),
             textAlign: TextAlign.center,
           ),
           SizedBox(
