@@ -15,7 +15,7 @@ class GuestCard extends StatelessWidget {
             flex: 5,
             child: PersonDetails(
               networkImageUrl:
-                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/randal.png?alt=media&token=3cd8306d-e485-46d1-b936-cb761f28a1e0",
+                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/randal.png?alt=media&token=e8768b28-e674-41a7-b2dc-fd7cd1570d3d",
               name: 'Randal Schwartz',
               message: 'a.k.a. Merlin, Flutter GDE',
               twitterHandle: 'https://twitter.com/RandalSchwartz',
@@ -31,7 +31,7 @@ class GuestCard extends StatelessWidget {
             flex: 5,
             child: PersonDetails(
               networkImageUrl:
-                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/kevin.png?alt=media&token=b65eeed3-86cf-4dac-8cad-6f99d8ce6f01",
+                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/kevin.png?alt=media&token=93d18763-22a7-427c-a246-807254ea66de",
               name: 'Kevin Moore',
               message: 'Product Manager, Flutter & Dart, Google',
               twitterHandle: 'https://twitter.com/kevmoo',
@@ -57,7 +57,7 @@ class GuestCard2 extends StatelessWidget {
           flex: 5,
           child: PersonDetails(
             networkImageUrl:
-                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/aswin.png?alt=media&token=8f95990b-06d2-40ab-8057-b7088a9c33e1",
+                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/aswin.png?alt=media&token=c016085c-6a4a-4b4a-9d8c-d52dcacc81e2",
             name: 'Aswin Gopinathan',
             message: 'Flutter Developer & Content Creator',
             twitterHandle: 'https://twitter.com/GopinathanAswin',
@@ -75,7 +75,7 @@ class GuestCard2 extends StatelessWidget {
           flex: 5,
           child: PersonDetails(
             networkImageUrl:
-                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/fernando.png?alt=media&token=09b56f87-b0a5-460e-856f-971c558f0b13",
+                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/fernando.png?alt=media&token=8ada1be9-1270-4dd8-8421-a5523e1deeef",
             name: 'Fernando Rocha',
             message: 'Senior Solutions Architect, AWS Amplify, Amazon',
             twitterHandle: 'https://twitter.com/rochatron',
