@@ -9,6 +9,7 @@ import 'package:flutter_vancouver/screens/home/child_widgets/follow_us.dart';
 import 'package:flutter_vancouver/screens/home/child_widgets/join_us_local.dart';
 import 'package:flutter_vancouver/screens/home/controller.dart';
 import 'package:flutter_vancouver/styles/responsive_constants.dart';
+import 'package:flutter_vancouver/widgets/max_width.dart';
 import 'package:flutter_vancouver/widgets/mouse_region_span.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -164,44 +165,54 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       ),
                       Material(
                         color: Colors.grey[850],
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: horizontalPadding,
-                              vertical: verticalPadding),
-                          child: Mission(),
+                        child: MaxWidth(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: horizontalPadding,
+                                vertical: verticalPadding),
+                            child: Mission(),
+                          ),
                         ),
                       ),
                       Material(
                           color: Colors.grey[900],
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: horizontalPadding,
-                                vertical: verticalPadding),
-                            child: JoinUsOnline(),
+                          child: MaxWidth(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: horizontalPadding,
+                                  vertical: verticalPadding),
+                              child: JoinUsOnline(),
+                            ),
                           )),
                       Material(
                           color: Colors.black,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: horizontalPadding,
-                                vertical: verticalPadding),
-                            child: JoinUsLocal(),
+                          child: MaxWidth(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: horizontalPadding,
+                                  vertical: verticalPadding),
+                              child: JoinUsLocal(),
+                            ),
                           )),
                       Material(
                           color: Colors.grey[900],
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: horizontalPadding,
-                                vertical: verticalPadding),
-                            child: Email(),
+                          child: MaxWidth(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: horizontalPadding,
+                                  vertical: verticalPadding),
+                              child: Email(),
+                            ),
                           )),
                       Material(
                           color: Colors.black,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: horizontalPadding,
-                                vertical: verticalPadding),
-                            child: FollowUs(),
+                          child: MaxWidth(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: horizontalPadding,
+                                  vertical: verticalPadding),
+                              child: FollowUs(),
+                            ),
                           )),
                       Material(
                           color: Colors.grey[850],

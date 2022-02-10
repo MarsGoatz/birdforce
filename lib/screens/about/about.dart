@@ -6,6 +6,7 @@ import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
 import 'package:flutter_vancouver/screens/common/title.dart';
 
+import '../../widgets/max_width.dart';
 import 'child_widgets/about_card.dart';
 import 'child_widgets/open_source_card.dart';
 
@@ -65,50 +66,56 @@ class _AboutPageState extends State<AboutPage> {
                 children: [
                   Material(
                     color: Colors.grey[850],
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
-                          vertical: verticalPadding),
-                      child: AboutCard(),
+                    child: MaxWidth(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: horizontalPadding,
+                            vertical: verticalPadding),
+                        child: AboutCard(),
+                      ),
                     ),
                   ),
                   Material(
                     color: Colors.grey[900],
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
-                          vertical: verticalPadding),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          GuestCard(),
-                          SizedBox(height: 40),
-                          GuestCard2(),
-                        ],
+                    child: MaxWidth(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: horizontalPadding,
+                            vertical: verticalPadding),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            GuestCard(),
+                            SizedBox(height: 40),
+                            GuestCard2(),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Material(
                     color: Colors.grey[850],
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding / 2,
-                          vertical: verticalPadding),
-                      child: Container(
-                          decoration: BoxDecoration(
-                            // color: Colors.orange,
-                            border: Border.all(
-                                width: borderWidth, color: Colors.redAccent),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(borderRadius)),
-                          ),
-                          child: Material(
-                            color: Colors.black,
-                            child: Padding(
-                              padding: EdgeInsets.all(topContributorsPadding),
-                              child: OpenSourceCard(),
+                    child: MaxWidth(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: horizontalPadding / 2,
+                            vertical: verticalPadding),
+                        child: Container(
+                            decoration: BoxDecoration(
+                              // color: Colors.orange,
+                              border: Border.all(
+                                  width: borderWidth, color: Colors.redAccent),
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(borderRadius)),
                             ),
-                          )),
+                            child: Material(
+                              color: Colors.black,
+                              child: Padding(
+                                padding: EdgeInsets.all(topContributorsPadding),
+                                child: OpenSourceCard(),
+                              ),
+                            )),
+                      ),
                     ),
                   ),
                   Material(
