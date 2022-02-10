@@ -9,7 +9,7 @@ class AboutCard extends StatelessWidget {
     return FlexCard(
       title: 'About',
       message:
-          'Flutter Canada was created by Siddharth Molleti after falling in love with Flutter and the concept of "everything is a widget". Sid started the group in February 2020 and grew the community from ground up for two years and grew the community from 0 to almost 500 people. Initially Sid started with hosting and giving talks in Vancouver and then expanded to Toronto at which point the community was rebranded to Flutter Canada. Alan joined as organizer on January 2022 and is now the current lead of the group and is taking the community to new heights. If you are interested in being an organizer, please reach out!',
+          'Flutter Canada was created by Siddharth Molleti after falling in love with Flutter and the concept of "everything is a widget". Sid started the group in February 2020 and grew the community from ground up for two years from 0 to almost 500 people. Initially Sid started with hosting and giving talks in Vancouver and then expanded to Toronto at which point the community was rebranded to Flutter Canada. Alan joined as organizer on January 2022 and is now the current lead of the group and is taking the community to new heights. If you are interested in being an organizer, please reach out!',
       items: [
         FlexResponsiveItem(
           flex: 7,
