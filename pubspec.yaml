@@ -17,6 +17,7 @@ dependencies:
   url_strategy: ^0.2.0
   cached_network_image: ^3.2.0
   provider: ^5.0.0
+  sliver_tools: ^0.2.5
 
 dev_dependencies:
   flutter_test:

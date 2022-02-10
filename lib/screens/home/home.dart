@@ -270,8 +270,8 @@ class HomeFlexibleSpacebar extends StatelessWidget {
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,
           colors: [
-            Color(0xff4e4376),
-            Color(0xff2b5876),
+            Colors.transparent,
+            Colors.transparent,
           ],
         )),
         child: Stack(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:sliver_tools/sliver_tools.dart';
 
 class FvAppBar extends StatelessWidget {
   const FvAppBar({
@@ -13,24 +13,36 @@ class FvAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      leading: Padding(
-        padding: const EdgeInsets.all(13.0),
-        child: FlutterLogo(
-          size: 15,
-        ),
-      ),
-      actions: !shouldShowNavOptions(context) ? null : _navOptions(context),
-      pinned: true,
-      title: flexibleSpaceBar != null ? null : title,
-      centerTitle: false,
-      expandedHeight:
-          flexibleSpaceBar != null ? MediaQuery.of(context).size.height : 0,
-      flexibleSpace: flexibleSpaceBar ??
-          SizedBox(
-            width: 0,
-            height: 0,
+    return SliverStack(
+      children: [
+        SliverAppBarBackground(flexibleSpaceBar: flexibleSpaceBar),
+        SliverCrossAxisConstrained(
+          maxCrossAxisExtent: 1800,
+          child: SliverAppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            leading: Padding(
+              padding: const EdgeInsets.all(13.0),
+              child: FlutterLogo(
+                size: 15,
+              ),
+            ),
+            actions:
+                !shouldShowNavOptions(context) ? null : _navOptions(context),
+            pinned: true,
+            title: flexibleSpaceBar != null ? null : title,
+            centerTitle: false,
+            expandedHeight: flexibleSpaceBar != null
+                ? MediaQuery.of(context).size.height
+                : 0,
+            flexibleSpace: flexibleSpaceBar ??
+                SizedBox(
+                  width: 0,
+                  height: 0,
+                ),
           ),
+        )
+      ],
     );
   }
 
@@ -112,5 +124,43 @@ class FvAppBar extends StatelessWidget {
         width: 10,
       )
     ];
+  }
+}
+
+class SliverAppBarBackground extends StatelessWidget {
+  const SliverAppBarBackground({
+    Key? key,
+    required this.flexibleSpaceBar,
+  }) : super(key: key);
+
+  final Widget? flexibleSpaceBar;
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverAppBar(
+      elevation: 0,
+      pinned: true,
+      title: null,
+      leading: SizedBox(
+        width: 0,
+        height: 0,
+      ),
+      expandedHeight:
+          flexibleSpaceBar != null ? MediaQuery.of(context).size.height : 0,
+      flexibleSpace: flexibleSpaceBar != null
+          ? FlexibleSpaceBar(
+              background: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+                colors: [
+                  Color(0xff4e4376),
+                  Color(0xff2b5876),
+                ],
+              )),
+            ))
+          : SizedBox(height: 0),
+    );
   }
 }
