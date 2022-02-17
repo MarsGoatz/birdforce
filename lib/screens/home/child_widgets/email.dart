@@ -31,12 +31,14 @@ class Email extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      'admin@fluttercanada.ca',
+                      'leadership@fluttercanada.ca',
                       style: TextStyle(
                           fontFamily: 'SourceCodePro',
                           color: Colors.white,
                           fontSize: MediaQuery.of(context).size.width > 800
-                              ? MediaQuery.of(context).size.width / 45
+                              ? MediaQuery.of(context).size.width > 2000 
+                                ? 45 
+                                : MediaQuery.of(context).size.width / 48
                               : MediaQuery.of(context).size.width / 25,
                           fontWeight: FontWeight.w300),
                     ),
