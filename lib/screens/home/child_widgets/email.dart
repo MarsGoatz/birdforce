@@ -5,6 +5,7 @@ import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Email extends StatelessWidget {
+  final kEmail = 'leadership@fluttercanada.ca';
   const Email({
     Key? key,
   }) : super(key: key);
@@ -31,7 +32,7 @@ class Email extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      'leadership@fluttercanada.ca',
+                      kEmail,
                       style: TextStyle(
                           fontFamily: 'SourceCodePro',
                           color: Colors.white,
@@ -44,7 +45,7 @@ class Email extends StatelessWidget {
                     ),
                   ),
                 ),
-                onPressed: () => launch('mailto:admin@fluttercanada.ca')),
+                onPressed: () => launch('mailto:$kEmail')),
           ),
         ],
         title: 'Contribute');
