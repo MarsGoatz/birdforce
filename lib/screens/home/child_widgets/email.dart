@@ -37,10 +37,12 @@ class Email extends StatelessWidget {
                           fontFamily: 'SourceCodePro',
                           color: Colors.white,
                           fontSize: MediaQuery.of(context).size.width > 800
-                              ? MediaQuery.of(context).size.width > 2000 
-                                ? 45 
-                                : MediaQuery.of(context).size.width / 48
-                              : MediaQuery.of(context).size.width / 25,
+                              ? MediaQuery.of(context).size.width > 2000
+                                  ? 45
+                                  : MediaQuery.of(context).size.width / 50
+                              : MediaQuery.of(context).size.width > 400
+                                  ? MediaQuery.of(context).size.width / 30
+                                  : MediaQuery.of(context).size.width / 34,
                           fontWeight: FontWeight.w300),
                     ),
                   ),
