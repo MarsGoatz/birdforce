@@ -71,7 +71,14 @@ class _AboutPageState extends State<AboutPage> {
                         padding: EdgeInsets.symmetric(
                             horizontal: horizontalPadding,
                             vertical: verticalPadding),
-                        child: AboutCard(),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            AboutCard(),
+                            SizedBox(height: 60),
+                            AboutCard2(),
+                          ],
+                        ),
                       ),
                     ),
                   ),

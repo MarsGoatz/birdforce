@@ -60,3 +60,45 @@ class AboutCard extends StatelessWidget {
     );
   }
 }
+
+class AboutCard2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FlexResponsive(
+      items: [
+        FlexResponsiveItem(
+          flex: 7,
+          child: PersonDetails(
+            networkImageUrl:
+                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/donald.png?alt=media&token=bab21faf-a8c8-481a-a1a9-ae8c58688d98",
+            name: 'Donald Murataj',
+            message: 'Co-Organizer',
+            email: 'donaldmurataj@gmail.com',
+            /*placeholder for Donald to fill in extra details*/
+            // twitterHandle: null,
+            // linkedInHandle: null,
+            // mediumLink: null,
+            // webLink: null,
+            borderColor: Colors.cyan,
+          ),
+        ),
+        FlexResponsiveItem(
+          flex: 7,
+          child: PersonDetails(
+            networkImageUrl:
+                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/willie.png?alt=media&token=e4d47369-6120-4ad9-ac92-9b5e8369c429",
+            name: 'Qifeng Li(Willie)',
+            message: 'Co-Organizer',
+            email: 'qi.li1@ucalgary.ca',
+            /*placeholder for Willie to fill in extra details*/
+            // twitterHandle: null,
+            // linkedInHandle: null,
+            // mediumLink: null,
+            // webLink: null,
+            borderColor: Colors.cyan,
+          ),
+        ),
+      ],
+    );
+  }
+}
