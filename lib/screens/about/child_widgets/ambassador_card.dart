@@ -15,6 +15,22 @@ class GuestCard extends StatelessWidget {
             flex: 5,
             child: PersonDetails(
               networkImageUrl:
+                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/roaa.png?alt=media&token=bdd74394-a415-49f8-88d3-a6ee88e3e82b",
+              name: 'Roaa Khaddam',
+              message: 'Flutter Developer & Co-founder @ multicaret',
+              twitterHandle: 'https://mobile.twitter.com/roaakdm',
+              mediumLink: 'https://medium.com/@roaakdm',
+              webLink: 'https://multicaret.com',
+
+              /*placeholder for Randal to fill in extra details*/
+
+              // linkedInHandle: null,
+              // email: null,
+            )),
+        FlexResponsiveItem(
+            flex: 5,
+            child: PersonDetails(
+              networkImageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/randal.png?alt=media&token=e8768b28-e674-41a7-b2dc-fd7cd1570d3d",
               name: 'Randal Schwartz',
               message: 'a.k.a. Merlyn, Flutter GDE',
