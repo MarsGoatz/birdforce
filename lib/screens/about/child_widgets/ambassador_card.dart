@@ -17,7 +17,7 @@ class GuestCard extends StatelessWidget {
               networkImageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/randal.png?alt=media&token=e8768b28-e674-41a7-b2dc-fd7cd1570d3d",
               name: 'Randal Schwartz',
-              message: 'a.k.a. Merlin, Flutter GDE',
+              message: 'a.k.a. Merlyn, Flutter GDE',
               twitterHandle: 'https://twitter.com/RandalSchwartz',
 
               /*placeholder for Randal to fill in extra details*/
