@@ -21,9 +21,6 @@ class GuestCard extends StatelessWidget {
               twitterHandle: 'https://mobile.twitter.com/roaakdm',
               mediumLink: 'https://medium.com/@roaakdm',
               webLink: 'https://multicaret.com',
-
-              /*placeholder for Randal to fill in extra details*/
-
               linkedInHandle: 'https://www.linkedin.com/in/roaa-kh/',
               email: 'roaa@multicaret.com',
             )),
