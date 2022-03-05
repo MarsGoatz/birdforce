@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_vancouver/screens/common/app_bar.dart';
 import 'package:flutter_vancouver/screens/common/drawer.dart';
 import 'package:flutter_vancouver/screens/common/footer.dart';
@@ -14,6 +13,7 @@ import 'package:flutter_vancouver/widgets/mouse_region_span.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
+import 'package:rive/rive.dart' as rive;
 
 import 'child_widgets/email.dart';
 import 'child_widgets/join_us_online.dart';
@@ -289,12 +289,19 @@ class HomeFlexibleSpacebar extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (MediaQuery.of(context).size.height > 600)
-                  FlutterLogo(
-                    size: (MediaQuery.of(context).size.width > 600 &&
-                            MediaQuery.of(context).size.height > 690)
-                        ? 400
-                        : 250,
-                  ),
+                  SizedBox(
+                      height: (MediaQuery.of(context).size.width > 600 &&
+                              MediaQuery.of(context).size.height > 690)
+                          ? 400
+                          : 250,
+                      width: (MediaQuery.of(context).size.width > 600 &&
+                              MediaQuery.of(context).size.height > 690)
+                          ? 400
+                          : 250,
+                      child: rive.RiveAnimation.asset(
+                        'assets/logo_canada.riv',
+                        alignment: Alignment.center,
+                      )),
                 Column(
                   children: [
                     Row(

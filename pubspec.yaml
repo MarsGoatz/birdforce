@@ -18,6 +18,7 @@ dependencies:
   cached_network_image: ^3.2.0
   provider: ^5.0.0
   sliver_tools: ^0.2.5
+  rive: ^0.8.1
 
 dev_dependencies:
   flutter_test:
@@ -37,18 +38,6 @@ flutter:
         - asset: fonts/JosefinSans-Regular.ttf
 
   assets:
-    - assets/meetup.png
-    - assets/slack_white.png
-    - assets/github.png
-    - assets/goals.png
-    - assets/conference_call.png
-    - assets/open_source.png
-    - assets/pair_programming.png
-    - assets/pixel_heart_canada_2.png
-    - assets/preview.png
-    - assets/vancity.png
-    - assets/flutter_can.png
-    - assets/vancouver.png
-    - assets/toronto.png
+    - assets/
     - assets/community/
     - assets/social/
