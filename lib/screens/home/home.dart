@@ -301,6 +301,7 @@ class HomeFlexibleSpacebar extends StatelessWidget {
                       child: rive.RiveAnimation.asset(
                         'assets/logo_canada.riv',
                         alignment: Alignment.center,
+                        fit: BoxFit.cover,
                       )),
                 Column(
                   children: [
