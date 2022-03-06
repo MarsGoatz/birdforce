@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vancouver/styles/style_constants.dart';
 import 'package:flutter_vancouver/widgets/flex_card.dart';
 import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
+import 'package:flutter_vancouver/widgets/outline_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class OpenSourceCard extends StatelessWidget {
@@ -31,19 +31,11 @@ class OpenSourceCard extends StatelessWidget {
               SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.only(left: 15.0),
-                child: OutlineButton(
-                    padding: EdgeInsets.all(16),
-                    borderSide: BorderSide(width: 2.0, color: Colors.red),
-                    color: Colors.redAccent,
-                    onPressed: () {
-                      launch('https://github.com/MarsGoatz/birdforce');
-                    },
-                    child: Text(
-                      'Github',
-                      style: StyleConstants.kButtonTextStyle,
-                    ),
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(20.0))),
+                child: OutlineCustomButton(
+                    borderColor: Colors.red,
+                    onPressed: () =>
+                        launch('https://github.com/MarsGoatz/birdforce'),
+                    text: 'Github'),
               ),
             ],
           ),

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_vancouver/widgets/flex_card.dart';
 import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
 import 'package:flutter_vancouver/styles/style_constants.dart';
+import 'package:flutter_vancouver/widgets/outline_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class FollowUs extends StatelessWidget {
@@ -39,19 +38,10 @@ class FollowUs extends StatelessWidget {
                 SizedBox(
                   height: 60,
                 ),
-                OutlineButton(
-                    padding: EdgeInsets.all(16),
-                    borderSide: BorderSide(width: 2.0, color: Colors.blue),
-                    color: Colors.amber[850],
-                    onPressed: () {
-                      launch('https://twitter.com/FlutterCan');
-                    },
-                    child: Text(
-                      'Twitter',
-                      style: StyleConstants.kButtonTextStyle,
-                    ),
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(20.0))),
+                OutlineCustomButton(
+                    borderColor: Colors.blue,
+                    onPressed: () => launch('https://twitter.com/FlutterCan'),
+                    text: 'Twitter'),
                 SizedBox(height: 20),
                 Text(
                   'Follow us on Twitter where we always announce important information!',
@@ -81,20 +71,11 @@ class FollowUs extends StatelessWidget {
                 SizedBox(
                   height: 25,
                 ),
-                OutlineButton(
-                    padding: EdgeInsets.all(16),
-                    borderSide: BorderSide(width: 2.0, color: Colors.red),
-                    color: Colors.red[850],
-                    onPressed: () {
-                      launch(
-                          'https://www.youtube.com/channel/UCiBD1H_RTwWLyhUTPFFpFeA');
-                    },
-                    child: Text(
-                      'Youtube',
-                      style: StyleConstants.kButtonTextStyle,
-                    ),
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(20.0))),
+                OutlineCustomButton(
+                    borderColor: Colors.red,
+                    onPressed: () => launch(
+                        'https://www.youtube.com/channel/UCiBD1H_RTwWLyhUTPFFpFeA'),
+                    text: 'Youtube'),
                 SizedBox(height: 20),
                 Text(
                   'Checkout our previous events. Like and subscribe!',

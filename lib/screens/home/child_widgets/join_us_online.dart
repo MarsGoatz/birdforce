@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_vancouver/widgets/flex_card.dart';
 import 'package:flutter_vancouver/widgets/flex_repsonsive.dart';
-import 'package:flutter_vancouver/styles/style_constants.dart';
+import 'package:flutter_vancouver/widgets/outline_btn.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class JoinUsOnline extends StatelessWidget {
@@ -38,20 +36,11 @@ class JoinUsOnline extends StatelessWidget {
                 SizedBox(
                   height: 25,
                 ),
-                OutlineButton(
-                    padding: EdgeInsets.all(16),
-                    borderSide: BorderSide(width: 2.0, color: Colors.amber),
-                    color: Colors.amber[850],
-                    onPressed: () {
-                      launch(
-                          'https://join.slack.com/t/fluttervancouver/shared_invite/zt-dtlz4grr-mqfJO5cuH5Xq5PjHaqa4fQ');
-                    },
-                    child: Text(
-                      'Slack',
-                      style: StyleConstants.kButtonTextStyle,
-                    ),
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(20.0))),
+                OutlineCustomButton(
+                    borderColor: Colors.amber,
+                    onPressed: () => launch(
+                        'https://join.slack.com/t/fluttervancouver/shared_invite/zt-dtlz4grr-mqfJO5cuH5Xq5PjHaqa4fQ'),
+                    text: 'Slack'),
               ],
             ),
           ),
