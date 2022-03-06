@@ -70,6 +70,22 @@ class AboutCard2 extends StatelessWidget {
           flex: 7,
           child: PersonDetails(
             networkImageUrl:
+                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/camilo.png?alt=media&token=cb7af92c-e726-4b7d-9768-26795d2f64a8",
+            name: 'Camilo Rodriguez',
+            message: 'Co-Organizer',
+            email: 'camilo.andr3s@gmail.com',
+            /*placeholder for Camilo to fill in additional details*/
+            // mediumLink: null,
+            // twitterHandle: null,
+            // linkedInHandle: null,
+            // webLink: null,
+            borderColor: Colors.cyan,
+          ),
+        ),
+        FlexResponsiveItem(
+          flex: 7,
+          child: PersonDetails(
+            networkImageUrl:
                 "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/donald.png?alt=media&token=bab21faf-a8c8-481a-a1a9-ae8c58688d98",
             name: 'Donald Murataj',
             message: 'Co-Organizer',
