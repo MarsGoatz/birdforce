@@ -76,8 +76,9 @@ class AboutCard2 extends StatelessWidget {
             email: 'camilo.andr3s@gmail.com',
             /*placeholder for Camilo to fill in additional details*/
             // mediumLink: null,
-            // twitterHandle: null,
-            // linkedInHandle: null,
+            twitterHandle: 'https://twitter.com/Camilorzh',
+            linkedInHandle:
+                'https://ca.linkedin.com/in/camilo-a-rodriguez-6246915a',
             // webLink: null,
             borderColor: Colors.cyan,
           ),
