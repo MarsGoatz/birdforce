@@ -53,7 +53,8 @@ class PersonDetails extends StatelessWidget {
                       width: 4.0,
                     ),
                   ),
-                  child: ClipOval(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(180),
                     child: networkImageUrl != null
                         ? CachedNetworkImage(
                             fit: BoxFit.cover,
