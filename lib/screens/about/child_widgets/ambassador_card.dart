@@ -84,20 +84,6 @@ class GuestCard2 extends StatelessWidget {
             // webLink: null,
           ),
         ),
-        FlexResponsiveItem(
-          flex: 5,
-          child: PersonDetails(
-            networkImageUrl:
-                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/fernando.png?alt=media&token=8ada1be9-1270-4dd8-8421-a5523e1deeef",
-            name: 'Fernando Rocha',
-            message: 'Senior Solutions Architect, AWS Amplify, Amazon',
-            twitterHandle: 'https://twitter.com/rochatron',
-            linkedInHandle: "https://www.linkedin.com/in/fernandorochas",
-            email: null,
-            mediumLink: null,
-            webLink: null,
-          ),
-        ),
       ],
     );
   }
