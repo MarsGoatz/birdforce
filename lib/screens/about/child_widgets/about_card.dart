@@ -51,7 +51,7 @@ class AboutCard extends StatelessWidget {
             email: 'sebastian@appliedpda.com',
             mediumLink: null,
             twitterHandle: null,
-            linkedInHandle: null,
+            linkedInHandle: https://www.linkedin.com/in/sedwo/,
             webLink: null,
             borderColor: Colors.cyan,
           ),
