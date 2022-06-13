@@ -25,37 +25,22 @@ class GuestCard extends StatelessWidget {
               email: 'roaa@multicaret.com',
             )),
         FlexResponsiveItem(
-            flex: 5,
-            child: PersonDetails(
-              networkImageUrl:
-                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/randal.png?alt=media&token=e8768b28-e674-41a7-b2dc-fd7cd1570d3d",
-              name: 'Randal Schwartz',
-              message: 'a.k.a. Merlyn, Flutter GDE',
-              twitterHandle: 'https://twitter.com/RandalSchwartz',
+          flex: 5,
+          child: PersonDetails(
+            networkImageUrl:
+                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/randal.png?alt=media&token=e8768b28-e674-41a7-b2dc-fd7cd1570d3d",
+            name: 'Randal Schwartz',
+            message: 'a.k.a. Merlyn, Flutter GDE',
+            twitterHandle: 'https://twitter.com/RandalSchwartz',
 
-              /*placeholder for Randal to fill in extra details*/
+            /*placeholder for Randal to fill in extra details*/
 
-              // linkedInHandle: null,
-              // email: null,
-              // mediumLink: null,
-              // webLink: null,
-            )),
-        FlexResponsiveItem(
-            flex: 5,
-            child: PersonDetails(
-              networkImageUrl:
-                  "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/kevin.png?alt=media&token=93d18763-22a7-427c-a246-807254ea66de",
-              name: 'Kevin Moore',
-              message: 'Product Manager, Flutter & Dart, Google',
-              twitterHandle: 'https://twitter.com/kevmoo',
-
-              /*placeholder for Kevin to fill in extra details*/
-
-              // linkedInHandle: null,
-              // email: null,
-              // mediumLink: null,
-              // webLink: null,
-            )),
+            // linkedInHandle: null,
+            // email: null,
+            // mediumLink: null,
+            // webLink: null,
+          ),
+        ),
       ],
     );
   }
@@ -66,6 +51,23 @@ class GuestCard2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlexResponsive(
       items: [
+        FlexResponsiveItem(
+          flex: 5,
+          child: PersonDetails(
+            networkImageUrl:
+                "https://firebasestorage.googleapis.com/v0/b/fluttervancity.appspot.com/o/kevin.png?alt=media&token=93d18763-22a7-427c-a246-807254ea66de",
+            name: 'Kevin Moore',
+            message: 'Product Manager, Flutter & Dart, Google',
+            twitterHandle: 'https://twitter.com/kevmoo',
+
+            /*placeholder for Kevin to fill in extra details*/
+
+            // linkedInHandle: null,
+            // email: null,
+            // mediumLink: null,
+            // webLink: null,
+          ),
+        ),
         FlexResponsiveItem(
           flex: 5,
           child: PersonDetails(
